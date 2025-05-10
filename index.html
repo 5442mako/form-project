@@ -1,382 +1,332 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.5">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #5a5a5a; -webkit-text-stroke: #5a5a5a}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #112d9e; -webkit-text-stroke: #112d9e}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #14606b; -webkit-text-stroke: #14606b}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #232526; -webkit-text-stroke: #232526}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Hiragino Sans'; color: #3c3f43; -webkit-text-stroke: #3c3f43}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #8f000f; -webkit-text-stroke: #8f000f}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #232526; -webkit-text-stroke: #232526; min-height: 15.0px}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #4d009d; -webkit-text-stroke: #4d009d}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #3c3f43; -webkit-text-stroke: #3c3f43}
-    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #0b2981; -webkit-text-stroke: #0b2981}
-    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Hiragino Sans'; color: #14511d; -webkit-text-stroke: #14511d}
-    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #14511d; -webkit-text-stroke: #14511d}
-    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Hiragino Sans'; color: #232526; -webkit-text-stroke: #232526}
-    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Menlo; color: #131315; -webkit-text-stroke: #131315}
-    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Hiragino Sans'; color: #8f000f; -webkit-text-stroke: #8f000f}
-    span.s1 {font-kerning: none; background-color: #f4f5f7}
-    span.s2 {font-kerning: none; color: #f6000b; background-color: #f4f5f7; -webkit-text-stroke: 0px #f6000b}
-    span.s3 {font-kerning: none; color: #1f1f1f; background-color: #f4f5f7; -webkit-text-stroke: 0px #1f1f1f}
-    span.s4 {font-kerning: none; color: #232526; background-color: #f4f5f7; -webkit-text-stroke: 0px #232526}
-    span.s5 {font-kerning: none; color: #112d9e; background-color: #f4f5f7; -webkit-text-stroke: 0px #112d9e}
-    span.s6 {font-kerning: none; color: #8f000f; background-color: #f4f5f7; -webkit-text-stroke: 0px #8f000f}
-    span.s7 {font: 13.0px 'Hiragino Sans'; font-kerning: none; background-color: #f4f5f7}
-    span.s8 {font: 13.0px Menlo; font-kerning: none; color: #232526; background-color: #f4f5f7; -webkit-text-stroke: 0px #232526}
-    span.s9 {font: 13.0px Menlo; font-kerning: none; background-color: #f4f5f7}
-    span.s10 {font-kerning: none; color: #4d009d; background-color: #f4f5f7; -webkit-text-stroke: 0px #4d009d}
-    span.s11 {font-kerning: none; color: #14606b; background-color: #f4f5f7; -webkit-text-stroke: 0px #14606b}
-    span.s12 {font-kerning: none; color: #0b2981; background-color: #f4f5f7; -webkit-text-stroke: 0px #0b2981}
-    span.s13 {font-kerning: none; color: #156536; background-color: #f4f5f7; -webkit-text-stroke: 0px #156536}
-    span.s14 {font-kerning: none}
-    span.s15 {font: 13.0px 'Hiragino Sans'; font-kerning: none; color: #232526; background-color: #f4f5f7; -webkit-text-stroke: 0px #232526}
-    span.s16 {font: 13.0px Monaco; font-kerning: none; color: #232526; background-color: #f4f5f7; -webkit-text-stroke: 0px #232526}
-    span.s17 {font: 13.0px 'Hiragino Sans'; font-kerning: none; color: #8f000f; background-color: #f4f5f7; -webkit-text-stroke: 0px #8f000f}
-    span.s18 {font: 13.0px Menlo; font-kerning: none; color: #1f1f1f; background-color: #f4f5f7; -webkit-text-stroke: 0px #1f1f1f}
-    span.s19 {font: 13.0px Menlo; font-kerning: none; color: #112d9e; background-color: #f4f5f7; -webkit-text-stroke: 0px #112d9e}
-    span.s20 {font-kerning: none; color: #131315; background-color: #f4f5f7; -webkit-text-stroke: 0px #131315}
-    span.s21 {font-kerning: none; color: #a90060; background-color: #f4f5f7; -webkit-text-stroke: 0px #a90060}
-    span.s22 {font: 13.0px Menlo; font-kerning: none; color: #131315; background-color: #f4f5f7; -webkit-text-stroke: 0px #131315}
+  <meta charset="UTF-8">
+  <title>イラスト見積もりフォーム</title>
+  <style>
+    /*全体のスタイル設定*/
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    /*フォーム本体のコンテナ装飾*/
+    .container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 700px;
+    }
+
+    /*送信完了の表示*/
+    .complete {
+      text-align: center;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
+    }
+    h2, h3 { color: #333; }
+    h3 {
+      background-color: #eef1f9;
+      padding: 10px;
+      border-left: 5px solid #446dff;
+      font-size: 1.1em;
+      margin-top: 30px;
+    }
+
+    /*ラベルと入力欄のレイアウト*/
+    label { display: block; margin: 6px 0; color: #222; }
+    input[type="text"], input[type="email"], textarea {
+      width: 100%; padding: 8px; margin-top: 6px; margin-bottom: 20px;
+      border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;
+    }
+    input[type="file"] { margin-bottom: 20px; }
+
+    /*送信ボタン*/
+    button {
+      background-color: #446dff; color: white; padding: 12px 20px;
+      border: none; border-radius: 6px; font-size: 1em; width: 100%;
+      cursor: pointer; margin-top: 20px;
+    }
+    button[disabled] {
+      background-color: #888;
+      cursor: not-allowed;
+    }
+    button:hover:not([disabled]) { background-color: #2c52d2; }
+
+    /*合計金額の表示スタイル*/
+    .total { font-size: 1.4em; color: #2c7a00; font-weight: bold; text-align: center; margin-top: 20px; }
+
+    /*プレビュー画像の表示スタイル*/
+    .preview img {
+      max-width: 100%; max-height: 200px; margin-top: 10px; border-radius: 6px;
+    }
+
+    /*右の固定プレビューパネルのスタイル*/
+    #previewPanel {
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      width: 250px;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      z-index: 1000;
+      font-size: 14px;
+    }
+    #previewPanel h4 {
+      margin-top: 0;
+    }
+
+    #previewPanel .preview-total-highlight {
+    font-size: 1.4em;
+    color: #2c7a00;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    }
+    
+
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">html</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s5">meta</span><span class="s4"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s6">"UTF-8"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s5">title</span><span class="s3">&gt;</span><span class="s7">イラスト見積もりフォーム</span><span class="s3">&lt;/</span><span class="s5">title</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s9">/*</span><span class="s1">全体のスタイル設定</span><span class="s9">*/</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">body</span><span class="s1"> {</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s11">font-family:</span><span class="s4"> </span><span class="s1">'Helvetica Neue'</span><span class="s4">, </span><span class="s1">sans-serif</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s12">#f4f4f9</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s11">display:</span><span class="s1"> </span><span class="s6">flex</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">justify-content:</span><span class="s4"> </span><span class="s6">center</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s11">padding:</span><span class="s1"> </span><span class="s13">40px</span><span class="s1">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p5"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s9">/*</span><span class="s1">フォーム本体のコンテナ装飾</span><span class="s9">*/</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">.container</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">background:</span><span class="s4"> </span><span class="s6">white</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s11">padding:</span><span class="s1"> </span><span class="s13">30px</span><span class="s1"> </span><span class="s13">40px</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s13">12px</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s11">box-shadow:</span><span class="s1"> </span><span class="s13">0</span><span class="s1"> </span><span class="s13">4px</span><span class="s1"> </span><span class="s13">12px</span><span class="s1"> </span><span class="s6">rgba(</span><span class="s13">0</span><span class="s1">,</span><span class="s13">0</span><span class="s1">,</span><span class="s13">0</span><span class="s1">,</span><span class="s13">0.1</span><span class="s6">)</span><span class="s1">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s11">width:</span><span class="s1"> </span><span class="s13">100%</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">max-width:</span><span class="s4"> </span><span class="s13">700px</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">/*</span><span class="s7">送信完了の表示</span><span class="s1">*/</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">.complete</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">text-align:</span><span class="s4"> </span><span class="s6">center</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s11">padding:</span><span class="s1"> </span><span class="s13">40px</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s12">#fff</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s13">12px</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s11">box-shadow:</span><span class="s1"> </span><span class="s13">0</span><span class="s1"> </span><span class="s13">4px</span><span class="s1"> </span><span class="s13">12px</span><span class="s1"> </span><span class="s6">rgba(</span><span class="s13">0</span><span class="s1">,</span><span class="s13">0</span><span class="s1">,</span><span class="s13">0</span><span class="s1">,</span><span class="s13">0.1</span><span class="s6">)</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">max-width:</span><span class="s4"> </span><span class="s13">500px</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s11">margin:</span><span class="s1"> </span><span class="s6">auto</span><span class="s1">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">h2</span><span class="s1">, </span><span class="s10">h3</span><span class="s1"> { </span><span class="s11">color:</span><span class="s1"> </span><span class="s12">#333</span><span class="s1">; }</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">h3</span><span class="s1"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s12">#eef1f9</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s11">padding:</span><span class="s1"> </span><span class="s13">10px</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">border-left:</span><span class="s4"> </span><span class="s13">5px</span><span class="s4"> </span><span class="s6">solid</span><span class="s4"> </span><span class="s12">#446dff</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">font-size:</span><span class="s4"> </span><span class="s13">1.1em</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">margin-top:</span><span class="s4"> </span><span class="s13">30px</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p5"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s9">/*</span><span class="s1">ラベルと入力欄のレイアウト</span><span class="s9">*/</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s10">label</span><span class="s4"> { </span><span class="s1">display:</span><span class="s4"> </span><span class="s6">block</span><span class="s4">; </span><span class="s1">margin:</span><span class="s4"> </span><span class="s13">6px</span><span class="s4"> </span><span class="s13">0</span><span class="s4">; </span><span class="s1">color:</span><span class="s4"> </span><span class="s12">#222</span><span class="s4">; }</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s10">input</span><span class="s4">[</span><span class="s1">type</span><span class="s4">=</span><span class="s1">"text"</span><span class="s4">], </span><span class="s10">input</span><span class="s4">[</span><span class="s1">type</span><span class="s4">=</span><span class="s1">"email"</span><span class="s4">], </span><span class="s10">textarea</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">width:</span><span class="s4"> </span><span class="s13">100%</span><span class="s4">; </span><span class="s1">padding:</span><span class="s4"> </span><span class="s13">8px</span><span class="s4">; </span><span class="s1">margin-top:</span><span class="s4"> </span><span class="s13">6px</span><span class="s4">; </span><span class="s1">margin-bottom:</span><span class="s4"> </span><span class="s13">20px</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">border:</span><span class="s4"> </span><span class="s13">1px</span><span class="s4"> </span><span class="s6">solid</span><span class="s4"> </span><span class="s12">#ccc</span><span class="s4">; </span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s13">6px</span><span class="s4">; </span><span class="s1">box-sizing:</span><span class="s4"> </span><span class="s6">border-box</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">input</span><span class="s1">[</span><span class="s6">type</span><span class="s1">=</span><span class="s6">"file"</span><span class="s1">] { </span><span class="s11">margin-bottom:</span><span class="s1"> </span><span class="s13">20px</span><span class="s1">; }</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">/*</span><span class="s7">送信ボタン</span><span class="s1">*/</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">button</span><span class="s1"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s12">#446dff</span><span class="s4">; </span><span class="s1">color:</span><span class="s4"> </span><span class="s6">white</span><span class="s4">; </span><span class="s1">padding:</span><span class="s4"> </span><span class="s13">12px</span><span class="s4"> </span><span class="s13">20px</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">border:</span><span class="s4"> </span><span class="s6">none</span><span class="s4">; </span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s13">6px</span><span class="s4">; </span><span class="s1">font-size:</span><span class="s4"> </span><span class="s13">1em</span><span class="s4">; </span><span class="s1">width:</span><span class="s4"> </span><span class="s13">100%</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">cursor:</span><span class="s4"> </span><span class="s6">pointer</span><span class="s4">; </span><span class="s1">margin-top:</span><span class="s4"> </span><span class="s13">20px</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s10">button</span><span class="s1">[</span><span class="s6">disabled</span><span class="s1">] {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s12">#888</span><span class="s4">;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s11">cursor:</span><span class="s4"> </span><span class="s1">not-allowed</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s10">button:hover:not</span><span class="s4">([</span><span class="s6">disabled</span><span class="s4">]) { </span><span class="s1">background-color:</span><span class="s4"> </span><span class="s12">#2c52d2</span><span class="s4">; }</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p5"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s9">/*</span><span class="s1">合計金額の表示スタイル</span><span class="s9">*/</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s10">.total</span><span class="s4"> { </span><span class="s1">font-size:</span><span class="s4"> </span><span class="s13">1.4em</span><span class="s4">; </span><span class="s1">color:</span><span class="s4"> </span><span class="s12">#2c7a00</span><span class="s4">; </span><span class="s1">font-weight:</span><span class="s4"> </span><span class="s6">bold</span><span class="s4">; </span><span class="s1">text-align:</span><span class="s4"> </span><span class="s6">center</span><span class="s4">; </span><span class="s1">margin-top:</span><span class="s4"> </span><span class="s13">20px</span><span class="s4">; }</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p5"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s9">/*</span><span class="s1">プレビュー画像の表示スタイル</span><span class="s9">*/</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">.preview</span><span class="s4"> </span><span class="s1">img</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">max-width:</span><span class="s4"> </span><span class="s13">100%</span><span class="s4">; </span><span class="s1">max-height:</span><span class="s4"> </span><span class="s13">200px</span><span class="s4">; </span><span class="s1">margin-top:</span><span class="s4"> </span><span class="s13">10px</span><span class="s4">; </span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s13">6px</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p5"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s9">/*</span><span class="s1">右の固定プレビューパネルのスタイル</span><span class="s9">*/</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">#previewPanel</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">position:</span><span class="s4"> </span><span class="s6">fixed</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s11">top:</span><span class="s1"> </span><span class="s13">60px</span><span class="s1">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s11">right:</span><span class="s1"> </span><span class="s13">20px</span><span class="s1">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s11">width:</span><span class="s1"> </span><span class="s13">250px</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">background:</span><span class="s4"> </span><span class="s12">#fff</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s11">border:</span><span class="s1"> </span><span class="s13">1px</span><span class="s1"> </span><span class="s6">solid</span><span class="s1"> </span><span class="s12">#ccc</span><span class="s1">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s11">padding:</span><span class="s1"> </span><span class="s13">15px</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s13">8px</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s11">box-shadow:</span><span class="s1"> </span><span class="s13">0</span><span class="s1"> </span><span class="s13">2px</span><span class="s1"> </span><span class="s13">8px</span><span class="s1"> </span><span class="s6">rgba(</span><span class="s13">0</span><span class="s1">,</span><span class="s13">0</span><span class="s1">,</span><span class="s13">0</span><span class="s1">,</span><span class="s13">0.15</span><span class="s6">)</span><span class="s1">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s11">z-index:</span><span class="s1"> </span><span class="s13">1000</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">font-size:</span><span class="s4"> </span><span class="s13">14px</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">#previewPanel</span><span class="s4"> </span><span class="s1">h4</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">margin-top:</span><span class="s4"> </span><span class="s13">0</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">#previewPanel</span><span class="s4"> </span><span class="s1">.preview-total-highlight</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">font-size:</span><span class="s4"> </span><span class="s13">1.4em</span><span class="s4">;</span></p>
-<p class="p10"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s11">color:</span><span class="s4"> </span><span class="s1">#2c7a00</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">font-weight:</span><span class="s4"> </span><span class="s6">bold</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">text-align:</span><span class="s4"> </span><span class="s6">center</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-top:</span><span class="s4"> </span><span class="s13">20px</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s5">div</span><span class="s4"> </span><span class="s11">class</span><span class="s3">=</span><span class="s1">"container"</span><span class="s4"> </span><span class="s11">id</span><span class="s3">=</span><span class="s1">"formContainer"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s5">h2</span><span class="s3">&gt;</span><span class="s7">イラスト見積もりフォーム</span><span class="s3">&lt;/</span><span class="s5">h2</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s5">form</span><span class="s4"> </span><span class="s11">id</span><span class="s3">=</span><span class="s1">"estimateForm"</span><span class="s4"> </span><span class="s11">onsubmit</span><span class="s3">=</span><span class="s1">"submitForm(event)"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p11"><span class="s8"><span class="Apple-converted-space">      </span></span><span class="s9">&lt;!--</span><span class="s1">希望のイラスト選択（ラジオボタン）</span><span class="s9">--&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">h3</span><span class="s3">&gt;</span><span class="s7">ご希望のイラストタイプ</span><span class="s3">&lt;/</span><span class="s5">h3</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">div</span><span class="s4"> </span><span class="s11">id</span><span class="s3">=</span><span class="s1">"typePreview"</span><span class="s4"> </span><span class="s11">class</span><span class="s3">=</span><span class="s1">"preview"</span><span class="s3">&gt;&lt;/</span><span class="s5">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">label</span><span class="s3">&gt;&lt;</span><span class="s5">input</span><span class="s4"> </span><span class="s11">type</span><span class="s3">=</span><span class="s1">"radio"</span><span class="s4"> </span><span class="s11">name</span><span class="s3">=</span><span class="s1">"type"</span><span class="s4"> </span><span class="s11">value</span><span class="s3">=</span><span class="s1">"5000"</span><span class="s4"> </span><span class="s11">data-img</span><span class="s3">=</span><span class="s1">"https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"</span><span class="s3">&gt;</span><span class="s4"> </span><span class="s15">顔アップ（</span><span class="s4">5,000</span><span class="s15">円）</span><span class="s3">&lt;/</span><span class="s5">label</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">label</span><span class="s3">&gt;&lt;</span><span class="s5">input</span><span class="s4"> </span><span class="s11">type</span><span class="s3">=</span><span class="s1">"radio"</span><span class="s4"> </span><span class="s11">name</span><span class="s3">=</span><span class="s1">"type"</span><span class="s4"> </span><span class="s11">value</span><span class="s3">=</span><span class="s1">"8000"</span><span class="s4"> </span><span class="s11">data-img</span><span class="s3">=</span><span class="s1">"https://raw.githubusercontent.com/5442mako/image-host-/main/559117789085565435.jpg"</span><span class="s3">&gt;</span><span class="s4"> </span><span class="s15">バストアップ（</span><span class="s4">8,000</span><span class="s15">円）</span><span class="s3">&lt;/</span><span class="s5">label</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">label</span><span class="s3">&gt;&lt;</span><span class="s5">input</span><span class="s4"> </span><span class="s11">type</span><span class="s3">=</span><span class="s1">"radio"</span><span class="s4"> </span><span class="s11">name</span><span class="s3">=</span><span class="s1">"type"</span><span class="s4"> </span><span class="s11">value</span><span class="s3">=</span><span class="s1">"10000"</span><span class="s4"> </span><span class="s11">data-img</span><span class="s3">=</span><span class="s1">"https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"</span><span class="s3">&gt;</span><span class="s4"> </span><span class="s15">膝上（</span><span class="s4">10,000</span><span class="s15">円）</span><span class="s3">&lt;/</span><span class="s5">label</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">label</span><span class="s3">&gt;&lt;</span><span class="s5">input</span><span class="s4"> </span><span class="s11">type</span><span class="s3">=</span><span class="s1">"radio"</span><span class="s4"> </span><span class="s11">name</span><span class="s3">=</span><span class="s1">"type"</span><span class="s4"> </span><span class="s11">value</span><span class="s3">=</span><span class="s1">"13000"</span><span class="s4"> </span><span class="s11">data-img</span><span class="s3">=</span><span class="s1">"https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"</span><span class="s3">&gt;</span><span class="s4"> </span><span class="s15">全身（</span><span class="s4">13,000</span><span class="s15">円）</span><span class="s3">&lt;/</span><span class="s5">label</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">label</span><span class="s3">&gt;&lt;</span><span class="s5">input</span><span class="s4"> </span><span class="s11">type</span><span class="s3">=</span><span class="s1">"radio"</span><span class="s4"> </span><span class="s11">name</span><span class="s3">=</span><span class="s1">"type"</span><span class="s4"> </span><span class="s11">value</span><span class="s3">=</span><span class="s1">"40000"</span><span class="s4"> </span><span class="s11">data-img</span><span class="s3">=</span><span class="s1">"https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"</span><span class="s3">&gt;</span><span class="s4"> Live2D</span><span class="s15">用イラストパーツ分け（</span><span class="s4">40,000</span><span class="s15">円）</span><span class="s3">&lt;/</span><span class="s5">label</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">label</span><span class="s3">&gt;&lt;</span><span class="s5">input</span><span class="s4"> </span><span class="s11">type</span><span class="s3">=</span><span class="s1">"radio"</span><span class="s4"> </span><span class="s11">name</span><span class="s3">=</span><span class="s1">"type"</span><span class="s4"> </span><span class="s11">value</span><span class="s3">=</span><span class="s1">"25000"</span><span class="s4"> </span><span class="s11">data-img</span><span class="s3">=</span><span class="s1">"https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"</span><span class="s3">&gt;</span><span class="s4"> Live2D</span><span class="s15">バストアップ（</span><span class="s4">25,000</span><span class="s15">円）</span><span class="s3">&lt;/</span><span class="s5">label</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">label</span><span class="s3">&gt;&lt;</span><span class="s5">input</span><span class="s4"> </span><span class="s11">type</span><span class="s3">=</span><span class="s1">"radio"</span><span class="s4"> </span><span class="s11">name</span><span class="s3">=</span><span class="s1">"type"</span><span class="s4"> </span><span class="s11">value</span><span class="s3">=</span><span class="s1">"15000"</span><span class="s4"> </span><span class="s11">data-img</span><span class="s3">=</span><span class="s1">"https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"</span><span class="s3">&gt;</span><span class="s4"> </span><span class="s15">キャラ・衣装デザイン（</span><span class="s4">15,000</span><span class="s15">円）</span><span class="s3">&lt;/</span><span class="s5">label</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p12"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">&lt;!--</span><span class="s7">イラストタイプの画像表示</span><span class="s1">--&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">div</span><span class="s4"> </span><span class="s11">id</span><span class="s3">=</span><span class="s1">"typeImageBelowOptions"</span><span class="s4"> </span><span class="s11">class</span><span class="s3">=</span><span class="s1">"preview"</span><span class="s3">&gt;&lt;/</span><span class="s5">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p11"><span class="s8"><span class="Apple-converted-space">      </span></span><span class="s9">&lt;!--</span><span class="s1">追加オプション選択（チェックボックス）</span><span class="s9">--&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">h3</span><span class="s3">&gt;</span><span class="s7">追加オプション（複数選択可）</span><span class="s3">&lt;/</span><span class="s5">h3</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">div</span><span class="s4"> </span><span class="s11">id</span><span class="s3">=</span><span class="s1">"optionPreview"</span><span class="s4"> </span><span class="s11">class</span><span class="s3">=</span><span class="s1">"preview"</span><span class="s3">&gt;&lt;/</span><span class="s5">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">label</span><span class="s3">&gt;&lt;</span><span class="s5">input</span><span class="s4"> </span><span class="s11">type</span><span class="s3">=</span><span class="s1">"checkbox"</span><span class="s4"> </span><span class="s11">class</span><span class="s3">=</span><span class="s1">"option"</span><span class="s4"> </span><span class="s11">value</span><span class="s3">=</span><span class="s1">"5000"</span><span class="s4"> </span><span class="s11">data-img</span><span class="s3">=</span><span class="s1">"https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"</span><span class="s3">&gt;</span><span class="s4"> </span><span class="s15">背景（</span><span class="s4">5,000</span><span class="s15">円）</span><span class="s3">&lt;/</span><span class="s5">label</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">label</span><span class="s3">&gt;&lt;</span><span class="s5">input</span><span class="s4"> </span><span class="s11">type</span><span class="s3">=</span><span class="s1">"checkbox"</span><span class="s4"> </span><span class="s11">class</span><span class="s3">=</span><span class="s1">"option"</span><span class="s4"> </span><span class="s11">value</span><span class="s3">=</span><span class="s1">"15000"</span><span class="s4"> </span><span class="s11">data-img</span><span class="s3">=</span><span class="s1">"https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"</span><span class="s3">&gt;</span><span class="s4"> </span><span class="s15">細かい背景（</span><span class="s4">15,000</span><span class="s15">円）</span><span class="s3">&lt;/</span><span class="s5">label</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">label</span><span class="s3">&gt;&lt;</span><span class="s5">input</span><span class="s4"> </span><span class="s11">type</span><span class="s3">=</span><span class="s1">"checkbox"</span><span class="s4"> </span><span class="s11">class</span><span class="s3">=</span><span class="s1">"option"</span><span class="s4"> </span><span class="s11">value</span><span class="s3">=</span><span class="s1">"5000"</span><span class="s4"> </span><span class="s11">data-img</span><span class="s3">=</span><span class="s1">"https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"</span><span class="s3">&gt;</span><span class="s4"> </span><span class="s15">細かい装飾（</span><span class="s4">5,000</span><span class="s15">円）</span><span class="s3">&lt;/</span><span class="s5">label</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">label</span><span class="s3">&gt;&lt;</span><span class="s5">input</span><span class="s4"> </span><span class="s11">type</span><span class="s3">=</span><span class="s1">"checkbox"</span><span class="s4"> </span><span class="s11">class</span><span class="s3">=</span><span class="s1">"option"</span><span class="s4"> </span><span class="s11">value</span><span class="s3">=</span><span class="s1">"5000"</span><span class="s4"> </span><span class="s11">data-img</span><span class="s3">=</span><span class="s1">"https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"</span><span class="s3">&gt;</span><span class="s4"> </span><span class="s15">動物・大きめアクセ（</span><span class="s4">5,000</span><span class="s15">円）</span><span class="s3">&lt;/</span><span class="s5">label</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">label</span><span class="s3">&gt;&lt;</span><span class="s5">input</span><span class="s1"> </span><span class="s11">type</span><span class="s3">=</span><span class="s6">"checkbox"</span><span class="s1"> </span><span class="s11">class</span><span class="s3">=</span><span class="s6">"option"</span><span class="s1"> </span><span class="s11">value</span><span class="s3">=</span><span class="s6">"10000"</span><span class="s3">&gt;</span><span class="s1"> </span><span class="s7">追加衣装（</span><span class="s1">1</span><span class="s7">着ごと</span><span class="s1">10,000</span><span class="s7">円）</span><span class="s3">&lt;/</span><span class="s5">label</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">label</span><span class="s3">&gt;&lt;</span><span class="s5">input</span><span class="s4"> </span><span class="s11">type</span><span class="s3">=</span><span class="s1">"checkbox"</span><span class="s4"> </span><span class="s11">class</span><span class="s3">=</span><span class="s1">"option"</span><span class="s4"> </span><span class="s11">value</span><span class="s3">=</span><span class="s1">"5000"</span><span class="s3">&gt;</span><span class="s4"> </span><span class="s15">商用利用（</span><span class="s4">5,000</span><span class="s15">円）</span><span class="s3">&lt;/</span><span class="s5">label</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p12"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">&lt;!--</span><span class="s7">追加オプションの画像表示</span><span class="s1">--&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">div</span><span class="s1"> </span><span class="s11">class</span><span class="s3">=</span><span class="s6">"total"</span><span class="s3">&gt;</span><span class="s7">合計金額：</span><span class="s1">¥</span><span class="s3">&lt;</span><span class="s5">span</span><span class="s1"> </span><span class="s11">id</span><span class="s3">=</span><span class="s6">"total"</span><span class="s3">&gt;</span><span class="s1">0</span><span class="s3">&lt;/</span><span class="s5">span</span><span class="s3">&gt;&lt;/</span><span class="s5">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p12"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">&lt;!--</span><span class="s7">ユーザー情報入力</span><span class="s1">--&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">h3</span><span class="s3">&gt;</span><span class="s7">ご連絡先</span><span class="s3">&lt;/</span><span class="s5">h3</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">span</span><span class="s4"> </span><span class="s11">style</span><span class="s3">=</span><span class="s1">"color:#FF0000; font-size: 12px;"</span><span class="s3">&gt;</span><span class="s16">※</span><span class="s15">お名前とメールアドレスは必須です。</span><span class="s3">&lt;/</span><span class="s5">span</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">input</span><span class="s4"> </span><span class="s1">type</span><span class="s3">=</span><span class="s6">"text"</span><span class="s4"> </span><span class="s1">id</span><span class="s3">=</span><span class="s6">"name"</span><span class="s4"> </span><span class="s1">placeholder</span><span class="s3">=</span><span class="s6">"</span><span class="s17">お名前</span><span class="s6">"</span><span class="s4"> </span><span class="s1">required</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">input</span><span class="s4"> </span><span class="s1">type</span><span class="s3">=</span><span class="s6">"email"</span><span class="s4"> </span><span class="s1">id</span><span class="s3">=</span><span class="s6">"email"</span><span class="s4"> </span><span class="s1">placeholder</span><span class="s3">=</span><span class="s6">"</span><span class="s17">メールアドレス</span><span class="s6">"</span><span class="s4"> </span><span class="s1">required</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">h3</span><span class="s3">&gt;</span><span class="s7">ご要望</span><span class="s3">&lt;/</span><span class="s5">h3</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">textarea</span><span class="s4"> </span><span class="s1">id</span><span class="s3">=</span><span class="s6">"note"</span><span class="s4"> </span><span class="s1">placeholder</span><span class="s3">=</span><span class="s6">"</span><span class="s17">ご要望など</span><span class="s6">"</span><span class="s4"> </span><span class="s1">rows</span><span class="s3">=</span><span class="s6">"4"</span><span class="s3">&gt;&lt;/</span><span class="s5">textarea</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">h3</span><span class="s3">&gt;</span><span class="s7">参考画像（添付）</span><span class="s3">&lt;/</span><span class="s5">h3</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">input</span><span class="s4"> </span><span class="s11">type</span><span class="s3">=</span><span class="s1">"file"</span><span class="s4"> </span><span class="s11">id</span><span class="s3">=</span><span class="s1">"imageFile"</span><span class="s4"> </span><span class="s11">accept</span><span class="s3">=</span><span class="s1">"image/*"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s5">button</span><span class="s4"> </span><span class="s11">id</span><span class="s3">=</span><span class="s1">"submitBtn"</span><span class="s4"> </span><span class="s11">type</span><span class="s3">=</span><span class="s1">"submit"</span><span class="s3">&gt;</span><span class="s15">送信</span><span class="s3">&lt;/</span><span class="s5">button</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s5">form</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p12"><span class="s4"><span class="Apple-converted-space">   </span></span><span class="s1">&lt;!--</span><span class="s7">送信後のメッセージ</span><span class="s1">--&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s5">div</span><span class="s4"> </span><span class="s11">id</span><span class="s3">=</span><span class="s1">"completeMessage"</span><span class="s4"> </span><span class="s11">class</span><span class="s3">=</span><span class="s1">"complete"</span><span class="s4"> </span><span class="s11">style</span><span class="s3">=</span><span class="s1">"display:none;"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s5">h2</span><span class="s3">&gt;</span><span class="s7">送信が完了しました！</span><span class="s3">&lt;/</span><span class="s5">h2</span><span class="s3">&gt;</span></p>
-<p class="p13"><span class="s9"><span class="Apple-converted-space">    </span></span><span class="s18">&lt;</span><span class="s19">p</span><span class="s18">&gt;</span><span class="s1">ありがとうございました。ブラウザを閉じてください。</span><span class="s18">&lt;/</span><span class="s19">p</span><span class="s18">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s5">button</span><span class="s4"> </span><span class="s11">onclick</span><span class="s3">=</span><span class="s1">"window.close()"</span><span class="s3">&gt;</span><span class="s15">ブラウザを閉じる</span><span class="s3">&lt;/</span><span class="s5">button</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p11"><span class="s8"><span class="Apple-converted-space">  </span></span><span class="s9">&lt;!--</span><span class="s1">右のプレビューが選択内容と金額がリアルタイムで連動</span><span class="s9">--&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s5">div</span><span class="s4"> </span><span class="s11">id</span><span class="s3">=</span><span class="s1">"previewPanel"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s5">h4</span><span class="s3">&gt;</span><span class="s7">プレビュー</span><span class="s3">&lt;/</span><span class="s5">h4</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">p</span><span class="s3">&gt;&lt;</span><span class="s1">strong</span><span class="s3">&gt;</span><span class="s15">イラストタイプ</span><span class="s4">:</span><span class="s3">&lt;/</span><span class="s1">strong</span><span class="s3">&gt;</span><span class="s4"> </span><span class="s3">&lt;</span><span class="s1">span</span><span class="s4"> </span><span class="s11">id</span><span class="s3">=</span><span class="s6">"previewType"</span><span class="s3">&gt;</span><span class="s15">未選択</span><span class="s3">&lt;/</span><span class="s1">span</span><span class="s3">&gt;&lt;/</span><span class="s1">p</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">p</span><span class="s3">&gt;&lt;</span><span class="s1">strong</span><span class="s3">&gt;</span><span class="s15">追加オプション</span><span class="s4">:</span><span class="s3">&lt;/</span><span class="s1">strong</span><span class="s3">&gt;</span><span class="s4"> </span><span class="s3">&lt;</span><span class="s1">span</span><span class="s4"> </span><span class="s11">id</span><span class="s3">=</span><span class="s6">"previewOptions"</span><span class="s3">&gt;</span><span class="s15">なし</span><span class="s3">&lt;/</span><span class="s1">span</span><span class="s3">&gt;&lt;/</span><span class="s1">p</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s5">p</span><span class="s3">&gt;&lt;</span><span class="s5">strong</span><span class="s3">&gt;</span><span class="s15">合計金額：</span><span class="s4"> </span><span class="s3">&lt;/</span><span class="s5">strong</span><span class="s3">&gt;</span><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s5">span</span><span class="s4"> </span><span class="s11">id</span><span class="s3">=</span><span class="s1">"previewTotal"</span><span class="s4"> </span><span class="s11">class</span><span class="s3">=</span><span class="s1">"preview-total-highlight"</span><span class="s3">&gt;</span><span class="s4">0</span><span class="s3">&lt;/</span><span class="s5">span</span><span class="s3">&gt;&lt;/</span><span class="s5">p</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p12"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!--</span><span class="s7">各種要素の取得</span><span class="s1">--&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space"> </span></span><span class="s3">&lt;</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">radios</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">querySelectorAll</span><span class="s4">(</span><span class="s6">'input[name="type"]'</span><span class="s4">);</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">checkboxes</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">querySelectorAll</span><span class="s4">(</span><span class="s6">'.option'</span><span class="s4">);</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">totalEl</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">getElementById</span><span class="s4">(</span><span class="s6">'total'</span><span class="s4">);</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">submitBtn</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">getElementById</span><span class="s4">(</span><span class="s6">'submitBtn'</span><span class="s4">);</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">optionPreview</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">getElementById</span><span class="s4">(</span><span class="s6">'optionPreview'</span><span class="s4">);</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">typePreview</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">getElementById</span><span class="s4">(</span><span class="s6">'typeImageBelowOptions'</span><span class="s4">);</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p5"><span class="s8"><span class="Apple-converted-space">  </span></span><span class="s9">/*</span><span class="s1">金額計算とプレビューパネルの更新</span><span class="s9">*/</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">function</span><span class="s4"> </span><span class="s1">calculateTotal</span><span class="s4">() {</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">let</span><span class="s1"> </span><span class="s20">total</span><span class="s1"> = </span><span class="s11">0</span><span class="s1">;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">selected</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">querySelector</span><span class="s4">(</span><span class="s6">'input[name="type"]:checked'</span><span class="s4">);</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s5">if</span><span class="s4"> (</span><span class="s1">selected</span><span class="s4">) </span><span class="s1">total</span><span class="s4"> += </span><span class="s1">parseInt</span><span class="s4">(</span><span class="s1">selected</span><span class="s4">.</span><span class="s1">value</span><span class="s4">);</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">checkboxes</span><span class="s4">.</span><span class="s1">forEach</span><span class="s4">(</span><span class="s1">opt</span><span class="s4"> =&gt; {</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s5">if</span><span class="s4"> (</span><span class="s1">opt</span><span class="s4">.</span><span class="s1">checked</span><span class="s4">) </span><span class="s1">total</span><span class="s4"> += </span><span class="s1">parseInt</span><span class="s4">(</span><span class="s1">opt</span><span class="s4">.</span><span class="s1">value</span><span class="s4">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">totalEl</span><span class="s4">.</span><span class="s1">textContent</span><span class="s4"> = </span><span class="s1">total</span><span class="s4">.</span><span class="s1">toLocaleString</span><span class="s4">();</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">updatePreviewPanel</span><span class="s4">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p5"><span class="s8"><span class="Apple-converted-space">  </span></span><span class="s9">/*</span><span class="s1">イラストタイプの画像を表示</span><span class="s9">*/</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">function</span><span class="s4"> </span><span class="s1">updateTypePreview</span><span class="s4">() {</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">selected</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">querySelector</span><span class="s4">(</span><span class="s6">'input[name="type"]:checked'</span><span class="s4">);</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">existing</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">getElementById</span><span class="s4">(</span><span class="s6">"typeImagePreview"</span><span class="s4">);</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s5">if</span><span class="s4"> (</span><span class="s1">existing</span><span class="s4">) </span><span class="s1">existing</span><span class="s4">.</span><span class="s1">remove</span><span class="s4">();</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s5">if</span><span class="s4"> (</span><span class="s1">selected</span><span class="s4"> &amp;&amp; </span><span class="s1">selected</span><span class="s4">.</span><span class="s1">dataset</span><span class="s4">.</span><span class="s1">img</span><span class="s4">) {</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">img</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">createElement</span><span class="s4">(</span><span class="s6">"img"</span><span class="s4">);</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">img</span><span class="s4">.</span><span class="s1">src</span><span class="s4"> = </span><span class="s1">selected</span><span class="s4">.</span><span class="s1">dataset</span><span class="s4">.</span><span class="s1">img</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s20">img</span><span class="s1">.</span><span class="s20">alt</span><span class="s1"> = </span><span class="s6">"</span><span class="s17">タイプ画像</span><span class="s6">"</span><span class="s1">;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s20">img</span><span class="s4">.</span><span class="s20">id</span><span class="s4"> = </span><span class="s1">"typeImagePreview"</span><span class="s4">;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">img</span><span class="s4">.</span><span class="s1">style</span><span class="s4">.</span><span class="s1">maxWidth</span><span class="s4"> = </span><span class="s6">"100%"</span><span class="s4">;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">img</span><span class="s4">.</span><span class="s1">style</span><span class="s4">.</span><span class="s1">maxHeight</span><span class="s4"> = </span><span class="s6">"200px"</span><span class="s4">;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">img</span><span class="s4">.</span><span class="s1">style</span><span class="s4">.</span><span class="s1">marginTop</span><span class="s4"> = </span><span class="s6">"10px"</span><span class="s4">;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">img</span><span class="s4">.</span><span class="s1">style</span><span class="s4">.</span><span class="s1">borderRadius</span><span class="s4"> = </span><span class="s6">"6px"</span><span class="s4">;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">lastTypeLabel</span><span class="s4"> = </span><span class="s21">Array</span><span class="s4">.</span><span class="s5">from</span><span class="s4">(</span><span class="s1">radios</span><span class="s4">).</span><span class="s1">slice</span><span class="s4">(-</span><span class="s11">1</span><span class="s4">)[</span><span class="s11">0</span><span class="s4">].</span><span class="s1">closest</span><span class="s4">(</span><span class="s6">"label"</span><span class="s4">);</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">lastTypeLabel</span><span class="s4">.</span><span class="s1">insertAdjacentElement</span><span class="s4">(</span><span class="s6">'afterend'</span><span class="s4">, </span><span class="s1">img</span><span class="s4">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p5"><span class="s8"><span class="Apple-converted-space">  </span></span><span class="s9">/*</span><span class="s1">追加オプション画像の表示（チェックボックスの最後の下）</span><span class="s9">*/</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">function</span><span class="s4"> </span><span class="s1">updateOptionPreview</span><span class="s4">() {</span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">/*</span><span class="s7">既存の画像を削除</span><span class="s1">*/</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">existingOptions</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">querySelectorAll</span><span class="s4">(</span><span class="s6">'.optionImagePreview'</span><span class="s4">);</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">existingOptions</span><span class="s4">.</span><span class="s1">forEach</span><span class="s4">(</span><span class="s1">el</span><span class="s4"> =&gt; </span><span class="s1">el</span><span class="s4">.</span><span class="s1">remove</span><span class="s4">());</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p5"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s9">/*</span><span class="s1">チェックされたオプションに対する画像の追加</span><span class="s9">*/</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">lastOptionLabel</span><span class="s4"> = </span><span class="s21">Array</span><span class="s4">.</span><span class="s5">from</span><span class="s4">(</span><span class="s1">checkboxes</span><span class="s4">).</span><span class="s1">slice</span><span class="s4">(-</span><span class="s11">1</span><span class="s4">)[</span><span class="s11">0</span><span class="s4">].</span><span class="s1">closest</span><span class="s4">(</span><span class="s6">"label"</span><span class="s4">);</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">checkboxes</span><span class="s4">.</span><span class="s1">forEach</span><span class="s4">(</span><span class="s1">opt</span><span class="s4"> =&gt; {</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s5">if</span><span class="s4"> (</span><span class="s1">opt</span><span class="s4">.</span><span class="s1">checked</span><span class="s4"> &amp;&amp; </span><span class="s1">opt</span><span class="s4">.</span><span class="s1">dataset</span><span class="s4">.</span><span class="s1">img</span><span class="s4">) {</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">img</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">createElement</span><span class="s4">(</span><span class="s6">"img"</span><span class="s4">);</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">img</span><span class="s4">.</span><span class="s1">src</span><span class="s4"> = </span><span class="s1">opt</span><span class="s4">.</span><span class="s1">dataset</span><span class="s4">.</span><span class="s1">img</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s20">img</span><span class="s1">.</span><span class="s20">alt</span><span class="s1"> = </span><span class="s6">"</span><span class="s17">オプション画像</span><span class="s6">"</span><span class="s1">;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s20">img</span><span class="s4">.</span><span class="s20">className</span><span class="s4"> = </span><span class="s1">"optionImagePreview"</span><span class="s4">;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">img</span><span class="s4">.</span><span class="s1">style</span><span class="s4">.</span><span class="s1">maxWidth</span><span class="s4"> = </span><span class="s6">"100%"</span><span class="s4">;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">img</span><span class="s4">.</span><span class="s1">style</span><span class="s4">.</span><span class="s1">maxHeight</span><span class="s4"> = </span><span class="s6">"200px"</span><span class="s4">;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">img</span><span class="s4">.</span><span class="s1">style</span><span class="s4">.</span><span class="s1">marginTop</span><span class="s4"> = </span><span class="s6">"10px"</span><span class="s4">;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">img</span><span class="s4">.</span><span class="s1">style</span><span class="s4">.</span><span class="s1">borderRadius</span><span class="s4"> = </span><span class="s6">"6px"</span><span class="s4">;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">lastOptionLabel</span><span class="s4">.</span><span class="s1">insertAdjacentElement</span><span class="s4">(</span><span class="s6">'afterend'</span><span class="s4">, </span><span class="s1">img</span><span class="s4">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p5"><span class="s8"><span class="Apple-converted-space">  </span></span><span class="s9">/*</span><span class="s1">プレビューパネルの更新</span><span class="s9">*/</span></p>
-<p class="p14"><span class="s5">function</span><span class="s4"> </span><span class="s1">updatePreviewPanel</span><span class="s4">() {</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">selected</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">querySelector</span><span class="s4">(</span><span class="s6">'input[name="type"]:checked'</span><span class="s4">);</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">selectedOptions</span><span class="s4"> = </span><span class="s21">Array</span><span class="s4">.</span><span class="s5">from</span><span class="s4">(</span><span class="s1">document</span><span class="s4">.</span><span class="s1">querySelectorAll</span><span class="s4">(</span><span class="s6">'.option:checked'</span><span class="s4">));</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">options</span><span class="s4"> = </span><span class="s1">selectedOptions</span><span class="s4">.</span><span class="s1">map</span><span class="s4">(</span><span class="s1">opt</span><span class="s4"> =&gt; </span><span class="s1">opt</span><span class="s4">.</span><span class="s1">parentElement</span><span class="s4">.</span><span class="s1">textContent</span><span class="s4">.</span><span class="s1">trim</span><span class="s4">());</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">document</span><span class="s4">.</span><span class="s1">getElementById</span><span class="s4">(</span><span class="s6">"previewType"</span><span class="s4">).</span><span class="s1">textContent</span><span class="s4"> = </span><span class="s1">selected</span><span class="s4"> ? </span><span class="s1">selected</span><span class="s4">.</span><span class="s1">parentElement</span><span class="s4">.</span><span class="s1">textContent</span><span class="s4">.</span><span class="s1">trim</span><span class="s4">() : </span><span class="s6">"</span><span class="s17">未選択</span><span class="s6">"</span><span class="s4">;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">document</span><span class="s4">.</span><span class="s1">getElementById</span><span class="s4">(</span><span class="s6">"previewOptions"</span><span class="s4">).</span><span class="s1">textContent</span><span class="s4"> = </span><span class="s1">options</span><span class="s4">.</span><span class="s1">length</span><span class="s4"> ? </span><span class="s1">options</span><span class="s4">.</span><span class="s1">join</span><span class="s4">(</span><span class="s6">", "</span><span class="s4">) : </span><span class="s6">"</span><span class="s17">なし</span><span class="s6">"</span><span class="s4">;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p5"><span class="s8"><span class="Apple-converted-space">  </span></span><span class="s9">/*</span><span class="s1">ここを修正：</span><span class="s9">¥</span><span class="s1">マークを含めて表示</span><span class="s9">*/</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">document</span><span class="s4">.</span><span class="s1">getElementById</span><span class="s4">(</span><span class="s6">"previewTotal"</span><span class="s4">).</span><span class="s1">textContent</span><span class="s4"> = </span><span class="s6">"¥"</span><span class="s4"> + </span><span class="s1">totalEl</span><span class="s4">.</span><span class="s1">textContent</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1">}</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p5"><span class="s8"><span class="Apple-converted-space">  </span></span><span class="s9">/*</span><span class="s1">フォーム送信処理</span><span class="s9">*/</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space"> </span></span><span class="s5">function</span><span class="s4"> </span><span class="s1">submitForm</span><span class="s4">(</span><span class="s1">event</span><span class="s4">) {</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">event</span><span class="s4">.</span><span class="s1">preventDefault</span><span class="s4">();</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">name</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">getElementById</span><span class="s4">(</span><span class="s6">"name"</span><span class="s4">).</span><span class="s1">value</span><span class="s4">.</span><span class="s1">trim</span><span class="s4">();</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">email</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">getElementById</span><span class="s4">(</span><span class="s6">"email"</span><span class="s4">).</span><span class="s1">value</span><span class="s4">.</span><span class="s1">trim</span><span class="s4">();</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">note</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">getElementById</span><span class="s4">(</span><span class="s6">"note"</span><span class="s4">).</span><span class="s1">value</span><span class="s4">;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">total</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">getElementById</span><span class="s4">(</span><span class="s6">"total"</span><span class="s4">).</span><span class="s1">textContent</span><span class="s4">;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">selectedType</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">querySelector</span><span class="s4">(</span><span class="s6">'input[name="type"]:checked'</span><span class="s4">);</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">selectedOptions</span><span class="s4"> = </span><span class="s21">Array</span><span class="s4">.</span><span class="s5">from</span><span class="s4">(</span><span class="s1">document</span><span class="s4">.</span><span class="s1">querySelectorAll</span><span class="s4">(</span><span class="s6">'.option:checked'</span><span class="s4">));</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">if</span><span class="s4"> (!</span><span class="s20">name</span><span class="s4"> || !</span><span class="s20">email</span><span class="s4"> || !</span><span class="s1">/^[^\s@]+@[^\s@]+\.[^\s@]+$/</span><span class="s4">.</span><span class="s20">test</span><span class="s4">(</span><span class="s20">email</span><span class="s4">)) {</span></p>
-<p class="p15"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s22">alert</span><span class="s8">(</span><span class="s9">"</span><span class="s1">お名前と正しいメールアドレスを入力してください。</span><span class="s9">"</span><span class="s8">);</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">return</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">submitBtn</span><span class="s4">.</span><span class="s1">disabled</span><span class="s4"> = </span><span class="s5">true</span><span class="s4">;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">submitBtn</span><span class="s4">.</span><span class="s1">textContent</span><span class="s4"> = </span><span class="s6">"</span><span class="s17">送信中</span><span class="s6">..."</span><span class="s4">;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s1"> </span><span class="s20">data</span><span class="s1"> = {</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s20">name</span><span class="s1">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s20">email</span><span class="s1">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s20">note</span><span class="s1">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s20">total</span><span class="s1">,</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">typeLabel</span><span class="s4">: </span><span class="s1">selectedType</span><span class="s4"> ? </span><span class="s1">selectedType</span><span class="s4">.</span><span class="s1">parentElement</span><span class="s4">.</span><span class="s1">textContent</span><span class="s4">.</span><span class="s1">trim</span><span class="s4">() : </span><span class="s6">""</span><span class="s4">,</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">optionLabels</span><span class="s4">: </span><span class="s1">selectedOptions</span><span class="s4">.</span><span class="s1">map</span><span class="s4">(</span><span class="s1">opt</span><span class="s4"> =&gt; </span><span class="s1">opt</span><span class="s4">.</span><span class="s1">parentElement</span><span class="s4">.</span><span class="s1">textContent</span><span class="s4">.</span><span class="s1">trim</span><span class="s4">()),</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s20">image</span><span class="s1">: </span><span class="s5">null</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span>};</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s5">const</span><span class="s4"> </span><span class="s1">file</span><span class="s4"> = </span><span class="s1">document</span><span class="s4">.</span><span class="s1">getElementById</span><span class="s4">(</span><span class="s6">"imageFile"</span><span class="s4">).</span><span class="s1">files</span><span class="s4">[</span><span class="s11">0</span><span class="s4">];</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s5">if</span><span class="s1"> (</span><span class="s20">file</span><span class="s1">) {</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s1"> </span><span class="s20">reader</span><span class="s1"> = </span><span class="s5">new</span><span class="s1"> </span><span class="s21">FileReader</span><span class="s1">();</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">reader</span><span class="s4">.</span><span class="s1">onload</span><span class="s4"> = </span><span class="s5">function</span><span class="s4">(</span><span class="s1">e</span><span class="s4">) {</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">data</span><span class="s4">.</span><span class="s1">image</span><span class="s4"> = </span><span class="s1">e</span><span class="s4">.</span><span class="s1">target</span><span class="s4">.</span><span class="s1">result</span><span class="s4">;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">sendToGAS</span><span class="s4">(</span><span class="s1">data</span><span class="s4">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">reader</span><span class="s4">.</span><span class="s1">readAsDataURL</span><span class="s4">(</span><span class="s1">file</span><span class="s4">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span>} </span><span class="s5">else</span><span class="s1"> {</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">sendToGAS</span><span class="s4">(</span><span class="s1">data</span><span class="s4">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p4"><span class="s1">}</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p9"><span class="s1">// </span><span class="s7">外に定義（</span><span class="s1">submitForm</span><span class="s7">の外）</span></p>
-<p class="p14"><span class="s5">function</span><span class="s4"> </span><span class="s1">sendToGAS</span><span class="s4">(</span><span class="s1">data</span><span class="s4">) {</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s20">fetch</span><span class="s4">(</span><span class="s1">"https://script.google.com/macros/s/AKfycbwnVXHI58mr87AiidQsyIuZYHDzPeZGyY8TDebfOPs-H6fzJrRxX-_H7UNuEPsjunyH/exec"</span><span class="s4">, {</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s20">method</span><span class="s1">: </span><span class="s6">"POST"</span><span class="s1">,</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">body</span><span class="s4">: </span><span class="s21">JSON</span><span class="s4">.</span><span class="s1">stringify</span><span class="s4">(</span><span class="s1">data</span><span class="s4">),</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s20">headers</span><span class="s1">: {</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">"Content-Type"</span><span class="s4">: </span><span class="s1">"application/json"</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span>})</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span>.</span><span class="s20">then</span><span class="s1">(</span><span class="s20">res</span><span class="s1"> =&gt; {</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">if</span><span class="s1"> (</span><span class="s20">res</span><span class="s1">.</span><span class="s20">ok</span><span class="s1">) {</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">document</span><span class="s4">.</span><span class="s1">getElementById</span><span class="s4">(</span><span class="s6">"formContainer"</span><span class="s4">).</span><span class="s1">style</span><span class="s4">.</span><span class="s1">display</span><span class="s4"> = </span><span class="s6">"none"</span><span class="s4">;</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">document</span><span class="s4">.</span><span class="s1">getElementById</span><span class="s4">(</span><span class="s6">"completeMessage"</span><span class="s4">).</span><span class="s1">style</span><span class="s4">.</span><span class="s1">display</span><span class="s4"> = </span><span class="s6">"block"</span><span class="s4">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>} </span><span class="s5">else</span><span class="s1"> {</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s20">alert</span><span class="s4">(</span><span class="s1">"</span><span class="s7">送信に失敗しました。</span><span class="s1">"</span><span class="s4">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span>})</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span>.</span><span class="s5">catch</span><span class="s1">(</span><span class="s20">error</span><span class="s1"> =&gt; {</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">alert</span><span class="s4">(</span><span class="s6">"</span><span class="s17">通信エラー</span><span class="s6">: "</span><span class="s4"> + </span><span class="s1">error</span><span class="s4">.</span><span class="s1">message</span><span class="s4">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
-<p class="p4"><span class="s1">}</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">/*</span><span class="s7">イベント設定</span><span class="s1">*/</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">radios</span><span class="s4">.</span><span class="s1">forEach</span><span class="s4">(</span><span class="s1">r</span><span class="s4"> =&gt; </span><span class="s1">r</span><span class="s4">.</span><span class="s1">addEventListener</span><span class="s4">(</span><span class="s6">'change'</span><span class="s4">, () =&gt; {</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">calculateTotal</span><span class="s4">();</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">updateTypePreview</span><span class="s4">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span>}));</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">checkboxes</span><span class="s4">.</span><span class="s1">forEach</span><span class="s4">(</span><span class="s1">c</span><span class="s4"> =&gt; </span><span class="s1">c</span><span class="s4">.</span><span class="s1">addEventListener</span><span class="s4">(</span><span class="s6">'change'</span><span class="s4">, () =&gt; {</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">calculateTotal</span><span class="s4">();</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">updateOptionPreview</span><span class="s4">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span>}));</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">/*</span><span class="s7">初期処理</span><span class="s1">*/</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">document</span><span class="s4">.</span><span class="s1">addEventListener</span><span class="s4">(</span><span class="s6">'DOMContentLoaded'</span><span class="s4">, () =&gt; {</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">calculateTotal</span><span class="s4">();</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">updateTypePreview</span><span class="s4">();</span></p>
-<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">updateOptionPreview</span><span class="s4">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s14"></span><br></p>
-<p class="p7"><span class="s14"></span><br></p>
+  <div class="container" id="formContainer">
+    <h2>イラスト見積もりフォーム</h2>
+    <form id="estimateForm" onsubmit="submitForm(event)">
+
+      <!--希望のイラスト選択（ラジオボタン）-->
+      <h3>ご希望のイラストタイプ</h3>
+      <div id="typePreview" class="preview"></div>
+      <label><input type="radio" name="type" value="5000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> 顔アップ（5,000円）</label>
+      <label><input type="radio" name="type" value="8000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/559117789085565435.jpg"> バストアップ（8,000円）</label>
+      <label><input type="radio" name="type" value="10000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> 膝上（10,000円）</label>
+      <label><input type="radio" name="type" value="13000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> 全身（13,000円）</label>
+      <label><input type="radio" name="type" value="40000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> Live2D用イラストパーツ分け（40,000円）</label>
+      <label><input type="radio" name="type" value="25000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> Live2Dバストアップ（25,000円）</label>
+      <label><input type="radio" name="type" value="15000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> キャラ・衣装デザイン（15,000円）</label>
+
+      <!--イラストタイプの画像表示-->
+      <div id="typeImageBelowOptions" class="preview"></div>
+
+      <!--追加オプション選択（チェックボックス）-->
+      <h3>追加オプション（複数選択可）</h3>
+      <div id="optionPreview" class="preview"></div>
+      <label><input type="checkbox" class="option" value="5000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> 背景（5,000円）</label>
+      <label><input type="checkbox" class="option" value="15000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> 細かい背景（15,000円）</label>
+      <label><input type="checkbox" class="option" value="5000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> 細かい装飾（5,000円）</label>
+      <label><input type="checkbox" class="option" value="5000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> 動物・大きめアクセ（5,000円）</label>
+      <label><input type="checkbox" class="option" value="10000"> 追加衣装（1着ごと10,000円）</label>
+      <label><input type="checkbox" class="option" value="5000"> 商用利用（5,000円）</label>
+
+      <!--追加オプションの画像表示-->
+      <div class="total">合計金額：¥<span id="total">0</span></div>
+
+      <!--ユーザー情報入力-->
+      <h3>ご連絡先</h3>
+      <span style="color:#FF0000; font-size: 12px;">※お名前とメールアドレスは必須です。</span>
+      <input type="text" id="name" placeholder="お名前" required>
+      <input type="email" id="email" placeholder="メールアドレス" required>
+
+      <h3>ご要望</h3>
+      <textarea id="note" placeholder="ご要望など" rows="4"></textarea>
+
+      <h3>参考画像（添付）</h3>
+      <input type="file" id="imageFile" accept="image/*">
+
+      <button id="submitBtn" type="submit">送信</button>
+    </form>
+  </div>
+
+   <!--送信後のメッセージ-->
+  <div id="completeMessage" class="complete" style="display:none;">
+    <h2>送信が完了しました！</h2>
+    <p>ありがとうございました。ブラウザを閉じてください。</p>
+    <button onclick="window.close()">ブラウザを閉じる</button>
+  </div>
+
+  <!--右のプレビューが選択内容と金額がリアルタイムで連動-->
+  <div id="previewPanel">
+    <h4>プレビュー</h4>
+    <p><strong>イラストタイプ:</strong> <span id="previewType">未選択</span></p>
+    <p><strong>追加オプション:</strong> <span id="previewOptions">なし</span></p>
+    <p><strong>合計金額： </strong>  <span id="previewTotal" class="preview-total-highlight">0</span></p>
+
+  </div>
+
+  <!--各種要素の取得-->
+ <script>
+  const radios = document.querySelectorAll('input[name="type"]');
+  const checkboxes = document.querySelectorAll('.option');
+  const totalEl = document.getElementById('total');
+  const submitBtn = document.getElementById('submitBtn');
+  const optionPreview = document.getElementById('optionPreview');
+  const typePreview = document.getElementById('typeImageBelowOptions');
+
+  /*金額計算とプレビューパネルの更新*/
+  function calculateTotal() {
+    let total = 0;
+    const selected = document.querySelector('input[name="type"]:checked');
+    if (selected) total += parseInt(selected.value);
+    checkboxes.forEach(opt => {
+      if (opt.checked) total += parseInt(opt.value);
+    });
+    totalEl.textContent = total.toLocaleString();
+    updatePreviewPanel();
+  }
+
+  /*イラストタイプの画像を表示*/
+  function updateTypePreview() {
+    const selected = document.querySelector('input[name="type"]:checked');
+    const existing = document.getElementById("typeImagePreview");
+    if (existing) existing.remove();
+
+    if (selected && selected.dataset.img) {
+      const img = document.createElement("img");
+      img.src = selected.dataset.img;
+      img.alt = "タイプ画像";
+      img.id = "typeImagePreview";
+      img.style.maxWidth = "100%";
+      img.style.maxHeight = "200px";
+      img.style.marginTop = "10px";
+      img.style.borderRadius = "6px";
+
+      const lastTypeLabel = Array.from(radios).slice(-1)[0].closest("label");
+      lastTypeLabel.insertAdjacentElement('afterend', img);
+    }
+  }
+
+  /*追加オプション画像の表示（チェックボックスの最後の下）*/
+  function updateOptionPreview() {
+    /*既存の画像を削除*/
+    const existingOptions = document.querySelectorAll('.optionImagePreview');
+    existingOptions.forEach(el => el.remove());
+
+    /*チェックされたオプションに対する画像の追加*/
+    const lastOptionLabel = Array.from(checkboxes).slice(-1)[0].closest("label");
+
+    checkboxes.forEach(opt => {
+      if (opt.checked && opt.dataset.img) {
+        const img = document.createElement("img");
+        img.src = opt.dataset.img;
+        img.alt = "オプション画像";
+        img.className = "optionImagePreview";
+        img.style.maxWidth = "100%";
+        img.style.maxHeight = "200px";
+        img.style.marginTop = "10px";
+        img.style.borderRadius = "6px";
+        lastOptionLabel.insertAdjacentElement('afterend', img);
+      }
+    });
+  }
+
+  /*プレビューパネルの更新*/
+function updatePreviewPanel() {
+  const selected = document.querySelector('input[name="type"]:checked');
+  const selectedOptions = Array.from(document.querySelectorAll('.option:checked'));
+  const options = selectedOptions.map(opt => opt.parentElement.textContent.trim());
+  document.getElementById("previewType").textContent = selected ? selected.parentElement.textContent.trim() : "未選択";
+  document.getElementById("previewOptions").textContent = options.length ? options.join(", ") : "なし";
+
+  /*ここを修正：¥マークを含めて表示*/
+  document.getElementById("previewTotal").textContent = "¥" + totalEl.textContent;
+}
+
+
+  /*フォーム送信処理*/
+ function submitForm(event) {
+  event.preventDefault();
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const note = document.getElementById("note").value;
+  const total = document.getElementById("total").textContent;
+  const selectedType = document.querySelector('input[name="type"]:checked');
+  const selectedOptions = Array.from(document.querySelectorAll('.option:checked'));
+
+  if (!name || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert("お名前と正しいメールアドレスを入力してください。");
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "送信中...";
+
+  const data = {
+    name,
+    email,
+    note,
+    total,
+    typeLabel: selectedType ? selectedType.parentElement.textContent.trim() : "",
+    optionLabels: selectedOptions.map(opt => opt.parentElement.textContent.trim()),
+    image: null
+  };
+
+  const file = document.getElementById("imageFile").files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      data.image = e.target.result;
+      sendToGAS(data);
+    };
+    reader.readAsDataURL(file);
+  } else {
+    sendToGAS(data);
+  }
+}
+
+// 外に定義（submitFormの外）
+function sendToGAS(data) {
+  fetch("https://script.google.com/macros/s/AKfycbwnVXHI58mr87AiidQsyIuZYHDzPeZGyY8TDebfOPs-H6fzJrRxX-_H7UNuEPsjunyH/exec", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  .then(res => {
+    if (res.ok) {
+      document.getElementById("formContainer").style.display = "none";
+      document.getElementById("completeMessage").style.display = "block";
+    } else {
+      alert("送信に失敗しました。");
+    }
+  })
+  .catch(error => {
+    alert("通信エラー: " + error.message);
+  });
+}
+
+
+
+  /*イベント設定*/
+  radios.forEach(r => r.addEventListener('change', () => {
+    calculateTotal();
+    updateTypePreview();
+  }));
+
+  checkboxes.forEach(c => c.addEventListener('change', () => {
+    calculateTotal();
+    updateOptionPreview();
+  }));
+
+  /*初期処理*/
+  document.addEventListener('DOMContentLoaded', () => {
+    calculateTotal();
+    updateTypePreview();
+    updateOptionPreview();
+  });
+</script>
+
 </body>
 </html>
+
+
