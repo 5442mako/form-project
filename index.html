@@ -292,18 +292,24 @@ function sendToGAS(data) {
       "Content-Type": "application/json"
     }
   })
-  .then(res => {
+  .then(async res => {
+    console.log("レスポンスステータス:", res.status);
+    const resText = await res.text();
+    console.log("レスポンステキスト:", resText);
+
     if (res.ok) {
       document.getElementById("formContainer").style.display = "none";
       document.getElementById("completeMessage").style.display = "block";
     } else {
-      alert("送信に失敗しました。");
+      alert("送信に失敗しました。ステータスコード: " + res.status);
     }
   })
   .catch(error => {
+    console.error("Fetchエラー:", error);  // ← ここで詳細ログ
     alert("通信エラー: " + error.message);
   });
 }
+
 
 
 
