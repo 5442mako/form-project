@@ -2,7 +2,10 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>ポートフォリオギャラリー</title>
+  <title>イラストレーター ポートフォリオ</title>
+  <meta name="robots" content="noai, noimageai">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
   <style>
     * {
       margin: 0;
@@ -12,44 +15,47 @@
     body, html {
       width: 100%;
       height: 100vh;
-      font-family: Arial, sans-serif;
+      font-family: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+      background: linear-gradient(to bottom, #fffafc, #f7f9ff);
       overflow: hidden;
-      background-color: #f4f4f4;
     }
     .gallery-wrapper {
-      height: 80vh;
+      height: 75vh;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow-x: auto;
       white-space: nowrap;
-      padding: 20px;
+      padding: 30px 20px;
+      scroll-behavior: smooth;
     }
     .gallery-item {
       display: inline-block;
-      margin: 0 15px;
+      margin: 0 25px;
       text-align: center;
     }
     .gallery-item img {
-      width: 250px;
+      width: 260px;
       height: auto;
-      border-radius: 10px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       cursor: pointer;
-      transition: transform 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .gallery-item img:hover {
-      transform: scale(1.05);
+      transform: scale(1.07);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
     .caption {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #555;
+      margin-top: 12px;
+      font-size: 15px;
+      color: #444;
     }
     .popup {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.75);
       display: none;
       align-items: center;
       justify-content: center;
@@ -58,23 +64,24 @@
     .popup img {
       max-width: 90%;
       max-height: 90%;
-      border-radius: 8px;
-    }
-    .popup:active {
-      display: none;
+      border-radius: 10px;
     }
     .footer {
       text-align: center;
-      padding: 20px;
+      padding: 10px 0;
     }
     .inquiry-button {
-      padding: 12px 24px;
-      background-color: #446dff;
+      padding: 14px 30px;
+      background-color: #e84a77;
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 16px;
       cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .inquiry-button:hover {
+      background-color: #d63b67;
     }
     iframe {
       width: 100%;
@@ -92,41 +99,35 @@
       z-index: 999;
     }
     #formContainer {
-      width: 90%;
+      width: 92%;
       max-width: 640px;
       background: white;
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
   </style>
+  <script>
+    document.addEventListener("contextmenu", function(e){
+      if (e.target.tagName === "IMG") e.preventDefault();
+    });
+  </script>
 </head>
 <body>
   <div class="gallery-wrapper">
     <div class="gallery-item">
-      <img src="images/sample1.jpg" alt="Sample1" onclick="showPopup(this.src)">
-      <div class="caption">サンプル画像1の説明</div>
+      <img src="images/sample1.jpg" alt="イラスト1" onclick="showPopup(this.src)">
+      <div class="caption">春の装いの少女</div>
     </div>
     <div class="gallery-item">
-      <img src="images/sample2.jpg" alt="Sample2" onclick="showPopup(this.src)">
-      <div class="caption">サンプル画像2の説明</div>
+      <img src="images/sample2.jpg" alt="イラスト2" onclick="showPopup(this.src)">
+      <div class="caption">カフェで本を読む</div>
     </div>
     <div class="gallery-item">
-      <img src="images/sample3.jpg" alt="Sample3" onclick="showPopup(this.src)">
-      <div class="caption">サンプル画像3の説明</div>
+      <img src="images/sample3.jpg" alt="イラスト3" onclick="showPopup(this.src)">
+      <div class="caption">夜の街の光</div>
     </div>
-    <div class="gallery-item">
-      <img src="images/sample4.jpg" alt="Sample4" onclick="showPopup(this.src)">
-      <div class="caption">サンプル画像3の説明</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/sample5.jpg" alt="Sample5" onclick="showPopup(this.src)">
-      <div class="caption">サンプル画像3の説明</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/sample6.jpg" alt="Sample6" onclick="showPopup(this.src)">
-      <div class="caption">サンプル画像3の説明</div>
-    </div>
-    <!-- 他の画像も同様に追加可能 -->
+    <!-- 画像をさらに追加可能 -->
   </div>
 
   <div class="footer">
