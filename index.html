@@ -19,6 +19,7 @@
       font-family: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
       background: linear-gradient(to bottom, #fdfbfb, #ebedee);
       color: #333;
+      overflow-x: hidden;
     }
     h1 {
       text-align: center;
@@ -34,14 +35,15 @@
       padding: 20px;
     }
     .gallery-wrapper {
-      width: 100%;
+      display: flex;
       overflow-x: auto;
       white-space: nowrap;
       scroll-behavior: smooth;
       margin: 30px 0;
+      padding-bottom: 10px;
     }
     .gallery-item {
-      display: inline-block;
+      flex: 0 0 auto;
       margin: 0 15px;
       text-align: center;
     }
@@ -128,16 +130,12 @@
         <div class="caption">夜の街の光</div>
       </div>
       <div class="gallery-item">
-        <img src="images/sample4.jpg" alt="イラスト3" onclick="showPopup(this.src)">
-        <div class="caption">夜の街の光</div>
+        <img src="images/sample4.jpg" alt="イラスト4" onclick="showPopup(this.src)">
+        <div class="caption">幻想の森</div>
       </div>
       <div class="gallery-item">
-        <img src="images/sample5.jpg" alt="イラスト3" onclick="showPopup(this.src)">
-        <div class="caption">夜の街の光</div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/sample6.jpg" alt="イラスト3" onclick="showPopup(this.src)">
-        <div class="caption">夜の街の光</div>
+        <img src="images/sample5.jpg" alt="イラスト5" onclick="showPopup(this.src)">
+        <div class="caption">海辺の夕暮れ</div>
       </div>
     </div>
     <a class="inquiry-button" href="https://script.google.com/macros/s/AKfycbx6u9pZ9-yynDyOEV4848yxDt9-FVnx2ZqhhCAq85EIqA2PdWFN-PYvwikvrUCEsz28/exec" target="_blank">お問い合わせはこちら</a>
