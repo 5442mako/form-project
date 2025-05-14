@@ -68,7 +68,7 @@
     }
     .footer {
       text-align: center;
-      padding: 10px 0;
+      padding: 20px 0;
     }
     .inquiry-button {
       padding: 14px 30px;
@@ -82,31 +82,6 @@
     }
     .inquiry-button:hover {
       background-color: #d63b67;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    #formOverlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background: rgba(0,0,0,0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-      padding: 20px;
-    }
-    #formContainer {
-      width: 95%;
-      max-width: 800px;
-      height: 90vh;
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
   </style>
   <script>
@@ -132,17 +107,11 @@
   </div>
 
   <div class="footer">
-    <button class="inquiry-button" onclick="openForm()">お問い合わせはこちら</button>
+    <a class="inquiry-button" href="https://script.google.com/macros/s/AKfycbzIybNpV3So0Iw0A8hE4bvk4Y4FMxG3Ha5X5TXpVNg/dev" target="_blank">お問い合わせはこちら</a>
   </div>
 
   <div class="popup" id="popup" onclick="hidePopup()">
     <img id="popupImg" src="" alt="拡大画像">
-  </div>
-
-  <div id="formOverlay" onclick="closeForm(event)">
-    <div id="formContainer">
-      <iframe src="https://script.google.com/macros/s/AKfycbzIybNpV3So0Iw0A8hE4bvk4Y4FMxG3Ha5X5TXpVNg/dev" allowfullscreen></iframe>
-    </div>
   </div>
 
   <script>
@@ -152,14 +121,6 @@
     }
     function hidePopup() {
       document.getElementById("popup").style.display = "none";
-    }
-    function openForm() {
-      document.getElementById("formOverlay").style.display = "flex";
-    }
-    function closeForm(e) {
-      if (e.target.id === "formOverlay") {
-        document.getElementById("formOverlay").style.display = "none";
-      }
     }
   </script>
 </body>
