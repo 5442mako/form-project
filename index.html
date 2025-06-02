@@ -55,32 +55,13 @@ gap: 8px;
 border-bottom: 2px solid #ff91d7;
 }
 
-/*ラベルと入力欄のレイアウト*/
+/*ラベルのレイアウト (ラジオボタンやチェックボックスのラベル用に残す) */
 label { display: block; margin: 6px 0; color: #222; }
-input[type="text"],
-input[type="email"],
-textarea {
-font-size: 16px;
-width: 100%;
-padding: 10px;
-margin-top: 6px;
-margin-bottom: 20px;
-border: 1px solid #ccc;
-border-radius: 6px;
-box-sizing: border-box;
-}
-input[type="text"].input-error, /* エラー時のスタイル */
-input[type="email"].input-error {
-border-color: red !important;
-outline: 1px solid red;
-background-color: #fff8f8;
-}
-label.highlight-error { /* イラストタイプ未選択時のラベルスタイル */
+
+/* イラストタイプ未選択時のラベルスタイル (残す) */
+label.highlight-error {
     color: red !important;
 }
-
-
-input[type="file"] { margin-bottom: 20px; }
 
 /*送信ボタン*/
 button#submitBtn {
@@ -252,26 +233,24 @@ margin-top: 6px;
 line-height: 1.5;
 }
 
-/* .disclaimer は .form-header .disclaimer と重複しているため、片方を整理しても良い */
-/* .disclaimer {
+/* .disclaimer は .form-header .disclaimer でカバーできるため、独立したものは不要なら削除可 */
+/*
+.disclaimer {
 font-size: 12px;
 color: #FF0000;
 line-height: 1.6;
 text-align: center;
-} */
-
-/* body の background-color は既に上で定義済みなのでコメントアウト
-body {
-background-color: #f7f9fc;
 }
 */
 
-.total { /* .total のスタイルも上で定義済みなので注意 */
+.total { /* 上で定義済みなので、スタイルが同じならこちらは削除可 */
+/*
 font-size: 1.3em;
 font-weight: bold;
 color: #1e7c27;
 text-align: center;
 margin-top: 24px;
+*/
 }
 .estimate-note {
 text-align: center;
@@ -296,11 +275,11 @@ transform: translateY(-2px);
 box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.error-message {
+.error-message { /* イラストタイプのエラーメッセージ用に残す */
 display: none;
 color: red;
 font-size: 0.9em;
-margin-top: -10px;
+margin-top: -10px; /* イラストタイプエラー表示位置調整 */
 margin-bottom: 15px;
 line-height: 1.4;
 background-color: #fff0f0;
@@ -349,18 +328,12 @@ border-radius: 4px;
     padding: 6px 12px;
   }
 
-  body {
-    /* padding: 40px; */ /* 上で定義済みなので注意 */
-  }
-  .container {
-    /* padding: 60px 20px; */ /* 上で定義済みなので注意 */
-  }
+  /* body { padding: 40px; } */ /* 上のbodyスタイルでpadding:40pxが既にある */
+  /* .container { padding: 60px 20px; } */ /* 上の.containerスタイルでpadding:50px 40pxが既にある。メディアクエリでの変更は維持 */
 }
 
 @media (max-width: 600px) {
-  .container {
-    /* padding: 60px 15px; */ /* 上で定義済みなので注意 */
-  }
+  /* .container { padding: 60px 15px; } */ /* 上の.containerスタイルでpadding:50px 40pxが既にある。メディアクエリでの変更は維持 */
 
   .form-header h2 {
     font-size: 1.3em;
@@ -370,12 +343,8 @@ border-radius: 4px;
     font-size: 1em;
   }
 
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    font-size: 16px;
-    padding: 12px;
-  }
+  /* input[type="text"], input[type="email"], textarea は削除されたため、このメディアクエリでのスタイルも不要 */
+
    #previewPanel {
     padding: 12px 15px;
     margin-top: 20px;
@@ -454,22 +423,9 @@ border-radius: 4px;
 
 <div id="optionPreview" class="preview"></div>
 
-<h3 id="contactInfoSectionH3">📩ご連絡先</h3>
-<span style="color:#FF0000; font-size: 12px;">※お名前とメールアドレスは必須です。</span>
+<p style="text-align: center;"><button id="submitBtn" type="submit" style="width: 10em;">送信</button></p>
 
-<input type="text" id="name" placeholder="お名前">
-<p id="nameErrorMessage" class="error-message" style="display: none;">※お名前を入力してください。</p>
-<input type="email" id="email" placeholder="メールアドレス">
-<p id="emailErrorMessage" class="error-message" style="display: none;">※有効なメールアドレスを入力してください。</p>
-
-<h3>📝ご要望</h3>
-<textarea id="note" placeholder="ご要望があればご自由にご記入ください。例：髪色・服装・性格イメージ／使用目的（アイコン・Live2Dなど）／ポーズや構図／背景の有無 など" rows="4"></textarea>
-<span style="color:#636262; font-size: 12px;">※例：髪色・服装・性格イメージ／使用目的（アイコン・Live2Dなど）／ポーズや構図／背景の有無</span>
-
-<h3>📎 参考画像（添付）</h3>
-<input type="file" id="imageFile" accept="image/*">
-
-<p style="text-align: center;"><button id="submitBtn" type="submit" style="width: 10em;">送信</button></p> <div id="formErrorMessage" style="display: none; color: #fff; background-color: #e74c3c; padding: 10px 15px; border-radius: 6px; margin-bottom: 20px; font-size: 14px;"></div>
+<div id="formErrorMessage" style="display: none; color: #fff; background-color: #e74c3c; padding: 10px 15px; border-radius: 6px; margin-bottom: 20px; font-size: 14px;"></div>
 
 </form>
 
@@ -646,28 +602,18 @@ function updatePreviewPanel() {
     }
 }
 
-// ▼▼▼ Googleフォーム連携のための handleSubmit 関数 ▼▼▼
+// ▼▼▼ Googleフォーム連携のための handleSubmit 関数 (指定セクション削除対応版) ▼▼▼
 async function handleSubmit(event) {
     event.preventDefault();
 
-    // --- 既存のバリデーション処理（必要に応じてコメントアウト解除または調整）---
-    const nameInput = document.getElementById("name");
-    const emailInput = document.getElementById("email");
+    // --- 既存のバリデーション処理（イラストタイプのみ）---
     const typeInputs = document.querySelectorAll('input[name="type"]');
     const selectedType = document.querySelector('input[name="type"]:checked');
-
-    const nameError = document.getElementById("nameErrorMessage");
-    const emailError = document.getElementById("emailErrorMessage");
     const typeErrorMsg = document.getElementById("typeErrorMessage");
+    const illustrationTypeSectionH3 = document.getElementById("illustrationTypeSectionH3");
 
-    // const illustrationTypeSectionH3 = document.getElementById("illustrationTypeSectionH3"); // バリデーションで使う場合
-    // const contactInfoSectionH3 = document.getElementById("contactInfoSectionH3"); // バリデーションで使う場合
 
-    nameInput.classList.remove("input-error");
-    emailInput.classList.remove("input-error");
     typeInputs.forEach(input => input.parentElement.classList.remove("highlight-error"));
-    if (nameError) nameError.style.display = "none";
-    if (emailError) emailError.style.display = "none";
     if (typeErrorMsg) typeErrorMsg.style.display = "none";
 
     let hasError = false;
@@ -679,53 +625,26 @@ async function handleSubmit(event) {
         });
         if (typeErrorMsg) {
             typeErrorMsg.style.display = "block";
-            // if (!firstErrorElement && illustrationTypeSectionH3) firstErrorElement = illustrationTypeSectionH3;
+            if (!firstErrorElement && illustrationTypeSectionH3) firstErrorElement = illustrationTypeSectionH3;
         }
         hasError = true;
     }
 
-    if (!nameInput.value.trim()) {
-        nameInput.classList.add("input-error");
-        if (nameError) nameError.style.display = "block";
-        hasError = true;
-        // if (!firstErrorElement && contactInfoSectionH3) firstErrorElement = contactInfoSectionH3;
-        // else if (!firstErrorElement) firstErrorElement = nameInput;
-    }
-
-    if (!emailInput.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
-        emailInput.classList.add("input-error");
-        if (emailError) emailError.style.display = "block";
-        hasError = true;
-        // if (!firstErrorElement && contactInfoSectionH3) firstErrorElement = contactInfoSectionH3;
-        // else if (!firstErrorElement) firstErrorElement = emailInput;
-    }
-
     if (hasError) {
-        // if (firstErrorElement) {
-        //     firstErrorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        // }
-        // エラーがある場合は、最初のエラーフィールドにスクロール（簡易版）
-        const firstError = document.querySelector('.input-error, .highlight-error');
-        if (firstError) {
-            firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (firstErrorElement) {
+            firstErrorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
         return;
     }
     // --- バリデーション処理ここまで ---
 
     // 1. GoogleフォームのベースURL (あなたのフォームの「回答用」URLのIDに置き換えてください)
-    // 例: https://docs.google.com/forms/d/e/【ここに長い英数字のIDが入る】/viewform
     const googleFormViewUrlId = "1FAIpQLSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"; // ★★★【重要】あなたのGoogleフォームのID (e/ と /viewform の間の部分) に置き換えてください ★★★
     const googleFormBaseUrl = `https://docs.google.com/forms/d/e/${googleFormViewUrlId}/viewform`;
 
     // 2. Googleフォームの質問ID (事前に調べて置き換えてください)
-    //    これらのIDは、フォームのプレビュー画面で開発者ツールを使い、各入力欄の name 属性 (entry.XXXXXX) を確認してください。
     const entryIdForIllustrationType = "entry.XXXXXXXXXX"; // ★★★ イラストタイプ用の entry ID に置き換え ★★★
     const entryIdForAdditionalOptions = "entry.YYYYYYYYYY"; // ★★★ 追加オプション用の entry ID に置き換え ★★★
-    // 必要であれば、お名前やメールアドレス用の entry ID も追加してください
-    // const entryIdForName = "entry.ZZZZZZZZZZ";
-    // const entryIdForEmail = "entry.AAAAAAAAAA";
-    // const entryIdForNote = "entry.BBBBBBBBBB"; // ご要望(備考)用
 
     // 3. HTMLフォームから選択された値を取得
     let illustrationTypeValue = "";
@@ -738,16 +657,11 @@ async function handleSubmit(event) {
     if (checkedOptions.length > 0) {
         additionalOptionsValue = Array.from(checkedOptions)
             .map(opt => opt.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '').trim())
-            .join(", "); // カンマ区切りで結合
+            .join(", ");
     } else if (document.getElementById('noOptionCheckbox') && document.getElementById('noOptionCheckbox').checked) {
         additionalOptionsValue = "追加オプションなし";
     }
     
-    // お名前、メールアドレス、ご要望の値も取得
-    const nameValue = nameInput.value.trim();
-    const emailValue = emailInput.value.trim();
-    const noteValue = document.getElementById('note').value.trim();
-
     // 4. URLパラメータを構築
     const params = new URLSearchParams();
     if (illustrationTypeValue) {
@@ -756,31 +670,15 @@ async function handleSubmit(event) {
     if (additionalOptionsValue) {
         params.append(entryIdForAdditionalOptions, additionalOptionsValue);
     }
-    // 必要に応じて、他の項目もパラメータに追加
-    // if (nameValue && entryIdForName) {
-    //     params.append(entryIdForName, nameValue);
-    // }
-    // if (emailValue && entryIdForEmail) {
-    //     params.append(entryIdForEmail, emailValue);
-    // }
-    // if (noteValue && entryIdForNote) {
-    //     params.append(entryIdForNote, noteValue);
-    // }
-
 
     // 5. 最終的なURLを生成
     const finalGoogleFormUrl = `${googleFormBaseUrl}?${params.toString()}`;
 
     // 6. 生成したGoogleフォームのURLにリダイレクト
-    // 送信ボタンを無効化し、「送信中...」と表示しても良いが、すぐにリダイレクトされるので効果は薄いかも
     submitBtn.disabled = true;
     submitBtn.textContent = "フォームへ移動中...";
     
     window.location.href = finalGoogleFormUrl;
-
-    // この方法では、元のGASの submitForm 関数は呼び出されません。
-    // そのため、スプレッドシートへの記録やメール送信はGoogleフォーム側で行うか、
-    // または、このリダイレクトの前にGASの関数を呼び出すように変更する必要があります。
 }
 // ▲▲▲ Googleフォーム連携のための handleSubmit 関数ここまで ▲▲▲
 
@@ -814,7 +712,7 @@ allOptionCheckboxes.forEach(checkbox => {
 
 const previewPanel = document.getElementById('previewPanel');
 const formElement = document.getElementById('estimateForm');
-const submitBtnP = document.getElementById('submitBtn').parentElement; // submitBtn の親要素 p
+const submitBtnP = document.getElementById('submitBtn').parentElement;
 const bodyElement = document.body;
 const completeMessageElement = document.getElementById('completeMessage');
 const closeTabButton = document.getElementById('closeTabButton');
@@ -836,8 +734,6 @@ function movePreviewPanel() {
             if (originalPreviewPanelParent) {
                  originalPreviewPanelParent.insertBefore(previewPanel, originalPreviewPanelNextSibling);
             } else {
-                 // bodyElement.insertBefore(previewPanel, completeMessageElement.nextSibling);
-                 // より安全に body の末尾に追加
                  bodyElement.appendChild(previewPanel);
             }
         }
@@ -846,14 +742,12 @@ function movePreviewPanel() {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (previewPanel) {
-        // 初期状態で previewPanel が formElement の子でない場合に限り、元の親と兄弟を記録
         if (previewPanel.parentElement !== formElement) {
             originalPreviewPanelParent = previewPanel.parentElement;
             originalPreviewPanelNextSibling = previewPanel.nextSibling;
         } else {
-            // スマホ表示などで最初からフォーム内にある場合は、body直下を想定
             originalPreviewPanelParent = bodyElement;
-            originalPreviewPanelNextSibling = completeMessageElement.nextSibling; // completeMessageがなければnull
+            originalPreviewPanelNextSibling = completeMessageElement.nextSibling;
         }
     }
 
