@@ -7,6 +7,7 @@
 <meta name="googlebot" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>イラスト見積もりフォーム</title>
 <style>
 /*全体のスタイル設定*/
 body {
@@ -55,19 +56,38 @@ gap: 8px;
 border-bottom: 2px solid #ff91d7;
 }
 
-/*ラベルのレイアウト (ラジオボタンやチェックボックスのラベル用に残す) */
+/*ラベルと入力欄のレイアウト*/
 label { display: block; margin: 6px 0; color: #222; }
-
-/* イラストタイプ未選択時のラベルスタイル (残す) */
-label.highlight-error {
+input[type="text"],
+input[type="email"],
+textarea {
+font-size: 16px;
+width: 100%;
+padding: 10px;
+margin-top: 6px;
+margin-bottom: 20px;
+border: 1px solid #ccc;
+border-radius: 6px;
+box-sizing: border-box;
+}
+input[type="text"].input-error, /* エラー時のスタイル */
+input[type="email"].input-error {
+border-color: red !important;
+outline: 1px solid red;
+background-color: #fff8f8;
+}
+label.highlight-error { /* イラストタイプ未選択時のラベルスタイル */
     color: red !important;
 }
+
+
+input[type="file"] { margin-bottom: 20px; }
 
 /*送信ボタン*/
 button#submitBtn {
 background-color: #446dff; color: white; padding: 12px 20px;
 border: none; border-radius: 6px; font-size: 1em; width: 100%;
-cursor: pointer; margin-top: 30px; /* margin を margin-top に変更 */
+cursor: pointer; margin: 30px;
 }
 button#submitBtn[disabled] {
 background-color: #888;
@@ -206,9 +226,9 @@ display: none !important;
   background-color: #ffffff;
   border-left: 6px solid #ff91d7;
   border-radius: 12px;
-  padding: 20px;
-  margin-top: 36px;
-  margin-bottom: 36px;
+  padding: 20px; /* 上下左右の内部パディングを均等にするか、デザインに合わせて調整 */
+  margin-top: 36px;    /* 上マージンは維持 */
+  margin-bottom: 36px; /* 下マージンも維持 */
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   position: relative;
 }
@@ -233,24 +253,23 @@ margin-top: 6px;
 line-height: 1.5;
 }
 
-/* .disclaimer は .form-header .disclaimer でカバーできるため、独立したものは不要なら削除可 */
-/*
 .disclaimer {
 font-size: 12px;
 color: #FF0000;
 line-height: 1.6;
 text-align: center;
 }
-*/
 
-.total { /* 上で定義済みなので、スタイルが同じならこちらは削除可 */
-/*
+body {
+background-color: #f7f9fc;
+}
+
+.total {
 font-size: 1.3em;
 font-weight: bold;
 color: #1e7c27;
 text-align: center;
 margin-top: 24px;
-*/
 }
 .estimate-note {
 text-align: center;
@@ -275,11 +294,11 @@ transform: translateY(-2px);
 box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.error-message { /* イラストタイプのエラーメッセージ用に残す */
+.error-message {
 display: none;
 color: red;
 font-size: 0.9em;
-margin-top: -10px; /* イラストタイプエラー表示位置調整 */
+margin-top: -10px;
 margin-bottom: 15px;
 line-height: 1.4;
 background-color: #fff0f0;
@@ -328,12 +347,18 @@ border-radius: 4px;
     padding: 6px 12px;
   }
 
-  /* body { padding: 40px; } */ /* 上のbodyスタイルでpadding:40pxが既にある */
-  /* .container { padding: 60px 20px; } */ /* 上の.containerスタイルでpadding:50px 40pxが既にある。メディアクエリでの変更は維持 */
+  body {
+    padding: 40px;
+  }
+  .container {
+    padding: 60px 20px;
+  }
 }
 
 @media (max-width: 600px) {
-  /* .container { padding: 60px 15px; } */ /* 上の.containerスタイルでpadding:50px 40pxが既にある。メディアクエリでの変更は維持 */
+  .container {
+    padding: 60px 15px;
+  }
 
   .form-header h2 {
     font-size: 1.3em;
@@ -343,8 +368,12 @@ border-radius: 4px;
     font-size: 1em;
   }
 
-  /* input[type="text"], input[type="email"], textarea は削除されたため、このメディアクエリでのスタイルも不要 */
-
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 16px;
+    padding: 12px;
+  }
    #previewPanel {
     padding: 12px 15px;
     margin-top: 20px;
@@ -423,7 +452,22 @@ border-radius: 4px;
 
 <div id="optionPreview" class="preview"></div>
 
-<p style="text-align: center;"><button id="submitBtn" type="submit" style="width: 10em;">送信</button></p>
+<h3 id="contactInfoSectionH3">📩ご連絡先</h3>
+<span style="color:#FF0000; font-size: 12px;">※お名前とメールアドレスは必須です。</span>
+
+<input type="text" id="name" placeholder="お名前">
+<p id="nameErrorMessage" class="error-message" style="display: none;">※お名前を入力してください。</p>
+<input type="email" id="email" placeholder="メールアドレス">
+<p id="emailErrorMessage" class="error-message" style="display: none;">※有効なメールアドレスを入力してください。</p>
+
+<h3>📝ご要望</h3>
+<textarea id="note" placeholder="ご要望があればご自由にご記入ください。例：髪色・服装・性格イメージ／使用目的（アイコン・Live2Dなど）／ポーズや構図／背景の有無 など" rows="4"></textarea>
+<span style="color:#636262; font-size: 12px;">※例：髪色・服装・性格イメージ／使用目的（アイコン・Live2Dなど）／ポーズや構図／背景の有無</span>
+
+<h3>📎 参考画像（添付）</h3>
+<input type="file" id="imageFile" accept="image/*">
+
+<p><button id="submitBtn" type="submit" style="width: 10em;">送信</button></p>
 
 <div id="formErrorMessage" style="display: none; color: #fff; background-color: #e74c3c; padding: 10px 15px; border-radius: 6px; margin-bottom: 20px; font-size: 14px;"></div>
 
@@ -454,84 +498,90 @@ border-radius: 4px;
 </div>
 
 <script>
-// ▼▼▼ ここからJavaScript ▼▼▼
 
 function showPopup(src) {
-    const overlay = document.getElementById("popupOverlay");
-    const popupImage = document.getElementById("popupImage");
-    popupImage.src = src;
-    overlay.style.display = "flex";
+const overlay = document.getElementById("popupOverlay");
+const popupImage = document.getElementById("popupImage");
+popupImage.src = src;
+overlay.style.display = "flex";
 }
 
 function hidePopup() {
-    document.getElementById("popupOverlay").style.display = "none";
+document.getElementById("popupOverlay").style.display = "none";
 }
 
 const radios = document.querySelectorAll('input[name="type"]');
+// const checkboxes = document.querySelectorAll('.option'); // この行は修正案では不要になるか、使い方が変わります
 const totalEl = document.getElementById('total');
 const submitBtn = document.getElementById('submitBtn');
-const optionPreviewContainer = document.getElementById('optionPreview');
+const optionPreviewContainer = document.getElementById('optionPreview'); // 変数名変更
 const typePreview = document.getElementById('typeImageBelowOptions');
 
-const allOptionCheckboxes = document.querySelectorAll('.option');
+// --- 追加オプションの排他選択ロジックのための要素取得 (ここから) ---
+const allOptionCheckboxes = document.querySelectorAll('.option'); // 「追加オプションなし」を含む全てのオプション
 const noOptionCheckbox = document.getElementById('noOptionCheckbox');
+// 「追加オプションなし」を除く、実際のオプション項目を特定するための準備
+// HTML側で class="additional-option-item" を付与している前提
 const actualOptionItems = document.querySelectorAll('.additional-option-item');
+// --- 追加オプションの排他選択ロジックのための要素取得 (ここまで) ---
+
 
 function calculateTotal() {
-    let total = 0;
-    const selectedType = document.querySelector('input[name="type"]:checked');
-    if (selectedType) total += parseInt(selectedType.value);
+let total = 0;
+const selectedType = document.querySelector('input[name="type"]:checked');
+if (selectedType) total += parseInt(selectedType.value);
 
-    if (noOptionCheckbox && noOptionCheckbox.checked) {
-        // 「追加オプションなし」が選択されている場合は、他のオプションは加算しない
-    } else {
-        actualOptionItems.forEach(opt => {
-            if (opt.checked) {
-                total += parseInt(opt.value);
-            }
-        });
-    }
-    totalEl.textContent = total.toLocaleString();
+if (noOptionCheckbox && noOptionCheckbox.checked) {
+    // 「追加オプションなし」が選択されている場合は、他のオプションは加算しない
+} else {
+    actualOptionItems.forEach(opt => { // 「追加オプションなし」以外の項目をループ
+        if (opt.checked) {
+            total += parseInt(opt.value);
+        }
+    });
+}
+totalEl.textContent = total.toLocaleString();
+// updatePreviewPanel(); // ここでは呼ばず、各イベントリスナーの最後で呼ぶように変更も検討
 }
 
 function updateTypePreview() {
-    const selected = document.querySelector('input[name="type"]:checked');
-    const existingImg = document.getElementById("typeImagePreview");
-    const existingNote = document.getElementById("typeImageNote");
+const selected = document.querySelector('input[name="type"]:checked');
+const existingImg = document.getElementById("typeImagePreview");
+const existingNote = document.getElementById("typeImageNote");
 
-    if (existingImg) existingImg.remove();
-    if (existingNote) existingNote.remove();
+if (existingImg) existingImg.remove();
+if (existingNote) existingNote.remove();
 
-    if (selected && selected.dataset.img) {
-        const img = document.createElement("img");
-        img.src = selected.dataset.img;
-        img.alt = "タイプ画像";
-        img.id = "typeImagePreview";
-        img.style.maxWidth = "100%";
-        img.style.maxHeight = "200px";
-        img.style.marginTop = "10px";
-        img.style.borderRadius = "6px";
-        img.onclick = () => showPopup(img.src);
+if (selected && selected.dataset.img) {
+const img = document.createElement("img");
+img.src = selected.dataset.img;
+img.alt = "タイプ画像";
+img.id = "typeImagePreview";
+img.style.maxWidth = "100%";
+img.style.maxHeight = "200px";
+img.style.marginTop = "10px";
+img.style.borderRadius = "6px";
+img.onclick = () => showPopup(img.src);
 
-        const note = document.createElement("p");
-        note.id = "typeImageNote";
-        note.textContent = "※画像をクリックすると拡大します。";
-        note.style.color = "#d66";
-        note.style.fontSize = "0.9em";
-        note.style.marginTop = "5px";
-        note.style.marginBottom = "20px";
+const note = document.createElement("p");
+note.id = "typeImageNote";
+note.textContent = "※画像をクリックすると拡大します。";
+note.style.color = "#d66";
+note.style.fontSize = "0.9em";
+note.style.marginTop = "5px";
+note.style.marginBottom = "20px";
 
-        const lastTypeLabel = Array.from(radios).pop().closest("label");
-        if (lastTypeLabel) {
-            lastTypeLabel.insertAdjacentElement('afterend', img);
-            img.insertAdjacentElement('afterend', note);
-        }
-    }
+const lastTypeLabel = Array.from(radios).pop().closest("label");
+if (lastTypeLabel) {
+    lastTypeLabel.insertAdjacentElement('afterend', img);
+    img.insertAdjacentElement('afterend', note);
+}
+}
 }
 
 function updateOptionPreview() {
     optionPreviewContainer.innerHTML = '';
-    actualOptionItems.forEach(opt => {
+    actualOptionItems.forEach(opt => { // 「追加オプションなし」以外の項目をループ
         if (opt.checked && opt.dataset.img) {
             const wrapper = document.createElement("div");
             wrapper.className = "optionImageWrapper";
@@ -562,58 +612,74 @@ function updateOptionPreview() {
     });
 }
 
+
 document.addEventListener('contextmenu', function(e) {
-    if (e.target.tagName === "IMG") {
-        e.preventDefault();
-    }
+if (e.target.tagName === "IMG") {
+e.preventDefault();
+}
 });
 
 document.addEventListener('dragstart', function(e) {
-    if (e.target.tagName === "IMG") {
-        e.preventDefault();
-    }
+if (e.target.tagName === "IMG") {
+e.preventDefault();
+}
 });
 
 function updatePreviewPanel() {
-    const selectedTypeRadio = document.querySelector('input[name="type"]:checked');
-    const previewTypeEl = document.getElementById("previewType");
-    const previewOptionsEl = document.getElementById("previewOptions");
-    const previewTotalEl = document.getElementById("previewTotal");
+const selectedTypeRadio = document.querySelector('input[name="type"]:checked');
+const previewTypeEl = document.getElementById("previewType");
+const previewOptionsEl = document.getElementById("previewOptions");
+const previewTotalEl = document.getElementById("previewTotal");
 
-    if (previewTypeEl) {
-        previewTypeEl.textContent = selectedTypeRadio ? selectedTypeRadio.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '').trim() : "未選択";
-    }
-
-    let optionsText = "なし";
-    if (noOptionCheckbox && noOptionCheckbox.checked) {
-        optionsText = noOptionCheckbox.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '').trim();
-    } else {
-        const checkedActualOptions = Array.from(actualOptionItems).filter(opt => opt.checked);
-        if (checkedActualOptions.length > 0) {
-            optionsText = checkedActualOptions.map(opt => opt.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '').trim()).join(", ");
-        }
-    }
-    if (previewOptionsEl) {
-        previewOptionsEl.textContent = optionsText;
-    }
-
-    if (previewTotalEl) {
-        previewTotalEl.textContent = "¥" + totalEl.textContent;
-    }
+if (previewTypeEl) {
+    previewTypeEl.textContent = selectedTypeRadio ? selectedTypeRadio.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '') : "未選択";
 }
 
-// ▼▼▼ Googleフォーム連携のための handleSubmit 関数 (指定セクション削除対応版) ▼▼▼
-async function handleSubmit(event) {
+let optionsText = "なし";
+if (noOptionCheckbox && noOptionCheckbox.checked) {
+    optionsText = noOptionCheckbox.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '');
+} else {
+    const checkedActualOptions = Array.from(actualOptionItems).filter(opt => opt.checked);
+    if (checkedActualOptions.length > 0) {
+        optionsText = checkedActualOptions.map(opt => opt.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '')).join(", ");
+    }
+}
+if (previewOptionsEl) {
+    previewOptionsEl.textContent = optionsText;
+}
+
+if (previewTotalEl) {
+    previewTotalEl.textContent = "¥" + totalEl.textContent;
+}
+}
+
+function handleSubmit(event) {
     event.preventDefault();
 
-    // --- 既存のバリデーション処理（イラストタイプのみ）---
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
     const typeInputs = document.querySelectorAll('input[name="type"]');
     const selectedType = document.querySelector('input[name="type"]:checked');
+
+    const nameError = document.getElementById("nameErrorMessage");
+    const emailError = document.getElementById("emailErrorMessage");
     const typeErrorMsg = document.getElementById("typeErrorMessage");
+
     const illustrationTypeSectionH3 = document.getElementById("illustrationTypeSectionH3");
+    const contactInfoSectionH3 = document.getElementById("contactInfoSectionH3");
 
 
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const note = document.getElementById("note").value;
+    const total = document.getElementById("total").textContent;
+
+
+    nameInput.classList.remove("input-error");
+    emailInput.classList.remove("input-error");
     typeInputs.forEach(input => input.parentElement.classList.remove("highlight-error"));
+    if (nameError) nameError.style.display = "none";
+    if (emailError) emailError.style.display = "none";
     if (typeErrorMsg) typeErrorMsg.style.display = "none";
 
     let hasError = false;
@@ -630,85 +696,116 @@ async function handleSubmit(event) {
         hasError = true;
     }
 
+    if (!name) {
+        nameInput.classList.add("input-error");
+        if (nameError) nameError.style.display = "block";
+        hasError = true;
+        if (!firstErrorElement && contactInfoSectionH3) firstErrorElement = contactInfoSectionH3;
+        else if (!firstErrorElement) firstErrorElement = nameInput;
+    }
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailInput.classList.add("input-error");
+        if (emailError) emailError.style.display = "block";
+        hasError = true;
+        if (!firstErrorElement && contactInfoSectionH3) firstErrorElement = contactInfoSectionH3;
+        else if (!firstErrorElement) firstErrorElement = emailInput;
+    }
+
+
     if (hasError) {
         if (firstErrorElement) {
             firstErrorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
         return;
     }
-    // --- バリデーション処理ここまで ---
 
-    // 1. GoogleフォームのベースURL (あなたのフォームの「回答用」URLのIDに置き換えてください)
-    const googleFormViewUrlId = "1FAIpQLSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"; // ★★★【重要】あなたのGoogleフォームのID (e/ と /viewform の間の部分) に置き換えてください ★★★
-    const googleFormBaseUrl = `https://docs.google.com/forms/d/e/${googleFormViewUrlId}/viewform`;
-
-    // 2. Googleフォームの質問ID (事前に調べて置き換えてください)
-    const entryIdForIllustrationType = "entry.XXXXXXXXXX"; // ★★★ イラストタイプ用の entry ID に置き換え ★★★
-    const entryIdForAdditionalOptions = "entry.YYYYYYYYYY"; // ★★★ 追加オプション用の entry ID に置き換え ★★★
-
-    // 3. HTMLフォームから選択された値を取得
-    let illustrationTypeValue = "";
-    if (selectedType) {
-        illustrationTypeValue = selectedType.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '').trim();
-    }
-
-    const checkedOptions = document.querySelectorAll('.option.additional-option-item:checked');
-    let additionalOptionsValue = "";
-    if (checkedOptions.length > 0) {
-        additionalOptionsValue = Array.from(checkedOptions)
-            .map(opt => opt.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '').trim())
-            .join(", ");
-    } else if (document.getElementById('noOptionCheckbox') && document.getElementById('noOptionCheckbox').checked) {
-        additionalOptionsValue = "追加オプションなし";
-    }
-    
-    // 4. URLパラメータを構築
-    const params = new URLSearchParams();
-    if (illustrationTypeValue) {
-        params.append(entryIdForIllustrationType, illustrationTypeValue);
-    }
-    if (additionalOptionsValue) {
-        params.append(entryIdForAdditionalOptions, additionalOptionsValue);
-    }
-
-    // 5. 最終的なURLを生成
-    const finalGoogleFormUrl = `${googleFormBaseUrl}?${params.toString()}`;
-
-    // 6. 生成したGoogleフォームのURLにリダイレクト
     submitBtn.disabled = true;
-    submitBtn.textContent = "フォームへ移動中...";
-    
-    window.location.href = finalGoogleFormUrl;
+    submitBtn.textContent = "送信中...";
+
+    // submitForm に渡す selectedOptions は、実際にチェックされているもののみにする
+    const activeSelectedOptions = Array.from(allOptionCheckboxes).filter(opt => opt.checked);
+    const data = {
+        name,
+        email,
+        note,
+        total,
+        typeLabel: selectedType ? selectedType.parentElement.textContent.trim() : "",
+        optionLabels: activeSelectedOptions.map(opt => opt.parentElement.textContent.trim()),
+        image: null
+    };
+
+    const file = document.getElementById("imageFile").files[0];
+    if (file) {
+        data.imageName = file.name;
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            data.image = e.target.result;
+            data.imageName = file.name;
+            google.script.run.withSuccessHandler(() => {
+                document.getElementById("formContainer").style.display = "none";
+                document.getElementById("completeMessage").style.display = "block";
+                if (document.getElementById("previewPanel")) {
+                    document.getElementById("previewPanel").style.display = "none";
+                }
+            }).withFailureHandler((error) => {
+                alert("送信に失敗しました。エラー内容: " + error.message);
+                submitBtn.disabled = false;
+                submitBtn.textContent = "送信";
+            }).submitForm(data);
+        };
+        reader.readAsDataURL(file);
+    } else {
+        google.script.run
+            .withSuccessHandler(() => {
+                document.getElementById("formContainer").style.display = "none";
+                document.getElementById("completeMessage").style.display = "block";
+                if (document.getElementById("previewPanel")) {
+                    document.getElementById("previewPanel").style.display = "none";
+                }
+            })
+            .withFailureHandler((error) => {
+                alert("送信に失敗しました。エラー内容: " + error.message);
+                submitBtn.disabled = false;
+                submitBtn.textContent = "送信";
+            })
+            .submitForm(data);
+    }
 }
-// ▲▲▲ Googleフォーム連携のための handleSubmit 関数ここまで ▲▲▲
 
 
 radios.forEach(r => r.addEventListener('change', () => {
     calculateTotal();
     updateTypePreview();
-    updatePreviewPanel();
+    updatePreviewPanel(); // ラジオボタン変更時もプレビューパネル更新
 }));
 
+// --- 追加オプションの排他選択ロジック (修正版) ---
 allOptionCheckboxes.forEach(checkbox => {
     checkbox.addEventListener('change', function() {
-        if (this === noOptionCheckbox) {
+        if (this === noOptionCheckbox) { // クリックされたのが「追加オプションなし」の場合
             if (this.checked) {
-                actualOptionItems.forEach(opt => {
+                // 「追加オプションなし」がチェックされたら、他のオプションのチェックを外す
+                actualOptionItems.forEach(opt => { // actualOptionItems を使う
                     opt.checked = false;
                 });
             }
-        } else {
+        } else { // クリックされたのが「追加オプションなし」以外のオプションの場合
             if (this.checked) {
+                // 他のオプションがチェックされたら、「追加オプションなし」のチェックを外す
                 if (noOptionCheckbox) {
                     noOptionCheckbox.checked = false;
                 }
             }
         }
+        // 状態変更後に共通の更新処理を呼び出す
         calculateTotal();
         updateOptionPreview();
         updatePreviewPanel();
     });
 });
+// --- 追加オプションの排他選択ロジックここまで ---
+
 
 const previewPanel = document.getElementById('previewPanel');
 const formElement = document.getElementById('estimateForm');
@@ -734,7 +831,7 @@ function movePreviewPanel() {
             if (originalPreviewPanelParent) {
                  originalPreviewPanelParent.insertBefore(previewPanel, originalPreviewPanelNextSibling);
             } else {
-                 bodyElement.appendChild(previewPanel);
+                bodyElement.insertBefore(previewPanel, completeMessageElement.nextSibling);
             }
         }
     }
@@ -742,19 +839,14 @@ function movePreviewPanel() {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (previewPanel) {
-        if (previewPanel.parentElement !== formElement) {
-            originalPreviewPanelParent = previewPanel.parentElement;
-            originalPreviewPanelNextSibling = previewPanel.nextSibling;
-        } else {
-            originalPreviewPanelParent = bodyElement;
-            originalPreviewPanelNextSibling = completeMessageElement.nextSibling;
-        }
+        originalPreviewPanelParent = previewPanel.parentElement;
+        originalPreviewPanelNextSibling = previewPanel.nextSibling;
     }
 
-    calculateTotal();
-    updateTypePreview();
-    updateOptionPreview();
-    updatePreviewPanel();
+    calculateTotal(); // 初期計算
+    updateTypePreview(); // 初期プレビュー
+    updateOptionPreview(); // 初期オプションプレビュー
+    updatePreviewPanel(); // 初期プレビューパネル
     movePreviewPanel();
 
     if(closeTabButton) {
@@ -769,7 +861,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('resize', movePreviewPanel);
 
-// ▲▲▲ ここまでJavaScript ▲▲▲
 </script>
 
 </body>
