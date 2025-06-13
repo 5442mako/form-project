@@ -77,7 +77,7 @@ outline: 1px solid red;
 background-color: #fff8f8;
 }
 label.highlight-error { /* イラストタイプ未選択時のラベルスタイル */
-    color: red !important;
+    color: red !important;
 }
 
 
@@ -105,83 +105,83 @@ max-width: 100%; max-height: 200px; margin-top: 10px; border-radius: 6px;
 
 /* --- 選択内容プレビューパネルのスタイル (調整後) --- */
 #previewPanel {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 270px;
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-top: 4px solid #ff8cc6;
-    border-radius: 8px;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
-    padding: 18px 22px;
-    z-index: 1000;
-    font-size: 13.5px;
-    box-sizing: border-box;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 270px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-top: 4px solid #ff8cc6;
+    border-radius: 8px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+    padding: 18px 22px;
+    z-index: 1000;
+    font-size: 13.5px;
+    box-sizing: border-box;
 }
 
 #previewPanel h4 {
-    font-size: 1.15em;
-    color: #2c2c2c;
-    margin-top: 0;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #f0f0f0;
-    display: flex;
-    align-items: center;
+    font-size: 1.15em;
+    color: #2c2c2c;
+    margin-top: 0;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
 }
 
 #previewPanel h4::before {
-    content: '📋';
-    margin-right: 8px;
-    font-size: 1.1em;
-    color: #ff8cc6;
+    content: '📋';
+    margin-right: 8px;
+    font-size: 1.1em;
+    color: #ff8cc6;
 }
 
 #previewPanel p {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #f5f5f5;
-    line-height: 1.4;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f5f5f5;
+    line-height: 1.4;
 }
 #previewPanel p:last-child { /* 合計金額の行 */
-     border-bottom: none;
-     margin-bottom: 0;
-     padding-bottom: 0;
-     margin-top: 12px;
-     padding-top: 12px;
-     border-top: 1px solid #e9e9e9;
+     border-bottom: none;
+     margin-bottom: 0;
+     padding-bottom: 0;
+     margin-top: 12px;
+     padding-top: 12px;
+     border-top: 1px solid #e9e9e9;
 }
 
 
 #previewPanel p strong {
-    display: block;
-    color: #444;
-    font-weight: 600;
-    margin-bottom: 6px;
-    font-size: 0.9em;
+    display: block;
+    color: #444;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 0.9em;
 }
 
 #previewPanel p span:not(.preview-total-highlight) {
-    display: block;
-    color: #333;
-    padding-left: 8px;
-    font-size: 0.95em;
-    word-break: break-word;
-    line-height: 1.55;
+    display: block;
+    color: #333;
+    padding-left: 8px;
+    font-size: 0.95em;
+    word-break: break-word;
+    line-height: 1.55;
 }
 
 #previewPanel .preview-total-highlight {
-    font-size: 1.65em;
-    color: #1a650e;
-    font-weight: bold;
-    background-color: #e6f4e3;
-    padding: 7px 14px;
-    border-radius: 6px;
-    display: inline-block;
-    text-align: left;
-    border: 1px solid #c8e6c1;
-    margin-top: 4px;
+    font-size: 1.65em;
+    color: #1a650e;
+    font-weight: bold;
+    background-color: #e6f4e3;
+    padding: 7px 14px;
+    border-radius: 6px;
+    display: inline-block;
+    text-align: left;
+    border: 1px solid #c8e6c1;
+    margin-top: 4px;
 }
 /* --- 選択内容プレビューパネルのスタイルここまで --- */
 
@@ -223,14 +223,14 @@ display: none !important;
 }
 
 .form-header {
-  background-color: #ffffff;
-  border-left: 6px solid #ff91d7;
-  border-radius: 12px;
-  padding: 20px; /* 上下左右の内部パディングを均等にするか、デザインに合わせて調整 */
-  margin-top: 36px;    /* 上マージンは維持 */
-  margin-bottom: 36px; /* 下マージンも維持 */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  position: relative;
+  background-color: #ffffff;
+  border-left: 6px solid #ff91d7;
+  border-radius: 12px;
+  padding: 20px; /* 上下左右の内部パディングを均等にするか、デザインに合わせて調整 */
+  margin-top: 36px;    /* 上マージンは維持 */
+  margin-bottom: 36px; /* 下マージンも維持 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  position: relative;
 }
 
 .form-header h2 {
@@ -308,90 +308,90 @@ border-radius: 4px;
 }
 
 @media (max-width: 980px) {
-  #previewPanel {
-    position: static;
-    width: 100%;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    padding: 15px 18px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    border-top-width: 3px;
-  }
+  #previewPanel {
+    position: static;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 15px 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    border-top-width: 3px;
+  }
 
-  #previewPanel h4 {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-  }
-   #previewPanel h4::before {
-    font-size: 1em;
-  }
+  #previewPanel h4 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+   #previewPanel h4::before {
+    font-size: 1em;
+  }
 
-  #previewPanel p {
-    margin-bottom: 8px;
-    padding-bottom: 8px;
-    line-height: 1.3;
-  }
+  #previewPanel p {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    line-height: 1.3;
+  }
 
-  #previewPanel p strong{
-    font-size: 0.85em;
-    margin-bottom: 4px;
-  }
-  #previewPanel p span:not(.preview-total-highlight){
-    font-size: 0.9em;
-    padding-left: 6px;
-  }
+  #previewPanel p strong{
+    font-size: 0.85em;
+    margin-bottom: 4px;
+  }
+  #previewPanel p span:not(.preview-total-highlight){
+    font-size: 0.9em;
+    padding-left: 6px;
+  }
 
-  #previewPanel .preview-total-highlight {
-    font-size: 1.55em;
-    padding: 6px 12px;
-  }
+  #previewPanel .preview-total-highlight {
+    font-size: 1.55em;
+    padding: 6px 12px;
+  }
 
-  body {
-    padding: 40px;
-  }
-  .container {
-    padding: 60px 20px;
-  }
+  body {
+    padding: 40px;
+  }
+  .container {
+    padding: 60px 20px;
+  }
 }
 
 @media (max-width: 600px) {
-  .container {
-    padding: 60px 15px;
-  }
+  .container {
+    padding: 60px 15px;
+  }
 
-  .form-header h2 {
-    font-size: 1.3em;
-  }
+  .form-header h2 {
+    font-size: 1.3em;
+  }
 
-  h3 {
-    font-size: 1em;
-  }
+  h3 {
+    font-size: 1em;
+  }
 
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    font-size: 16px;
-    padding: 12px;
-  }
-   #previewPanel {
-    padding: 12px 15px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  #previewPanel h4 {
-    font-size: 1.05em;
-  }
-   #previewPanel .preview-total-highlight {
-    font-size: 1.45em;
-   }
-   #previewPanel p strong{
-    font-size: 0.8em;
-   }
-   #previewPanel p span:not(.preview-total-highlight){
-    font-size: 0.85em;
-    padding-left: 5px;
-   }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 16px;
+    padding: 12px;
+  }
+   #previewPanel {
+    padding: 12px 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  #previewPanel h4 {
+    font-size: 1.05em;
+  }
+   #previewPanel .preview-total-highlight {
+    font-size: 1.45em;
+   }
+   #previewPanel p strong{
+    font-size: 0.8em;
+   }
+   #previewPanel p span:not(.preview-total-highlight){
+    font-size: 0.85em;
+    padding-left: 5px;
+   }
 }
 
 </style>
@@ -486,10 +486,10 @@ border-radius: 4px;
 </div>
 
 <div id="previewPanel">
-    <h4>選択内容プレビュー</h4>
-    <p><strong>イラストタイプ:</strong> <span id="previewType">未選択</span></p>
-    <p><strong>追加オプション:</strong> <span id="previewOptions">なし</span></p>
-    <p><strong>簡易見積合計金額：</strong> <span id="previewTotal" class="preview-total-highlight">0</span></p>
+    <h4>選択内容プレビュー</h4>
+    <p><strong>イラストタイプ:</strong> <span id="previewType">未選択</span></p>
+    <p><strong>追加オプション:</strong> <span id="previewOptions">なし</span></p>
+    <p><strong>簡易見積合計金額：</strong> <span id="previewTotal" class="preview-total-highlight">0</span></p>
 </div>
 
 
@@ -532,13 +532,13 @@ const selectedType = document.querySelector('input[name="type"]:checked');
 if (selectedType) total += parseInt(selectedType.value);
 
 if (noOptionCheckbox && noOptionCheckbox.checked) {
-    // 「追加オプションなし」が選択されている場合は、他のオプションは加算しない
+    // 「追加オプションなし」が選択されている場合は、他のオプションは加算しない
 } else {
-    actualOptionItems.forEach(opt => { // 「追加オプションなし」以外の項目をループ
-        if (opt.checked) {
-            total += parseInt(opt.value);
-        }
-    });
+    actualOptionItems.forEach(opt => { // 「追加オプションなし」以外の項目をループ
+        if (opt.checked) {
+            total += parseInt(opt.value);
+        }
+    });
 }
 totalEl.textContent = total.toLocaleString();
 // updatePreviewPanel(); // ここでは呼ばず、各イベントリスナーの最後で呼ぶように変更も検討
@@ -573,43 +573,43 @@ note.style.marginBottom = "20px";
 
 const lastTypeLabel = Array.from(radios).pop().closest("label");
 if (lastTypeLabel) {
-    lastTypeLabel.insertAdjacentElement('afterend', img);
-    img.insertAdjacentElement('afterend', note);
+    lastTypeLabel.insertAdjacentElement('afterend', img);
+    img.insertAdjacentElement('afterend', note);
 }
 }
 }
 
 function updateOptionPreview() {
-    optionPreviewContainer.innerHTML = '';
-    actualOptionItems.forEach(opt => { // 「追加オプションなし」以外の項目をループ
-        if (opt.checked && opt.dataset.img) {
-            const wrapper = document.createElement("div");
-            wrapper.className = "optionImageWrapper";
-            wrapper.style.marginRight = "10px";
-            wrapper.style.textAlign = "center";
+    optionPreviewContainer.innerHTML = '';
+    actualOptionItems.forEach(opt => { // 「追加オプションなし」以外の項目をループ
+        if (opt.checked && opt.dataset.img) {
+            const wrapper = document.createElement("div");
+            wrapper.className = "optionImageWrapper";
+            wrapper.style.marginRight = "10px";
+            wrapper.style.textAlign = "center";
 
-            const img = document.createElement("img");
-            img.src = opt.dataset.img;
-            img.alt = "オプション画像";
-            img.className = "optionImagePreview";
-            img.style.maxWidth = "150px";
-            img.style.maxHeight = "150px";
-            img.style.borderRadius = "6px";
-            img.style.cursor = "pointer";
-            img.onclick = () => showPopup(img.src);
+            const img = document.createElement("img");
+            img.src = opt.dataset.img;
+            img.alt = "オプション画像";
+            img.className = "optionImagePreview";
+            img.style.maxWidth = "150px";
+            img.style.maxHeight = "150px";
+            img.style.borderRadius = "6px";
+            img.style.cursor = "pointer";
+            img.onclick = () => showPopup(img.src);
 
-            const note = document.createElement("p");
-            note.className = "optionImageNote";
-            note.textContent = "※画像をクリックすると拡大します。";
-            note.style.color = "#d66";
-            note.style.fontSize = "0.8em";
-            note.style.marginTop = "5px";
+            const note = document.createElement("p");
+            note.className = "optionImageNote";
+            note.textContent = "※画像をクリックすると拡大します。";
+            note.style.color = "#d66";
+            note.style.fontSize = "0.8em";
+            note.style.marginTop = "5px";
 
-            wrapper.appendChild(img);
-            wrapper.appendChild(note);
-            optionPreviewContainer.appendChild(wrapper);
-        }
-    });
+            wrapper.appendChild(img);
+            wrapper.appendChild(note);
+            optionPreviewContainer.appendChild(wrapper);
+        }
+    });
 }
 
 
@@ -632,154 +632,189 @@ const previewOptionsEl = document.getElementById("previewOptions");
 const previewTotalEl = document.getElementById("previewTotal");
 
 if (previewTypeEl) {
-    previewTypeEl.textContent = selectedTypeRadio ? selectedTypeRadio.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '') : "未選択";
+    previewTypeEl.textContent = selectedTypeRadio ? selectedTypeRadio.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '') : "未選択";
 }
 
 let optionsText = "なし";
 if (noOptionCheckbox && noOptionCheckbox.checked) {
-    optionsText = noOptionCheckbox.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '');
+    optionsText = noOptionCheckbox.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '');
 } else {
-    const checkedActualOptions = Array.from(actualOptionItems).filter(opt => opt.checked);
-    if (checkedActualOptions.length > 0) {
-        optionsText = checkedActualOptions.map(opt => opt.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '')).join(", ");
-    }
+    const checkedActualOptions = Array.from(actualOptionItems).filter(opt => opt.checked);
+    if (checkedActualOptions.length > 0) {
+        optionsText = checkedActualOptions.map(opt => opt.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '')).join(", ");
+    }
 }
 if (previewOptionsEl) {
-    previewOptionsEl.textContent = optionsText;
+    previewOptionsEl.textContent = optionsText;
 }
 
 if (previewTotalEl) {
-    previewTotalEl.textContent = "¥" + totalEl.textContent;
+    previewTotalEl.textContent = "¥" + totalEl.textContent;
 }
 }
 
-// HTMLファイル内の <script> タグに記述するJavaScript
-
-// ... (showPopup, calculateTotal, updateTypePreviewなどの関数は元のままでOK) ...
-
-// ★★★★★ この handleSubmit 関数を丸ごと置き換えてください ★★★★★
-async function handleSubmit(event) {
-    event.preventDefault();
-
-    // バリデーション処理 (元のコードのまま)
-    const nameInput = document.getElementById("name");
-    const emailInput = document.getElementById("email");
-    const typeInputs = document.querySelectorAll('input[name="type"]');
-    const selectedType = document.querySelector('input[name="type"]:checked');
-
-    // ... (元のバリデーションコードをここに残してください。エラーがあればreturnする) ...
-    let hasError = false;
-    // (省略) バリデーションチェックの結果、hasErrorがtrueならreturnする処理
-
-
-    const submitBtn = document.getElementById('submitBtn');
-    submitBtn.disabled = true;
-    submitBtn.textContent = "送信中...";
-
-    // ★★★ GASのウェブアプリURLをここに貼り付け ★★★
-    const GAS_WEB_APP_URL = 'ここにステップ1でコピーしたウェブアプリのURLを貼り付け';
-
-    // フォームデータをまとめる
-    const activeSelectedOptions = Array.from(allOptionCheckboxes).filter(opt => opt.checked);
-    const dataToSend = {
-        name: nameInput.value.trim(),
-        email: emailInput.value.trim(),
-        note: document.getElementById("note").value.trim(),
-        total: document.getElementById("total").textContent,
-        typeLabel: selectedType ? selectedType.parentElement.textContent.trim() : "",
-        optionLabels: activeSelectedOptions.map(opt => opt.parentElement.textContent.trim()),
-        image: null,     // Base64画像データ
-        imageName: null, // 元のファイル名
-    };
-
-    const file = document.getElementById("imageFile").files[0];
-
-    // ファイルが選択されている場合の処理
-    if (file) {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = async () => {
-            dataToSend.image = reader.result; // Base64データ
-            dataToSend.imageName = file.name;
-            // ファイル読み込み後に送信実行
-            await sendDataToGAS(GAS_WEB_APP_URL, dataToSend);
-        };
-        reader.onerror = (error) => {
-            console.error("ファイル読み込みエラー:", error);
-            alert("ファイルの読み込みに失敗しました。");
-            submitBtn.disabled = false;
-            submitBtn.textContent = "送信";
-        };
-    } else {
-        // ファイルがない場合はそのまま送信実行
-        await sendDataToGAS(GAS_WEB_APP_URL, dataToSend);
-    }
-}
-
-// ★★★ データをGASに送信するための補助関数（これも追加してください） ★★★
+<script>
+// データをGASに送信するための補助関数
 async function sendDataToGAS(url, data) {
-    const submitBtn = document.getElementById('submitBtn');
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            // GAS Web AppではCORSを回避するためにtext/plainで送り、GAS側でJSON.parseするのが定石
-            headers: {
-                'Content-Type': 'text/plain;charset=utf-8',
-            },
-            body: JSON.stringify(data)
-        });
+    const submitBtn = document.getElementById('submitBtn');
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            // GAS Web AppではCORSエラーを回避するためにtext/plainで送り、GAS側でJSON.parseするのが一般的です
+            headers: {
+                'Content-Type': 'text/plain;charset=utf-8',
+            },
+            body: JSON.stringify(data)
+        });
 
-        const result = await response.json();
+        const result = await response.json();
 
-        if (result.status === 'success') {
-            // 送信成功
-            document.getElementById("formContainer").style.display = "none";
-            document.getElementById("previewPanel").style.display = "none";
-            document.getElementById("completeMessage").style.display = "block";
-        } else {
-            // GAS側でエラーが起きた場合
-            console.error('GAS Error:', result.message);
-            alert("送信処理中にエラーが発生しました。\n詳細: " + result.message);
-            submitBtn.disabled = false;
-            submitBtn.textContent = "送信";
-        }
-    } catch (error) {
-        console.error('Fetch Error:', error);
-        alert("送信に失敗しました。ネットワーク接続などを確認してください。");
-        submitBtn.disabled = false;
-        submitBtn.textContent = "送信";
-    }
+        if (result.status === 'success') {
+            // 送信成功
+            document.getElementById("formContainer").style.display = "none";
+            document.getElementById("previewPanel").style.display = "none";
+            document.getElementById("completeMessage").style.display = "block";
+        } else {
+            // GAS側でエラーが起きた場合
+            console.error('GAS Error:', result.message);
+            alert("送信処理中にエラーが発生しました。\n詳細: " + result.message);
+            submitBtn.disabled = false;
+            submitBtn.textContent = "送信";
+        }
+    } catch (error) {
+        console.error('Fetch Error:', error);
+        alert("送信に失敗しました。ネットワーク接続などを確認してください。");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "送信";
+    }
 }
+
+
+// メインの送信処理関数
+async function handleSubmit(event) {
+    event.preventDefault();
+
+    // バリデーション処理 (元のコードのまま)
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const typeInputs = document.querySelectorAll('input[name="type"]');
+    const selectedType = document.querySelector('input[name="type"]:checked');
+
+    let hasError = false;
+    // ... (元のバリデーションコードはここにそのまま残してください) ...
+    // 例：
+    if (!nameInput.value.trim()) {
+        hasError = true;
+        nameInput.classList.add("input-error");
+        document.getElementById("nameErrorMessage").style.display = "block";
+        // エラー表示の処理
+    } else {
+        nameInput.classList.remove("input-error");
+        document.getElementById("nameErrorMessage").style.display = "none";
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
+        hasError = true;
+        emailInput.classList.add("input-error");
+        document.getElementById("emailErrorMessage").style.display = "block";
+    } else {
+        emailInput.classList.remove("input-error");
+        document.getElementById("emailErrorMessage").style.display = "none";
+    }
+
+    const typeErrorMessage = document.getElementById("typeErrorMessage");
+    const illustrationTypeSectionH3 = document.getElementById("illustrationTypeSectionH3");
+    if (!selectedType) {
+        hasError = true;
+        typeErrorMessage.style.display = "block";
+        illustrationTypeSectionH3.classList.add("highlight-error"); // エラー時にハイライト
+    } else {
+        typeErrorMessage.style.display = "none";
+        illustrationTypeSectionH3.classList.remove("highlight-error"); // エラー解除時にハイライトを削除
+    }
+
+
+    if (hasError) {
+        alert("入力に誤りがあります。");
+        return; // エラーがあればここで処理を中断
+    }
+
+
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = "送信中...";
+
+    // ★★★★★ ここにあなたのURLを設定しました ★★★★★
+    const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzPYH7PJvBY3-udurh-4vc4CmF0H2cGJI1KUaIFzgXksQaGzpyeE0rFp0ZquHSTQXAx/exec';
+
+    // フォームデータをまとめる
+    const activeSelectedOptions = Array.from(allOptionCheckboxes).filter(opt => opt.checked);
+    const dataToSend = {
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        note: document.getElementById("note").value.trim(),
+        total: document.getElementById("total").textContent,
+        typeLabel: selectedType ? selectedType.parentElement.textContent.trim() : "",
+        optionLabels: activeSelectedOptions.map(opt => opt.parentElement.textContent.trim()),
+        image: null,     // Base64画像データ
+        imageName: null, // 元のファイル名
+    };
+
+    const file = document.getElementById("imageFile").files[0];
+    
+    // ファイルが選択されている場合の処理
+    if (file) {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = async () => {
+            dataToSend.image = reader.result; // Base64データ
+            dataToSend.imageName = file.name;
+            // ファイル読み込み後に送信実行
+            await sendDataToGAS(GAS_WEB_APP_URL, dataToSend);
+        };
+        reader.onerror = (error) => {
+            console.error("ファイル読み込みエラー:", error);
+            alert("ファイルの読み込みに失敗しました。");
+            submitBtn.disabled = false;
+            submitBtn.textContent = "送信";
+        };
+    } else {
+        // ファイルがない場合はそのまま送信実行
+        await sendDataToGAS(GAS_WEB_APP_URL, dataToSend);
+    }
+}
+
 
 radios.forEach(r => r.addEventListener('change', () => {
-    calculateTotal();
-    updateTypePreview();
-    updatePreviewPanel(); // ラジオボタン変更時もプレビューパネル更新
+    calculateTotal();
+    updateTypePreview();
+    updatePreviewPanel(); // ラジオボタン変更時もプレビューパネル更新
 }));
 
 // --- 追加オプションの排他選択ロジック (修正版) ---
 allOptionCheckboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-        if (this === noOptionCheckbox) { // クリックされたのが「追加オプションなし」の場合
-            if (this.checked) {
-                // 「追加オプションなし」がチェックされたら、他のオプションのチェックを外す
-                actualOptionItems.forEach(opt => { // actualOptionItems を使う
-                    opt.checked = false;
-                });
-            }
-        } else { // クリックされたのが「追加オプションなし」以外のオプションの場合
-            if (this.checked) {
-                // 他のオプションがチェックされたら、「追加オプションなし」のチェックを外す
-                if (noOptionCheckbox) {
-                    noOptionCheckbox.checked = false;
-                }
-            }
-        }
-        // 状態変更後に共通の更新処理を呼び出す
-        calculateTotal();
-        updateOptionPreview();
-        updatePreviewPanel();
-    });
+    checkbox.addEventListener('change', function() {
+        if (this === noOptionCheckbox) { // クリックされたのが「追加オプションなし」の場合
+            if (this.checked) {
+                // 「追加オプションなし」がチェックされたら、他のオプションのチェックを外す
+                actualOptionItems.forEach(opt => { // actualOptionItems を使う
+                    opt.checked = false;
+                });
+            }
+        } else { // クリックされたのが「追加オプションなし」以外のオプションの場合
+            if (this.checked) {
+                // 他のオプションがチェックされたら、「追加オプションなし」のチェックを外す
+                if (noOptionCheckbox) {
+                    noOptionCheckbox.checked = false;
+                }
+            }
+        }
+        // 状態変更後に共通の更新処理を呼び出す
+        calculateTotal();
+        updateOptionPreview();
+        updatePreviewPanel();
+    });
 });
 // --- 追加オプションの排他選択ロジックここまで ---
 
@@ -795,45 +830,45 @@ let originalPreviewPanelParent = null;
 let originalPreviewPanelNextSibling = null;
 
 function movePreviewPanel() {
-    if (!previewPanel || !formElement || !submitBtnP || !completeMessageElement) {
-        return;
-    }
+    if (!previewPanel || !formElement || !submitBtnP || !completeMessageElement) {
+        return;
+    }
 
-    if (window.innerWidth <= 980) {
-        if (previewPanel.parentElement !== formElement) {
-            formElement.insertBefore(previewPanel, submitBtnP);
-        }
-    } else {
-        if (previewPanel.parentElement === formElement) {
-            if (originalPreviewPanelParent) {
-                 originalPreviewPanelParent.insertBefore(previewPanel, originalPreviewPanelNextSibling);
-            } else {
-                bodyElement.insertBefore(previewPanel, completeMessageElement.nextSibling);
-            }
-        }
-    }
+    if (window.innerWidth <= 980) {
+        if (previewPanel.parentElement !== formElement) {
+            formElement.insertBefore(previewPanel, submitBtnP);
+        }
+    } else {
+        if (previewPanel.parentElement === formElement) {
+            if (originalPreviewPanelParent) {
+                 originalPreviewPanelParent.insertBefore(previewPanel, originalPreviewPanelNextSibling);
+            } else {
+                bodyElement.insertBefore(previewPanel, completeMessageElement.nextSibling);
+            }
+        }
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (previewPanel) {
-        originalPreviewPanelParent = previewPanel.parentElement;
-        originalPreviewPanelNextSibling = previewPanel.nextSibling;
-    }
+    if (previewPanel) {
+        originalPreviewPanelParent = previewPanel.parentElement;
+        originalPreviewPanelNextSibling = previewPanel.nextSibling;
+    }
 
-    calculateTotal(); // 初期計算
-    updateTypePreview(); // 初期プレビュー
-    updateOptionPreview(); // 初期オプションプレビュー
-    updatePreviewPanel(); // 初期プレビューパネル
-    movePreviewPanel();
+    calculateTotal(); // 初期計算
+    updateTypePreview(); // 初期プレビュー
+    updateOptionPreview(); // 初期オプションプレビュー
+    updatePreviewPanel(); // 初期プレビューパネル
+    movePreviewPanel();
 
-    if(closeTabButton) {
-        closeTabButton.addEventListener('click', () => {
-            const newWindow = window.open('', '_self', '');
-            if (newWindow) {
-                newWindow.close();
-            }
-        });
-    }
+    if(closeTabButton) {
+        closeTabButton.addEventListener('click', () => {
+            const newWindow = window.open('', '_self', '');
+            if (newWindow) {
+                newWindow.close();
+            }
+        });
+    }
 });
 
 window.addEventListener('resize', movePreviewPanel);
