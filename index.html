@@ -266,7 +266,7 @@ margin: 4px 0 12px;
 <div class="container" id="formContainer">
 
 <hr color="#ff91d7">
-<center><span style="color:#ff91d7; font-size: 12px;">*・。*゜・。・o゜・。*゜・。・o*゜・。*゜・。・o*゜・。*゜・。・o*゜・。・o*゜・。*゜・。・o*゜・。・</span></center>
+<center><span style="color:#ff91d7; font-size: 12px;">*・。*゜・。・o゜・。*゜・。・o*゜・。*゜・。・o*゜・。*゜・。・o*゜・。・o*゜・。*゜・。・o*゜・。・o*゜・。・o*゜・。</span></center>
 <p><hr color="#ff91d7"></p>
 
 <div class="form-header">
@@ -281,23 +281,15 @@ margin: 4px 0 12px;
 <h3 id="illustrationTypeSectionH3">🖼️ ご希望のイラストタイプ</h3>
 <p class="section-description"><span style="color:#FF0000; font-size: 12px;">※必須ご希望のイラスト構成を1つお選びください。</span></p>
 
-<div id="typePreview" class="preview"></div>
-<label><input type="radio" name="type" value="5000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/image196.png"> 顔アップ（5,000円）</label>
-<label><input type="radio" name="type" value="8000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/559117789085565435.jpg"> バストアップ（8,000円）</label>
-<label><input type="radio" name="type" value="10000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> 膝上（10,000円）</label>
-<label><input type="radio" name="type" value="13000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/210-all.png"> 全身（13,000円）</label>
-<label><input type="radio" name="type" value="40000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> Live2D用イラストパーツ分け（40,000円）</label>
-<label><input type="radio" name="type" value="25000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> Live2Dバストアップ（25,000円）</label>
-<label><input type="radio" name="type" value="15000" data-img="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> キャラ・衣装デザイン（15,000円）</label>
+<label><input type="radio" name="type" value="5000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png,https://raw.githubusercontent.com/5442mako/image-host-/main/image196.png"> 顔アップ（5,000円）</label>
+<label><input type="radio" name="type" value="8000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/559117789085565435.jpg"> バストアップ（8,000円）</label>
+<label><input type="radio" name="type" value="10000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> 膝上（10,000円）</label>
+<label><input type="radio" name="type" value="13000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/210-all.png"> 全身（13,000円）</label>
+<label><input type="radio" name="type" value="40000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> Live2D用イラストパーツ分け（40,000円）</label>
+<label><input type="radio" name="type" value="25000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> Live2Dバストアップ（25,000円）</label>
+<label><input type="radio" name="type" value="15000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/fec976d1-b412-4286-b968-e8b672f86fd5.png"> キャラ・衣装デザイン（15,000円）</label>
 
 <div id="typeImageBelowOptions" class="preview"></div>
-
-<h3>💰合計</h3>
-<div class="total">簡易見積合計金額：¥<span id="total">0</span></div>
-<div class="estimate-note">
-※この金額はあくまで目安です。<br>
-※実際の費用は内容を確認のうえ、正式にお見積もりさせていただきます。
-</div>
 
 <h3>🎯 追加オプション（複数選択可）</h3>
 <p class="section-description">ご希望の追加オプションをお選びください。</p>
@@ -312,6 +304,13 @@ margin: 4px 0 12px;
 
 <div id="optionPreview" class="preview"></div>
 
+<h3>💰合計</h3>
+<div class="total">簡易見積合計金額：¥<span id="total">0</span></div>
+<div class="estimate-note">
+※この金額はあくまで目安です。<br>
+※実際の費用は内容を確認のうえ、正式にお見積もりさせていただきます。
+</div>
+
 <p style="text-align: center;">
     <a href="https://forms.gle/VUtVWuTAeXs23Yf16" target="_blank" rel="noopener noreferrer" class="submit-link">申し込みフォームへ</a>
 </p>
@@ -319,7 +318,7 @@ margin: 4px 0 12px;
 </form>
 
 <hr color="#ff91d7">
-<center><span style="color:#ff91d7; font-size: 12px;">*・。*゜・。・o゜・。*゜・。・o*゜・。*゜・。・o*゜・。*゜・。・o*゜・。・o*゜・。*゜・。・o*゜・。・</span></center>
+<center><span style="color:#ff91d7; font-size: 12px;">*・。*゜・。・o゜・。*゜・。・o*゜・。*゜・。・o*゜・。*゜・。・o*゜・。・o*゜・。*゜・。・o*゜・。・o*゜・。・o*゜・。</span></center>
 <hr color="#ff91d7">
 
 </div>
@@ -374,41 +373,54 @@ function calculateTotal() {
     totalEl.textContent = total.toLocaleString();
 }
 
+// ★★★ ここを差し替えます ★★★
 function updateTypePreview() {
     const selected = document.querySelector('input[name="type"]:checked');
-    const existingImg = document.getElementById("typeImagePreview");
-    const existingNote = document.getElementById("typeImageNote");
+    // まず、既存のプレビュー用画像をすべて削除します
+    const previewContainer = document.getElementById('typeImageBelowOptions');
+    previewContainer.innerHTML = ''; // コンテナを空にする
 
-    if (existingImg) existingImg.remove();
-    if (existingNote) existingNote.remove();
+    // data-imgs属性があるかチェックします
+    if (selected && selected.dataset.imgs) {
+        // カンマでURLを分割して配列にします
+        const imageUrls = selected.dataset.imgs.split(',');
 
-    if (selected && selected.dataset.img) {
-        const img = document.createElement("img");
-        img.src = selected.dataset.img;
-        img.alt = "タイプ画像";
-        img.id = "typeImagePreview";
-        img.style.maxWidth = "100%";
-        img.style.maxHeight = "200px";
-        img.style.marginTop = "10px";
-        img.style.borderRadius = "6px";
-        img.style.cursor = "pointer";
-        img.onclick = () => showPopup(img.src);
+        // 各URLに対して画像を作成し、表示します
+        imageUrls.forEach(url => {
+            // URLの前後にあるかもしれない空白を削除
+            const imageUrl = url.trim();
+            if(imageUrl) { // URLが空でない場合のみ処理
+                const img = document.createElement("img");
+                img.src = imageUrl;
+                img.alt = "タイプ画像";
+                img.style.maxWidth = "50%"; // 2枚横に並べるため、幅を調整
+                img.style.maxHeight = "200px";
+                img.style.marginTop = "10px";
+                img.style.borderRadius = "6px";
+                img.style.cursor = "pointer";
+                img.style.boxSizing = "border-box"; // paddingやborderを幅に含める
+                img.style.padding = "0 5px"; // 画像間の隙間
+                img.onclick = () => showPopup(img.src);
 
-        const note = document.createElement("p");
-        note.id = "typeImageNote";
-        note.textContent = "※画像をクリックすると拡大します。";
-        note.style.color = "#d66";
-        note.style.fontSize = "0.9em";
-        note.style.marginTop = "5px";
-        note.style.marginBottom = "20px";
+                // プレビューコンテナに画像を追加
+                previewContainer.appendChild(img);
+            }
+        });
 
-        const lastTypeLabel = Array.from(radios).pop().closest("label");
-        if (lastTypeLabel) {
-            lastTypeLabel.insertAdjacentElement('afterend', img);
-            img.insertAdjacentElement('afterend', note);
+        // 拡大に関する注釈を追加
+        if(imageUrls.length > 0 && imageUrls[0].trim() !== '') {
+            const note = document.createElement("p");
+            note.textContent = "※画像をクリックすると拡大します。";
+            note.style.color = "#d66";
+            note.style.fontSize = "0.9em";
+            note.style.marginTop = "5px";
+            note.style.marginBottom = "20px";
+            note.style.textAlign = "center"; // 注釈を中央揃えに
+            previewContainer.appendChild(note);
         }
     }
 }
+
 
 function updateOptionPreview() {
     optionPreviewContainer.innerHTML = '';
