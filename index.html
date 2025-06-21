@@ -73,11 +73,6 @@ label { display: block; margin: 6px 0; color: #222; }
 /*合計金額の表示スタイル*/
 .total { font-size: 1.4em; color: #2c7a00; font-weight: bold; text-align: center; margin-top: 20px; }
 
-/*プレビュー画像の表示スタイル*/
-.preview img {
-max-width: 100%; max-height: 200px; margin-top: 10px; border-radius: 6px;
-}
-
 /* --- 選択内容プレビューパネルのスタイル (維持) --- */
 #previewPanel {
     position: fixed;
@@ -373,49 +368,57 @@ function calculateTotal() {
     totalEl.textContent = total.toLocaleString();
 }
 
-// ★★★ ここを差し替えます ★★★
+// ★★★ 修正済みの関数 ★★★
 function updateTypePreview() {
-    const selected = document.querySelector('input[name="type"]:checked');
-    // まず、既存のプレビュー用画像をすべて削除します
+    // 1. プレビュー画像を表示する専用のコンテナを取得します
     const previewContainer = document.getElementById('typeImageBelowOptions');
-    previewContainer.innerHTML = ''; // コンテナを空にする
 
-    // data-imgs属性があるかチェックします
+    // 2. まず、コンテナの中を空にして、古いプレビュー画像を消去します
+    previewContainer.innerHTML = '';
+
+    // 3. 現在選択されているラジオボタンを取得します
+    const selected = document.querySelector('input[name="type"]:checked');
+
+    // 4. ラジオボタンが選択されており、'data-imgs'属性を持っているか確認します
     if (selected && selected.dataset.imgs) {
-        // カンマでURLを分割して配列にします
+        
+        // 5. 'data-imgs' の中身をカンマで分割し、URLの配列を作成します
         const imageUrls = selected.dataset.imgs.split(',');
 
-        // 各URLに対して画像を作成し、表示します
+        // 6. 配列内の各URLに対して、画像(<img>タグ)を生成します
         imageUrls.forEach(url => {
-            // URLの前後にあるかもしれない空白を削除
-            const imageUrl = url.trim();
-            if(imageUrl) { // URLが空でない場合のみ処理
-                const img = document.createElement("img");
+            const imageUrl = url.trim(); // URL前後の空白を削除
+            if (imageUrl) { // URLが空でなければ実行
+                const img = document.createElement('img');
                 img.src = imageUrl;
                 img.alt = "タイプ画像";
-                img.style.maxWidth = "50%"; // 2枚横に並べるため、幅を調整
-                img.style.maxHeight = "200px";
-                img.style.marginTop = "10px";
-                img.style.borderRadius = "6px";
-                img.style.cursor = "pointer";
-                img.style.boxSizing = "border-box"; // paddingやborderを幅に含める
-                img.style.padding = "0 5px"; // 画像間の隙間
+                
+                // スタイルを設定（2枚横並びを意識）
+                img.style.maxWidth = '50%';
+                img.style.maxHeight = '200px';
+                img.style.boxSizing = 'border-box';
+                img.style.padding = '0 5px';
+                img.style.cursor = 'pointer';
+                img.style.borderRadius = '6px';
+                img.style.display = 'inline-block'; // 横並びのため
+                
                 img.onclick = () => showPopup(img.src);
 
-                // プレビューコンテナに画像を追加
+                // 7. コンテナに生成した画像を追加します
                 previewContainer.appendChild(img);
             }
         });
 
-        // 拡大に関する注釈を追加
-        if(imageUrls.length > 0 && imageUrls[0].trim() !== '') {
+        // 8. 画像が1枚以上ある場合、「クリックで拡大」の注釈を追加します
+        const hasImages = imageUrls.some(url => url.trim() !== '');
+        if (hasImages) {
             const note = document.createElement("p");
             note.textContent = "※画像をクリックすると拡大します。";
             note.style.color = "#d66";
             note.style.fontSize = "0.9em";
-            note.style.marginTop = "5px";
-            note.style.marginBottom = "20px";
-            note.style.textAlign = "center"; // 注釈を中央揃えに
+            note.style.textAlign = "center";
+            note.style.width = "100%";
+            note.style.marginTop = "10px";
             previewContainer.appendChild(note);
         }
     }
