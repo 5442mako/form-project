@@ -663,7 +663,6 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("送信に失敗しました。時間をおいて再度お試しください。\n\nエラー詳細: " + error.message);
     };
     
-    // ▼▼▼▼▼ ここからが修正箇所です ▼▼▼▼▼
     const handleSubmit = (event) => {
         event.preventDefault();
         let hasError = false;
@@ -750,10 +749,8 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(filesData => {
                 data.images = filesData;
                 
-                // ★★★★★ このURLを必ず書き換えてください ★★★★★
-                const GAS_WEB_APP_URL = 'ここに【必ず】GASのウェブアプリURLを貼り付けてください';
+                const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxD6iQRuWtez4CABt0d6eIum3SolAYtefR3FmUbLgx8W-mnKy_WSc6ocAjZC8e_2Nc3/exec';
 
-                // fetchを使ってGASにデータを送信
                 fetch(GAS_WEB_APP_URL, {
                     method: 'POST',
                     mode: 'cors',
@@ -761,12 +758,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(data),
-                    // リダイレクトを追跡しないように設定
                     redirect: 'follow', 
                 })
                 .then(response => {
                     if (!response.ok) {
-                        // サーバーからのエラーレスポンスを処理
                         throw new Error(`サーバーエラー: ${response.status}`);
                     }
                     return response.json();
@@ -782,8 +777,6 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(e => onFailure(e));
     };
-    // ▲▲▲▲▲ ここまでが修正箇所です ▲▲▲▲▲
-
 
     // --- イベントリスナー設定 ---
     popupOverlay.addEventListener('click', hidePopup);
@@ -815,7 +808,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         selectedFiles.push(...newFiles);
         renderFilePreview();
-        imageFileInput.value = ''; // 同じファイルを選択できるようにするため
+        imageFileInput.value = '';
     });
     
     estimateForm.addEventListener('submit', handleSubmit);
