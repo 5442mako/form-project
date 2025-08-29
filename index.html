@@ -528,12 +528,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingOverlay = document.getElementById('loadingOverlay');
     const loadingText = document.getElementById('loadingText');
 
-    let selectedFiles = []; // 選択されたファイルを管理する配列
-    
-    // --- GASのURL ---
+    let selectedFiles = [];
     const gasUrl = "https://script.google.com/macros/s/AKfycbytDXqM6zOc8ohaNdO_qFjEHE3IaB-rwyZRziWhv-QV-mdmeMJ65wf6abOMzFmjf5q6/exec";
 
-    // --- 関数定義 ---
     const showLoading = (text) => {
         loadingText.textContent = text;
         loadingOverlay.style.opacity = '1';
@@ -583,7 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
         totalEl.textContent = total.toLocaleString();
         updatePreviewPanel();
     };
-    
+
     const createPreviewImage = (url, altText, container, isOption = false) => {
         const img = document.createElement('img');
         img.src = url;
@@ -593,7 +590,7 @@ document.addEventListener('DOMContentLoaded', () => {
         img.style.cursor = 'pointer';
         img.style.borderRadius = '6px';
         img.onclick = () => showPopup(img.src);
-        
+
         if (isOption) {
             img.style.maxWidth = "150px";
             img.style.maxHeight = "150px";
@@ -604,7 +601,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img.style.padding = '0 5px';
             img.style.display = 'inline-block';
         }
-        
+
         container.appendChild(img);
     };
 
@@ -613,8 +610,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const selected = document.querySelector('input[name="type"]:checked');
         if (selected?.dataset.imgs) {
             const imageUrls = selected.dataset.imgs.split(',').map(url => url.trim()).filter(Boolean);
-            imageUrls.forEach(url => createPreviewImage(url, "タイプ画像", typePreviewContainer));
             if (imageUrls.length > 0) {
+                imageUrls.forEach(url => createPreviewImage(url, "タイプ画像", typePreviewContainer));
                 const note = document.createElement("p");
                 note.textContent = "※画像をクリックすると拡大します。";
                 note.className = "preview-note";
@@ -630,7 +627,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const wrapper = document.createElement("div");
                 wrapper.className = "optionImageWrapper";
                 createPreviewImage(opt.dataset.imgs, "オプション画像", wrapper, true);
-                
+
                 const note = document.createElement("p");
                 note.textContent = "※画像をクリックすると拡大します。";
                 note.className = "preview-note";
@@ -639,27 +636,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
-    
-    // ファイルプレビューを更新する関数
+
     const renderFilePreview = () => {
         filePreviewContainer.innerHTML = '';
         selectedFiles.forEach((file, index) => {
             const previewItem = document.createElement('div');
             previewItem.className = 'file-preview-item';
-
             const fileName = document.createElement('span');
             fileName.textContent = file.name;
-            
             const removeBtn = document.createElement('button');
             removeBtn.textContent = '削除';
             removeBtn.onclick = () => {
                 selectedFiles.splice(index, 1);
                 renderFilePreview();
                 if (selectedFiles.length === 0) {
-                    imageFileInput.value = ''; // ファイルリストが空になったらinputをリセット
+                    imageFileInput.value = '';
                 }
             };
-
             previewItem.appendChild(fileName);
             previewItem.appendChild(removeBtn);
             filePreviewContainer.appendChild(previewItem);
@@ -671,7 +664,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let hasError = false;
         let firstErrorElement = null;
 
-        // Reset errors
         radios.forEach(input => input.parentElement.classList.remove("highlight-error"));
         typeErrorMessage.classList.add('is-hidden');
         nameInput.classList.remove("input-error");
@@ -680,7 +672,6 @@ document.addEventListener('DOMContentLoaded', () => {
         emailErrorMessage.classList.add("is-hidden");
         fileErrorMessage.classList.add("is-hidden");
 
-        // Validation
         const selectedType = document.querySelector('input[name="type"]:checked');
         if (!selectedType) {
             hasError = true;
@@ -715,11 +706,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // 送信ボタンを無効化し、ローディングを表示
         submitBtn.disabled = true;
         showLoading("送信中です...しばらくお待ちください。");
 
-        // データ収集
         const selectedTypeLabel = selectedType.parentElement.textContent.trim();
         const note = noteTextarea.value;
         const total = totalEl.textContent.replace(/,/g, '');
@@ -727,7 +716,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ? ['追加オプションなし']
             : Array.from(document.querySelectorAll('.additional-option-item:checked')).map(opt => opt.parentElement.textContent.trim());
 
-        // ファイルをBase64に変換
         const fileDataArray = [];
         for (const file of selectedFiles) {
             const base64 = await new Promise((resolve, reject) => {
@@ -741,7 +729,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 data: base64
             });
         }
-        
+
         const data = {
             name: name,
             email: email,
@@ -751,7 +739,7 @@ document.addEventListener('DOMContentLoaded', () => {
             optionLabels: optionLabels,
             images: fileDataArray
         };
-        
+
         try {
             const response = await fetch(gasUrl, {
                 method: 'POST',
@@ -776,25 +764,51 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // --- イベントリスナーの設定 ---
+    radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            calculateTotal();
+            updateTypePreview();
+        });
+    });
+
+    allOptionCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            if (checkbox.id === 'noOptionCheckbox') {
+                actualOptionItems.forEach(item => {
+                    item.disabled = checkbox.checked;
+                    if (checkbox.checked) {
+                        item.checked = false;
+                    }
+                });
+            } else {
+                if (checkbox.checked) {
+                    noOptionCheckbox.checked = false;
+                }
+            }
+            calculateTotal();
+            updateOptionPreview();
+        });
+    });
+
     // ファイル選択時のイベント
     imageFileInput.addEventListener('change', (event) => {
         fileErrorMessage.classList.add("is-hidden");
         const newFiles = Array.from(event.target.files);
-        
+
         if (newFiles.length > 5) {
             fileErrorMessage.classList.remove('is-hidden');
-            // ファイル選択をリセット
             imageFileInput.value = '';
             selectedFiles = [];
         } else {
-            // 新しく選択されたファイルで配列を置き換え
             selectedFiles = newFiles;
         }
         renderFilePreview();
     });
-    
+
     estimateForm.addEventListener('submit', handleSubmit);
-    
+    popupOverlay.addEventListener('click', hidePopup);
+
     // Responsive panel movement
     const originalPreviewPanelParent = previewPanel?.parentElement;
     const originalPreviewPanelNextSibling = previewPanel?.nextSibling;
