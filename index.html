@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>イラスト申し込み</title>
 <meta name="robots" content="noai, noimageai, noindex, nofollow">
-<meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <style>
 /* --- スタイルは変更なし --- */
@@ -394,29 +393,31 @@ button[type="submit"]:hover:not([disabled]) {
     </p>
   </div>
   <div class="content-wrapper">
-    <form id="estimateForm">
+    <form id="estimateForm" action="https://formspree.io/f/your-form-id" method="POST">
       <h3 id="illustrationTypeSectionH3">【ご希望のイラストタイプ】<span class="required-note">※必須。</span></h3>
-      <label><input type="radio" name="type" value="5000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image196.webp"> 顔アップ（5,000円）</label>
-      <label><input type="radio" name="type" value="8000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/575755441817780548.webp"> バストアップ（8,000円）</label>
-      <label><input type="radio" name="type" value="10000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image107.webp"> 膝上（10,000円）</label>
-      <label><input type="radio" name="type" value="13000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/イラスト210.webp"> 全身（13,000円）</label>
-      <label><input type="radio" name="type" value="40000" > Live2D用イラストパーツ分け（40,000円）</label>
-      <label><input type="radio" name="type" value="25000" > Live2Dバストアップ（25,000円）</label>
-      <label><input type="radio" name="type" value="15000" > キャラ・衣装デザイン（15,000円）</label>
+      <label><input type="radio" name="イラストタイプ" value="顔アップ（5,000円）" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image196.webp"> 顔アップ（5,000円）</label>
+      <label><input type="radio" name="イラストタイプ" value="バストアップ（8,000円）" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/575755441817780548.webp"> バストアップ（8,000円）</label>
+      <label><input type="radio" name="イラストタイプ" value="膝上（10,000円）" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image107.webp"> 膝上（10,000円）</label>
+      <label><input type="radio" name="イラストタイプ" value="全身（13,000円）" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/イラスト210.webp"> 全身（13,000円）</label>
+      <label><input type="radio" name="イラストタイプ" value="Live2D用イラストパーツ分け（40,000円）" > Live2D用イラストパーツ分け（40,000円）</label>
+      <label><input type="radio" name="イラストタイプ" value="Live2Dバストアップ（25,000円）" > Live2Dバストアップ（25,000円）</label>
+      <label><input type="radio" name="イラストタイプ" value="キャラ・衣装デザイン（15,000円）" > キャラ・衣装デザイン（15,000円）</label>
       <p id="typeErrorMessage" class="error-message is-hidden">※ご希望のイラストタイプを選択してください。</p>
       <div id="typeImageBelowOptions" class="preview"></div>
 
       <h3>【追加オプション（複数選択可）】<span class="required-note">※必須。</span></h3>
-      <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="3000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image209.webp"> 背景（3,000円〜）</label>
-      <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="15000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image216.webp"> 細かい背景（15,000円〜）</label>
-      <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" > 細かい装飾（5,000円）</label>
-      <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" > ぬいぐるみ（動物など）・大きめアクセ（5,000円）</label>
-      <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="10000"> 追加衣装（1着ごと10,000円）</label>
-      <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000"> 商用利用（5,000円）</label>
-      <label><input type="checkbox" class="option" id="noOptionCheckbox" name="additionalOption" value="0"> 追加オプションなし</label>
+      <label><input type="checkbox" class="option additional-option-item" name="追加オプション[]" value="背景（3,000円〜）" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image209.webp"> 背景（3,000円〜）</label>
+      <label><input type="checkbox" class="option additional-option-item" name="追加オプション[]" value="細かい背景（15,000円〜）" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image216.webp"> 細かい背景（15,000円〜）</label>
+      <label><input type="checkbox" class="option additional-option-item" name="追加オプション[]" value="細かい装飾（5,000円）" > 細かい装飾（5,000円）</label>
+      <label><input type="checkbox" class="option additional-option-item" name="追加オプション[]" value="ぬいぐるみ・大きめアクセ（5,000円）" > ぬいぐるみ（動物など）・大きめアクセ（5,000円）</label>
+      <label><input type="checkbox" class="option additional-option-item" name="追加オプション[]" value="追加衣装（1着ごと10,000円）"> 追加衣装（1着ごと10,000円）</label>
+      <label><input type="checkbox" class="option additional-option-item" name="追加オプション[]" value="商用利用（5,000円）"> 商用利用（5,000円）</label>
+      <label><input type="checkbox" class="option" id="noOptionCheckbox" name="追加オプション" value="追加オプションなし"> 追加オプションなし</label>
+      <div id="optionPreview" class="preview"></div>
 
       <h3>【合計】</h3>
       <div class="total">簡易見積合計金額：¥<span id="total">0</span></div>
+      <input type="hidden" name="合計金額" id="totalInput">
       <div class="estimate-note">
         ※この金額はあくまで目安です。<br>
         ※実際の費用は内容を確認のうえ、<br>正式にお見積もりさせていただきます。
@@ -424,15 +425,17 @@ button[type="submit"]:hover:not([disabled]) {
       
       <h3 id="contactInfoSectionH3">【ご連絡先】</h3>
       <p>お名前orハンドルネーム<span class="required-note">※必須。</span></p>
-      <input type="text" id="name" placeholder="※例：花束の住人、yamada100">
+      <input type="text" id="name" name="お名前" placeholder="※例：花束の住人、yamada100">
       <p id="nameErrorMessage" class="error-message is-hidden">※お名前orハンドルネームをご入力してください。</p>
       <p>メールアドレス<span class="required-note">※必須。</span></p>
-      <input type="email" id="email" placeholder="※例：example@gmail.com">
+      <input type="email" id="email" name="メールアドレス" placeholder="※例：example@gmail.com">
       <p id="emailErrorMessage" class="error-message is-hidden">※正しいメールアドレスをご入力ください。</p>
       
       <h3>【ご依頼用テンプレート】<span class="required-note">※必須。</span></h3>
-      <textarea id="note" placeholder="ご要望があればご自由にご記入ください。例：髪色・服装・性格イメージ／使用目的（アイコン・Live2Dなど）／ポーズや構図／背景の有無 など" rows="30">
+      <textarea id="note" name="ご依頼用テンプレート" placeholder="ご要望があればご自由にご記入ください。例：髪色・服装・性格イメージ／使用目的（アイコン・Live2Dなど）／ポーズや構図／背景の有無 など" rows="30">
+
 －－－－－－－－－－－－－－－－－－－－－－
+
 【納期】：
 【納期の前倒しの可否】：
 【使用用途】：
@@ -445,15 +448,24 @@ button[type="submit"]:hover:not([disabled]) {
 【ご希望のポーズ】：
 【雰囲気】：
 【表情】：
+
 【実績公開可能日時】：
+
 －－－－－－－－－－－－－－－－－－－－－－
 任意欄
+
 ◎ご依頼検討の決め手となったイラストなどがあればお教えください
+
 ◎その他ご相談したい事などございましたお教えください
+
 詳細資料などございましたらご提示頂けますと助かります。
 お手数お掛け致しますがどうぞよろしくお願い致します。
 </textarea>
       
+      <h3>【参考画像（添付）】</h3>
+      <input type="file" id="imageFile" name="参考画像[]" accept="image/*" multiple>
+      <p class="section-description">※参考資料などありましたら画像を添付してください。<br>Windowsの方はCtrlキー、Macの方はCommandキーを押しながらクリックすることで、複数のファイルを選択できます。（最大5枚）</p>
+      <div id="filePreviewContainer"></div>
       <p id="fileErrorMessage" class="error-message is-hidden">※ファイルは5枚までしか選択できません。</p>
       <button id="submitBtn" type="submit">送信</button>
     </form>
@@ -493,7 +505,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = document.getElementById("submitBtn");
     const optionPreviewContainer = document.getElementById("optionPreview");
     const typePreviewContainer = document.getElementById('typeImageBelowOptions');
-    const radios = document.querySelectorAll('input[name="type"]');
+    const radios = document.querySelectorAll('input[name="イラストタイプ"]');
     const allOptionCheckboxes = document.querySelectorAll('.option');
     const noOptionCheckbox = document.getElementById('noOptionCheckbox');
     const actualOptionItems = document.querySelectorAll('.additional-option-item');
@@ -506,13 +518,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const nameInput = document.getElementById("name");
     const emailInput = document.getElementById("email");
     const noteTextarea = document.getElementById("note");
+    const imageFileInput = document.getElementById("imageFile");
     const nameErrorMessage = document.getElementById("nameErrorMessage");
     const emailErrorMessage = document.getElementById("emailErrorMessage");
     const typeErrorMessage = document.getElementById("typeErrorMessage");
+    const fileErrorMessage = document.getElementById("fileErrorMessage");
     const illustrationTypeSectionH3 = document.getElementById("illustrationTypeSectionH3");
     const contactInfoSectionH3 = document.getElementById("contactInfoSectionH3");
+    const filePreviewContainer = document.getElementById('filePreviewContainer');
     const loadingOverlay = document.getElementById('loadingOverlay');
     const loadingText = document.getElementById('loadingText');
+    const totalInput = document.getElementById('totalInput');
+
+    let selectedFiles = []; // 選択されたファイルを管理する配列
 
     // --- 関数定義 ---
     const showLoading = (text) => {
@@ -535,7 +553,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const updatePreviewPanel = () => {
-        const selectedTypeRadio = document.querySelector('input[name="type"]:checked');
+        const selectedTypeRadio = document.querySelector('input[name="イラストタイプ"]:checked');
         previewTypeEl.textContent = selectedTypeRadio ? selectedTypeRadio.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '') : "未選択";
 
         let optionsText = "なし";
@@ -553,15 +571,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const calculateTotal = () => {
         let total = 0;
-        const selectedType = document.querySelector('input[name="type"]:checked');
-        if (selectedType) total += parseInt(selectedType.value, 10);
+        const selectedType = document.querySelector('input[name="イラストタイプ"]:checked');
+        if (selectedType) total += parseInt(selectedType.value.match(/\d+/)?.at(0), 10);
 
         if (!noOptionCheckbox?.checked) {
             actualOptionItems.forEach(opt => {
-                if (opt.checked) total += parseInt(opt.value, 10);
+                const valueMatch = opt.value.match(/\d+/);
+                if (opt.checked && valueMatch) total += parseInt(valueMatch[0], 10);
             });
         }
         totalEl.textContent = total.toLocaleString();
+        totalInput.value = total;
         updatePreviewPanel();
     };
     
@@ -591,7 +611,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updateTypePreview = () => {
         typePreviewContainer.innerHTML = '';
-        const selected = document.querySelector('input[name="type"]:checked');
+        const selected = document.querySelector('input[name="イラストタイプ"]:checked');
         if (selected?.dataset.imgs) {
             const imageUrls = selected.dataset.imgs.split(',').map(url => url.trim()).filter(Boolean);
             imageUrls.forEach(url => createPreviewImage(url, "タイプ画像", typePreviewContainer));
@@ -621,20 +641,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
     
-    const onSuccess = (result) => {
-        hideLoading();
-        formContainer.classList.add("is-hidden");
-        completeMessage.classList.remove("is-hidden");
-        previewPanel?.classList.add("is-hidden");
+    // ファイルプレビューを更新する関数
+    const renderFilePreview = () => {
+        filePreviewContainer.innerHTML = '';
+        selectedFiles.forEach((file, index) => {
+            const previewItem = document.createElement('div');
+            previewItem.className = 'file-preview-item';
+
+            const fileName = document.createElement('span');
+            fileName.textContent = file.name;
+            
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = '削除';
+            removeBtn.onclick = () => {
+                selectedFiles.splice(index, 1);
+                renderFilePreview();
+                if (selectedFiles.length === 0) {
+                    imageFileInput.value = ''; // ファイルリストが空になったらinputをリセット
+                }
+            };
+
+            previewItem.appendChild(fileName);
+            previewItem.appendChild(removeBtn);
+            filePreviewContainer.appendChild(previewItem);
+        });
     };
 
-    const onFailure = (error) => {
-        hideLoading();
-        submitBtn.disabled = false;
-        alert("送信に失敗しました。時間をおいて再度お試しください。\n\nエラー詳細: " + error.message);
-    };
-    
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         let hasError = false;
         let firstErrorElement = null;
@@ -646,9 +679,10 @@ document.addEventListener('DOMContentLoaded', () => {
         nameErrorMessage.classList.add("is-hidden");
         emailInput.classList.remove("input-error");
         emailErrorMessage.classList.add("is-hidden");
+        fileErrorMessage.classList.add("is-hidden");
 
         // Validation
-        const selectedType = document.querySelector('input[name="type"]:checked');
+        const selectedType = document.querySelector('input[name="イラストタイプ"]:checked');
         if (!selectedType) {
             hasError = true;
             firstErrorElement = illustrationTypeSectionH3;
@@ -672,57 +706,70 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!firstErrorElement) firstErrorElement = contactInfoSectionH3;
         }
 
-        if (hasError) {
-            firstErrorElement?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            return;
+        if (selectedFiles.length > 5) {
+            hasError = true;
+            fileErrorMessage.classList.remove('is-hidden');
         }
 
-        submitBtn.disabled = true;
-        showLoading("送信中です...しばらくお待ちください。");
-
-        const selectedTypeLabel = selectedType.parentElement.textContent.trim();
-        const note = noteTextarea.value;
-        const total = totalEl.textContent.replace(/,/g, '');
-        const optionLabels = noOptionCheckbox.checked
-            ? ['追加オプションなし']
-            : Array.from(document.querySelectorAll('.additional-option-item:checked')).map(opt => opt.parentElement.textContent.trim());
-
-        const data = {
-            name: name,
-            email: email,
-            total: total,
-            note: note,
-            typeLabel: selectedTypeLabel,
-            optionLabels: optionLabels,
-        };
+        if (hasError) {
+            firstErrorElement?.scroll-into-view({ behavior: 'smooth', block: 'center' });
+            return;
+        }
         
-        const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbytDXqM6zOc8ohaNdO_qFjEHE3IaB-rwyZRziWhv-QV-mdmeMJ65wf6abOMzFmjf5q6/exec';
+        // Prevent submission if no options are selected
+        const selectedOptions = document.querySelectorAll('.additional-option-item:checked');
+        if (selectedOptions.length === 0 && !noOptionCheckbox.checked) {
+             alert('追加オプションを選択するか、「追加オプションなし」にチェックを入れてください。');
+             return;
+        }
+        
+        // Formspree logic
+        showLoading("送信中です...しばらくお待ちください。");
+        submitBtn.disabled = true;
 
-        fetch(GAS_WEB_APP_URL, {
-            method: 'POST',
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-            redirect: 'follow', 
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`サーバーエラー: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(result => {
-            if (result.status === 'success') {
-                onSuccess(result);
+        const formData = new FormData(estimateForm);
+        const selectedTypeElement = document.querySelector('input[name="イラストタイプ"]:checked');
+        if (selectedTypeElement) {
+            formData.set('イラストタイプ', selectedTypeElement.parentElement.textContent.trim());
+        }
+
+        const optionValues = Array.from(document.querySelectorAll('.additional-option-item:checked')).map(opt => opt.parentElement.textContent.trim());
+        if (noOptionCheckbox.checked) {
+            optionValues.push('追加オプションなし');
+        }
+        formData.set('追加オプション', optionValues.join(', '));
+        
+        // Handle file uploads
+        if (selectedFiles.length > 0) {
+             selectedFiles.forEach(file => {
+                 formData.append('参考画像', file);
+             });
+        }
+        
+        try {
+            const response = await fetch(estimateForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                formContainer.classList.add("is-hidden");
+                completeMessage.classList.remove("is-hidden");
+                previewPanel?.classList.add("is-hidden");
             } else {
-                throw new Error(result.message || '不明なエラーが発生しました。');
+                alert("送信に失敗しました。フォームの設定を確認してください。");
             }
-        })
-        .catch(error => onFailure(error));
+        } catch (error) {
+            alert("送信中にエラーが発生しました。\n\n" + error.message);
+        } finally {
+            hideLoading();
+            submitBtn.disabled = false;
+        }
     };
-
+    
     // --- イベントリスナー設定 ---
     popupOverlay.addEventListener('click', hidePopup);
     document.addEventListener('contextmenu', e => { if (e.target.tagName === "IMG") e.preventDefault(); });
@@ -740,8 +787,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
+    // ファイル選択時のイベント
+    imageFileInput.addEventListener('change', (event) => {
+        fileErrorMessage.classList.add("is-hidden");
+        const newFiles = Array.from(event.target.files);
+        
+        if (newFiles.length > 5) {
+            fileErrorMessage.classList.remove('is-hidden');
+            // ファイル選択をリセット
+            imageFileInput.value = '';
+            selectedFiles = [];
+        } else {
+            // 新しく選択されたファイルで配列を置き換え
+            selectedFiles = newFiles;
+        }
+        renderFilePreview();
+    });
+    
     estimateForm.addEventListener('submit', handleSubmit);
     
+    // Responsive panel movement
     const originalPreviewPanelParent = previewPanel?.parentElement;
     const originalPreviewPanelNextSibling = previewPanel?.nextSibling;
     const movePreviewPanel = () => {
