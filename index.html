@@ -529,6 +529,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingText = document.getElementById('loadingText');
 
     let selectedFiles = [];
+    // GASウェブアプリのURL
     const gasUrl = "https://script.google.com/macros/s/AKfycbytDXqM6zOc8ohaNdO_qFjEHE3IaB-rwyZRziWhv-QV-mdmeMJ65wf6abOMzFmjf5q6/exec";
 
     const showLoading = (text) => {
@@ -746,6 +747,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
+                // mode: 'cors' を追加
+                mode: 'cors',
                 body: JSON.stringify(data)
             });
 
