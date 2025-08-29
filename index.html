@@ -8,430 +8,431 @@
 <style>
 /* --- スタイルは変更なし --- */
 body {
-    background-color: #f7f9fc;
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-    flex-direction: column;
-    align-items: center;
+    background-color: #f7f9fc;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    flex-direction: column;
+    align-items: center;
 }
 .container {
-    background: white;
-    padding: 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 700px;
-    box-sizing: border-box;
+    background: white;
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
 }
 .content-wrapper {
-    padding: 15px 40px;
+    padding: 15px 40px;
 }
 .header-image {
-    display: block;
-    width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    display: block;
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 .disclaimer-container {
-    padding: 15px 40px;
-    border-top: 2px solid #ff91d7;
-    border-bottom: 2px solid #ff91d7;
-    text-align: center;
+    padding: 15px 40px;
+    border-top: 2px solid #ff91d7;
+    border-bottom: 2px solid #ff91d7;
+    text-align: center;
 }
 .disclaimer-container p {
-    margin: 0;
-    font-size: 14px;
-    color: #000000;
-    line-height: 1.6;
+    margin: 0;
+    font-size: 14px;
+    color: #000000;
+    line-height: 1.6;
 }
 h2, h3 {
-    color: #333;
+    color: #333;
 }
 h3 {
-    font-size: 1.15em;
-    font-weight: 600;
-    margin-top: 40px;
-    padding-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border-bottom: 2px solid #ff91d7;
+    font-size: 1.15em;
+    font-weight: 600;
+    margin-top: 40px;
+    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid #ff91d7;
 }
 .section-description {
-    font-size: 14px;
-    color: #666;
-    margin: 4px 0 12px;
+    font-size: 14px;
+    color: #666;
+    margin: 4px 0 12px;
 }
 .required-note {
-    color: #FF0000;
-    font-size: 12px;
+    color: #FF0000;
+    font-size: 12px;
 }
 label {
-    display: block;
-    margin: 6px 0;
-    color: #222;
+    display: block;
+    margin: 6px 0;
+    color: #222;
 }
 input[type="text"],
 input[type="email"],
 textarea {
-    font-size: 16px;
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
 }
 input[type="file"] {
-    margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 .input-error {
-    border-color: red !important;
-    outline: 1px solid red;
-    background-color: #fff8f8;
+    border-color: red !important;
+    outline: 1px solid red;
+    background-color: #fff8f8;
 }
 label.highlight-error {
-    color: red !important;
+    color: red !important;
 }
 .error-message {
-    color: red;
-    font-size: 0.9em;
-    margin: -10px 0 15px;
-    line-height: 1.4;
-    background-color: #fff0f0;
-    padding: 6px 8px;
-    border: 1px solid #ffcccc;
-    border-radius: 4px;
+    color: red;
+    font-size: 0.9em;
+    margin: -10px 0 15px;
+    line-height: 1.4;
+    background-color: #fff0f0;
+    padding: 6px 8px;
+    border: 1px solid #ffcccc;
+    border-radius: 4px;
 }
 .total {
-    font-size: 1.3em;
-    font-weight: bold;
-    color: #1e7c27;
-    text-align: center;
-    margin-top: 24px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #1e7c27;
+    text-align: center;
+    margin-top: 24px;
 }
 .estimate-note {
-    text-align: center;
-    color: #555;
-    font-size: 14px;
-    margin-top: 10px;
-    line-height: 1.5;
+    text-align: center;
+    color: #555;
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 1.5;
 }
 .preview img {
-    max-width: 100%;
-    max-height: 200px;
-    margin-top: 10px;
-    border-radius: 6px;
+    max-width: 100%;
+    max-height: 200px;
+    margin-top: 10px;
+    border-radius: 6px;
 }
 .preview-note {
-    color: #d66;
-    font-size: 0.9em;
-    text-align: center;
-    width: 100%;
-    margin-top: 10px;
+    color: #d66;
+    font-size: 0.9em;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
 }
 #optionPreview {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
 }
 .optionImageWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .optionImageWrapper .preview-note {
-    font-size: 0.8em;
-    margin-top: 5px;
+    font-size: 0.8em;
+    margin-top: 5px;
 }
 #filePreviewContainer {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 .file-preview-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 12px;
-    background-color: #f4f4f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #f4f4f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.9em;
 }
 .file-preview-item span {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 10px;
 }
 .file-preview-item button {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 4px 8px;
-    cursor: pointer;
-    font-size: 0.8em;
-    line-height: 1;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.8em;
+    line-height: 1;
 }
 .file-preview-item button:hover {
-    background-color: #cc0000;
+    background-color: #cc0000;
 }
 button[type="submit"] {
-    background-color: #446dff;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    font-size: 1em;
-    width: 10em;
-    cursor: pointer;
-    margin-top: 30px;
-    transition: all 0.3s ease;
+    background-color: #446dff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    width: 10em;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s ease;
 }
 button[type="submit"][disabled] {
-    background-color: #888;
-    cursor: not-allowed;
+    background-color: #888;
+    cursor: not-allowed;
 }
 button[type="submit"]:hover:not([disabled]) {
-    background-color: #ff69b4;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: #ff69b4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 #previewPanel {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 270px;
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-top: 4px solid #ff8cc6;
-    border-radius: 8px;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
-    padding: 18px 22px;
-    z-index: 1000;
-    font-size: 13.5px;
-    box-sizing: border-box;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 270px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-top: 4px solid #ff8cc6;
+    border-radius: 8px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+    padding: 18px 22px;
+    z-index: 1000;
+    font-size: 13.5px;
+    box-sizing: border-box;
 }
 #previewPanel h4 {
-    font-size: 1.15em;
-    color: #2c2c2c;
-    margin: 0 0 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #f0f0f0;
-    display: flex;
-    align-items: center;
+    font-size: 1.15em;
+    color: #2c2c2c;
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
 }
 #previewPanel h4::before {
-    content: '📋';
-    margin-right: 8px;
-    font-size: 1.1em;
-    color: #ff8cc6;
+    content: '📋';
+    margin-right: 8px;
+    font-size: 1.1em;
+    color: #ff8cc6;
 }
 #previewPanel p {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #f5f5f5;
-    line-height: 1.4;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f5f5f5;
+    line-height: 1.4;
 }
 #previewPanel p:last-child {
-    border-bottom: none;
-    margin: 12px 0 0;
-    padding: 12px 0 0;
-    border-top: 1px solid #e9e9e9;
+    border-bottom: none;
+    margin: 12px 0 0;
+    padding: 12px 0 0;
+    border-top: 1px solid #e9e9e9;
 }
 #previewPanel p strong {
-    display: block;
-    color: #444;
-    font-weight: 600;
-    margin-bottom: 6px;
-    font-size: 0.9em;
+    display: block;
+    color: #444;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 0.9em;
 }
 #previewPanel p span:not(.preview-total-highlight) {
-    display: block;
-    color: #333;
-    padding-left: 8px;
-    font-size: 0.95em;
-    word-break: break-word;
-    line-height: 1.55;
+    display: block;
+    color: #333;
+    padding-left: 8px;
+    font-size: 0.95em;
+    word-break: break-word;
+    line-height: 1.55;
 }
 #previewPanel .preview-total-highlight {
-    font-size: 1.65em;
-    color: #1a650e;
-    font-weight: bold;
-    background-color: #e6f4e3;
-    padding: 7px 14px;
-    border-radius: 6px;
-    display: inline-block;
-    text-align: left;
-    border: 1px solid #c8e6c1;
-    margin-top: 4px;
+    font-size: 1.65em;
+    color: #1a650e;
+    font-weight: bold;
+    background-color: #e6f4e3;
+    padding: 7px 14px;
+    border-radius: 6px;
+    display: inline-block;
+    text-align: left;
+    border: 1px solid #c8e6c1;
+    margin-top: 4px;
 }
 .popup-overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.8);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
 }
 .popup-overlay img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .complete {
-    text-align: center;
-    padding: 40px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    max-width: 500px;
-    margin: 20px auto;
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 20px auto;
 }
 .is-hidden {
-    display: none !important;
+    display: none !important;
 }
 #closeTabButton {
-    background-color: #446dff;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    font-size: 1em;
-    width: 10em;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: all 0.3s ease;
+    background-color: #446dff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    width: 10em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
 }
 #loadingOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
 }
 .spinner {
-    border: 6px solid #f3f3f3;
-    border-top: 6px solid #ff69b4;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #ff69b4;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
 }
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 #loadingText {
-    margin-top: 20px;
-    color: #555;
-    font-size: 1.1em;
+    margin-top: 20px;
+    color: #555;
+    font-size: 1.1em;
 }
 @media (max-width: 980px) {
-    body { padding: 20px; }
-    .content-wrapper { padding: 15px 20px; }
-    .disclaimer-container { padding: 15px 20px; }
-    #previewPanel {
-        position: static;
-        width: 100%;
-        margin: 25px 0;
-        padding: 15px 18px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        border-top-width: 3px;
-    }
-    #previewPanel h4 { font-size: 1.1em; margin-bottom: 15px; padding-bottom: 10px; }
-    #previewPanel h4::before { font-size: 1em; }
-    #previewPanel p { margin-bottom: 8px; padding-bottom: 8px; line-height: 1.3; }
-    #previewPanel p strong { font-size: 0.85em; }
-    #previewPanel p span:not(.preview-total-highlight) { font-size: 0.9em; padding-left: 6px; }
-    #previewPanel .preview-total-highlight { font-size: 1.55em; padding: 6px 12px; }
+    body { padding: 20px; }
+    .content-wrapper { padding: 15px 20px; }
+    .disclaimer-container { padding: 15px 20px; }
+    #previewPanel {
+        position: static;
+        width: 100%;
+        margin: 25px 0;
+        padding: 15px 18px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        border-top-width: 3px;
+    }
+    #previewPanel h4 { font-size: 1.1em; margin-bottom: 15px; padding-bottom: 10px; }
+    #previewPanel h4::before { font-size: 1em; }
+    #previewPanel p { margin-bottom: 8px; padding-bottom: 8px; line-height: 1.3; }
+    #previewPanel p strong { font-size: 0.85em; }
+    #previewPanel p span:not(.preview-total-highlight) { font-size: 0.9em; padding-left: 6px; }
+    #previewPanel .preview-total-highlight { font-size: 1.55em; padding: 6px 12px; }
 }
 @media (max-width: 600px) {
-    body { padding: 15px; }
-    .content-wrapper { padding: 15px; }
-    h3 { font-size: 1.1em; }
-    input[type="text"], input[type="email"], textarea { padding: 12px; }
-    #previewPanel { padding: 12px 15px; margin: 20px 0; }
-    #previewPanel h4 { font-size: 1.05em; }
-    #previewPanel .preview-total-highlight { font-size: 1.45em; }
-    #previewPanel p strong { font-size: 0.8em; }
-    #previewPanel p span:not(.preview-total-highlight) { font-size: 0.85em; padding-left: 5px; }
+    body { padding: 15px; }
+    .content-wrapper { padding: 15px; }
+    h3 { font-size: 1.1em; }
+    input[type="text"], input[type="email"], textarea { padding: 12px; }
+    #previewPanel { padding: 12px 15px; margin: 20px 0; }
+    #previewPanel h4 { font-size: 1.05em; }
+    #previewPanel .preview-total-highlight { font-size: 1.45em; }
+    #previewPanel p strong { font-size: 0.8em; }
+    #previewPanel p span:not(.preview-total-highlight) { font-size: 0.85em; padding-left: 5px; }
 }
 @media print {
-    img { display: none !important; }
+    img { display: none !important; }
 }
 </style>
 </head>
 <body>
 
 <div class="container" id="formContainer">
-  <img src="https://raw.githubusercontent.com/5442mako/image-host-/main/575758226550424048.webp" alt="ヘッダー画像" class="header-image" loading="lazy" decoding="async">
-  <div class="disclaimer-container">
-    <p>
-      ※本ページに掲載された画像の無断転載・無断使用を禁止。<br>
-      ※不正利用が発覚した場合、損害請求の対象となります。
-    </p>
-  </div>
-  <div class="content-wrapper">
-    <form id="estimateForm">
-      <h3 id="illustrationTypeSectionH3">【ご希望のイラストタイプ】<span class="required-note">※必須。</span></h3>
-      <label><input type="radio" name="type" value="5000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image196.webp"> 顔アップ（5,000円）</label>
-      <label><input type="radio" name="type" value="8000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/575755441817780548.webp"> バストアップ（8,000円）</label>
-      <label><input type="radio" name="type" value="10000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image107.webp"> 膝上（10,000円）</label>
-      <label><input type="radio" name="type" value="13000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/イラスト210.webp"> 全身（13,000円）</label>
-      <label><input type="radio" name="type" value="40000" > Live2D用イラストパーツ分け（40,000円）</label>
-      <label><input type="radio" name="type" value="25000" > Live2Dバストアップ（25,000円）</label>
-      <label><input type="radio" name="type" value="15000" > キャラ・衣装デザイン（15,000円）</label>
-      <p id="typeErrorMessage" class="error-message is-hidden">※ご希望のイラストタイプを選択してください。</p>
-      <div id="typeImageBelowOptions" class="preview"></div>
+  <img src="https://raw.githubusercontent.com/5442mako/image-host-/main/575758226550424048.webp" alt="ヘッダー画像" class="header-image" loading="lazy" decoding="async">
+  <div class="disclaimer-container">
+    <p>
+      ※本ページに掲載された画像の無断転載・無断使用を禁止。<br>
+      ※不正利用が発覚した場合、損害請求の対象となります。
+    </p>
+  </div>
+  <div class="content-wrapper">
+    <form id="estimateForm" action="https://formspree.io/f/your-form-id" method="POST">
+      <h3 id="illustrationTypeSectionH3">【ご希望のイラストタイプ】<span class="required-note">※必須。</span></h3>
+      <label><input type="radio" name="イラストタイプ" value="顔アップ（5000）" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image196.webp"> 顔アップ（5,000円）</label>
+      <label><input type="radio" name="イラストタイプ" value="バストアップ（8000）" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/575755441817780548.webp"> バストアップ（8,000円）</label>
+      <label><input type="radio" name="イラストタイプ" value="膝上（10000円）" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image107.webp"> 膝上（10,000円）</label>
+      <label><input type="radio" name="イラストタイプ" value="全身（13000）" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/イラスト210.webp"> 全身（13,000円）</label>
+      <label><input type="radio" name="イラストタイプ" value="Live2D用イラストパーツ分け（40000）" > Live2D用イラストパーツ分け（40,000円）</label>
+      <label><input type="radio" name="イラストタイプ" value="Live2Dバストアップ（25000）" > Live2Dバストアップ（25,000円）</label>
+      <label><input type="radio" name="イラストタイプ" value="キャラ・衣装デザイン（15000）" > キャラ・衣装デザイン（15,000円）</label>
+      <p id="typeErrorMessage" class="error-message is-hidden">※ご希望のイラストタイプを選択してください。</p>
+      <div id="typeImageBelowOptions" class="preview"></div>
 
-      <h3>【追加オプション（複数選択可）】<span class="required-note">※必須。</span></h3>
-      <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="3000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image209.webp"> 背景（3,000円〜）</label>
-      <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="15000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image216.webp"> 細かい背景（15,000円〜）</label>
-      <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" > 細かい装飾（5,000円）</label>
-      <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" > ぬいぐるみ（動物など）・大きめアクセ（5,000円）</label>
-      <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="10000"> 追加衣装（1着ごと10,000円）</label>
-      <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000"> 商用利用（5,000円）</label>
-      <label><input type="checkbox" class="option" id="noOptionCheckbox" name="additionalOption" value="0"> 追加オプションなし</label>
-      <div id="optionPreview" class="preview"></div>
+      <h3>【追加オプション（複数選択可）】<span class="required-note">※必須。</span></h3>
+      <label><input type="checkbox" class="option additional-option-item" name="追加オプション[]" value="背景（3000）" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image209.webp"> 背景（3,000円〜）</label>
+      <label><input type="checkbox" class="option additional-option-item" name="追加オプション[]" value="細かい背景（15000）" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image216.webp"> 細かい背景（15,000円〜）</label>
+      <label><input type="checkbox" class="option additional-option-item" name="追加オプション[]" value="細かい装飾（5000）" > 細かい装飾（5,000円）</label>
+      <label><input type="checkbox" class="option additional-option-item" name="追加オプション[]" value="ぬいぐるみ・大きめアクセ（5000）" > ぬいぐるみ（動物など）・大きめアクセ（5,000円）</label>
+      <label><input type="checkbox" class="option additional-option-item" name="追加オプション[]" value="追加衣装（10000）"> 追加衣装（1着ごと10,000円）</label>
+      <label><input type="checkbox" class="option additional-option-item" name="追加オプション[]" value="商用利用（5000）"> 商用利用（5,000円）</label>
+      <label><input type="checkbox" class="option" id="noOptionCheckbox" name="追加オプション" value="追加オプションなし"> 追加オプションなし</label>
+      <div id="optionPreview" class="preview"></div>
 
-      <h3>【合計】</h3>
-      <div class="total">簡易見積合計金額：¥<span id="total">0</span></div>
-      <div class="estimate-note">
-        ※この金額はあくまで目安です。<br>
-        ※実際の費用は内容を確認のうえ、<br>正式にお見積もりさせていただきます。
-      </div>
-      
-      <h3 id="contactInfoSectionH3">【ご連絡先】</h3>
-      <p>お名前orハンドルネーム<span class="required-note">※必須。</span></p>
-      <input type="text" id="name" placeholder="※例：花束の住人、yamada100">
-      <p id="nameErrorMessage" class="error-message is-hidden">※お名前orハンドルネームをご入力してください。</p>
-      <p>メールアドレス<span class="required-note">※必須。</span></p>
-      <input type="email" id="email" placeholder="※例：example@gmail.com">
-      <p id="emailErrorMessage" class="error-message is-hidden">※正しいメールアドレスをご入力ください。</p>
-      
-      <h3>【ご依頼用テンプレート】<span class="required-note">※必須。</span></h3>
-      <textarea id="note" placeholder="ご要望があればご自由にご記入ください。例：髪色・服装・性格イメージ／使用目的（アイコン・Live2Dなど）／ポーズや構図／背景の有無 など" rows="30">
+      <h3>【合計】</h3>
+      <div class="total">簡易見積合計金額：¥<span id="total">0</span></div>
+      <input type="hidden" name="合計金額" id="totalInput">
+      <div class="estimate-note">
+        ※この金額はあくまで目安です。<br>
+        ※実際の費用は内容を確認のうえ、<br>正式にお見積もりさせていただきます。
+      </div>
+      
+      <h3 id="contactInfoSectionH3">【ご連絡先】</h3>
+      <p>お名前orハンドルネーム<span class="required-note">※必須。</span></p>
+      <input type="text" id="name" name="お名前" placeholder="※例：花束の住人、yamada100">
+      <p id="nameErrorMessage" class="error-message is-hidden">※お名前orハンドルネームをご入力してください。</p>
+      <p>メールアドレス<span class="required-note">※必須。</span></p>
+      <input type="email" id="email" name="メールアドレス" placeholder="※例：example@gmail.com">
+      <p id="emailErrorMessage" class="error-message is-hidden">※正しいメールアドレスをご入力ください。</p>
+      
+      <h3>【ご依頼用テンプレート】<span class="required-note">※必須。</span></h3>
+      <textarea id="note" name="ご依頼用テンプレート" placeholder="ご要望があればご自由にご記入ください。例：髪色・服装・性格イメージ／使用目的（アイコン・Live2Dなど）／ポーズや構図／背景の有無 など" rows="30">
 
 －－－－－－－－－－－－－－－－－－－－－－
 
@@ -460,402 +461,373 @@ button[type="submit"]:hover:not([disabled]) {
 詳細資料などございましたらご提示頂けますと助かります。
 お手数お掛け致しますがどうぞよろしくお願い致します。
 </textarea>
-      
-      <h3>【参考画像（添付）】</h3>
-      <input type="file" id="imageFile" accept="image/*" multiple>
-      <p class="section-description">※参考資料などありましたら画像を添付してください。<br>Windowsの方はCtrlキー、Macの方はCommandキーを押しながらクリックすることで、複数のファイルを選択できます。（最大5枚）</p>
-      <div id="filePreviewContainer"></div>
-      <p id="fileErrorMessage" class="error-message is-hidden">※ファイルは5枚までしか選択できません。</p>
-      <button id="submitBtn" type="submit">送信</button>
-    </form>
-  </div>
+      
+      <h3>【参考画像（添付）】</h3>
+      <input type="file" id="imageFile" name="参考画像[]" accept="image/*" multiple>
+      <p class="section-description">※参考資料などありましたら画像を添付してください。<br>Windowsの方はCtrlキー、Macの方はCommandキーを押しながらクリックすることで、複数のファイルを選択できます。（最大5枚）</p>
+      <div id="filePreviewContainer"></div>
+      <p id="fileErrorMessage" class="error-message is-hidden">※ファイルは5枚までしか選択できません。</p>
+      <button id="submitBtn" type="submit">送信</button>
+    </form>
+  </div>
 </div>
 
 <div id="completeMessage" class="complete is-hidden">
-  <h2>送信が完了しました！</h2>
-  <p>お問い合わせいただき、ありがとうございます。</p>
-  <p>お問い合わせ内容を確認次第、3営業日以内にご連絡いたします。</p>
-  <p>3営業日を過ぎても返信がない場合は、<br>お手数ですが、XのDMにてご連絡いただけますと幸いです。</p>
+  <h2>送信が完了しました！</h2>
+  <p>お問い合わせいただき、ありがとうございます。</p>
+  <p>お問い合わせ内容を確認次第、3営業日以内にご連絡いたします。</p>
+  <p>3営業日を過ぎても返信がない場合は、<br>お手数ですが、XのDMにてご連絡いただけますと幸いです。</p>
 </div>
 
 <div id="loadingOverlay">
-  <div class="spinner"></div>
-  <div id="loadingText">送信中です...しばらくお待ちください。</div>
+  <div class="spinner"></div>
+  <div id="loadingText">送信中です...しばらくお待ちください。</div>
 </div>
 
 <div id="previewPanel">
-  <h4>選択内容プレビュー</h4>
-  <p><strong>イラストタイプ:</strong> <span id="previewType">未選択</span></p>
-  <p><strong>追加オプション:</strong> <span id="previewOptions">なし</span></p>
-  <p><strong>簡易見積合計金額：</strong> <span id="previewTotal" class="preview-total-highlight">0</span></p>
+  <h4>選択内容プレビュー</h4>
+  <p><strong>イラストタイプ:</strong> <span id="previewType">未選択</span></p>
+  <p><strong>追加オプション:</strong> <span id="previewOptions">なし</span></p>
+  <p><strong>簡易見積合計金額：</strong> <span id="previewTotal" class="preview-total-highlight">0</span></p>
 </div>
 
 <div class="popup-overlay" id="popupOverlay">
-  <img id="popupImage" src="" alt="拡大画像" loading="lazy" decoding="async">
+  <img id="popupImage" src="" alt="拡大画像" loading="lazy" decoding="async">
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    // ★ここをGASの新しいデプロイURLに書き換えてください。
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbytDXqM6zOc8ohaNdO_qFjEHE3IaB-rwyZRziWhv-QV-mdmeMJ65wf6abOMzFmjf5q6/exec";
-    
-    // --- DOM要素の取得 ---
-    const formContainer = document.getElementById("formContainer");
-    const completeMessage = document.getElementById("completeMessage");
-    const estimateForm = document.getElementById("estimateForm");
-    const totalEl = document.getElementById("total");
-    const submitBtn = document.getElementById("submitBtn");
-    const optionPreviewContainer = document.getElementById("optionPreview");
-    const typePreviewContainer = document.getElementById('typeImageBelowOptions');
-    const radios = document.querySelectorAll('input[name="type"]');
-    const allOptionCheckboxes = document.querySelectorAll('.option');
-    const noOptionCheckbox = document.getElementById('noOptionCheckbox');
-    const actualOptionItems = document.querySelectorAll('.additional-option-item');
-    const previewPanel = document.getElementById('previewPanel');
-    const popupOverlay = document.getElementById("popupOverlay");
-    const popupImage = document.getElementById("popupImage");
-    const previewTypeEl = document.getElementById("previewType");
-    const previewOptionsEl = document.getElementById("previewOptions");
-    const previewTotalEl = document.getElementById("previewTotal");
-    const nameInput = document.getElementById("name");
-    const emailInput = document.getElementById("email");
-    const noteTextarea = document.getElementById("note");
-    const imageFileInput = document.getElementById("imageFile");
-    const nameErrorMessage = document.getElementById("nameErrorMessage");
-    const emailErrorMessage = document.getElementById("emailErrorMessage");
-    const typeErrorMessage = document.getElementById("typeErrorMessage");
-    const fileErrorMessage = document.getElementById("fileErrorMessage");
-    const illustrationTypeSectionH3 = document.getElementById("illustrationTypeSectionH3");
-    const contactInfoSectionH3 = document.getElementById("contactInfoSectionH3");
-    const filePreviewContainer = document.getElementById('filePreviewContainer');
-    const loadingOverlay = document.getElementById('loadingOverlay');
-    const loadingText = document.getElementById('loadingText');
+    // --- DOM要素の取得 ---
+    const formContainer = document.getElementById("formContainer");
+    const completeMessage = document.getElementById("completeMessage");
+    const estimateForm = document.getElementById("estimateForm");
+    const totalEl = document.getElementById("total");
+    const submitBtn = document.getElementById("submitBtn");
+    const optionPreviewContainer = document.getElementById("optionPreview");
+    const typePreviewContainer = document.getElementById('typeImageBelowOptions');
+    const radios = document.querySelectorAll('input[name="イラストタイプ"]');
+    const allOptionCheckboxes = document.querySelectorAll('.option');
+    const noOptionCheckbox = document.getElementById('noOptionCheckbox');
+    const actualOptionItems = document.querySelectorAll('.additional-option-item');
+    const previewPanel = document.getElementById('previewPanel');
+    const popupOverlay = document.getElementById("popupOverlay");
+    const popupImage = document.getElementById("popupImage");
+    const previewTypeEl = document.getElementById("previewType");
+    const previewOptionsEl = document.getElementById("previewOptions");
+    const previewTotalEl = document.getElementById("previewTotal");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const noteTextarea = document.getElementById("note");
+    const imageFileInput = document.getElementById("imageFile");
+    const nameErrorMessage = document.getElementById("nameErrorMessage");
+    const emailErrorMessage = document.getElementById("emailErrorMessage");
+    const typeErrorMessage = document.getElementById("typeErrorMessage");
+    const fileErrorMessage = document.getElementById("fileErrorMessage");
+    const illustrationTypeSectionH3 = document.getElementById("illustrationTypeSectionH3");
+    const contactInfoSectionH3 = document.getElementById("contactInfoSectionH3");
+    const filePreviewContainer = document.getElementById('filePreviewContainer');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const loadingText = document.getElementById('loadingText');
+    const totalInput = document.getElementById('totalInput');
 
-    let selectedFiles = []; // 選択されたファイルを管理する配列
+    let selectedFiles = []; // 選択されたファイルを管理する配列
 
-    // --- 関数定義 ---
-    const showLoading = (text) => {
-        loadingText.textContent = text;
-        loadingOverlay.style.opacity = '1';
-        loadingOverlay.style.visibility = 'visible';
-    };
+    // --- 関数定義 ---
+    const showLoading = (text) => {
+        loadingText.textContent = text;
+        loadingOverlay.style.opacity = '1';
+        loadingOverlay.style.visibility = 'visible';
+    };
 
-    const hideLoading = () => {
-        loadingOverlay.style.opacity = '0';
-        loadingOverlay.style.visibility = 'hidden';
-    };
+    const hideLoading = () => {
+        loadingOverlay.style.opacity = '0';
+        loadingOverlay.style.visibility = 'hidden';
+    };
 
-    const showPopup = (src) => {
-        popupImage.src = src;
-        popupOverlay.style.display = "flex";
-    };
-    const hidePopup = () => {
-        popupOverlay.style.display = "none";
-    };
+    const showPopup = (src) => {
+        popupImage.src = src;
+        popupOverlay.style.display = "flex";
+    };
+    const hidePopup = () => {
+        popupOverlay.style.display = "none";
+    };
 
-    const updatePreviewPanel = () => {
-        const selectedTypeRadio = document.querySelector('input[name="type"]:checked');
-        previewTypeEl.textContent = selectedTypeRadio ? selectedTypeRadio.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '') : "未選択";
+    const updatePreviewPanel = () => {
+        const selectedTypeRadio = document.querySelector('input[name="イラストタイプ"]:checked');
+        previewTypeEl.textContent = selectedTypeRadio ? selectedTypeRadio.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '') : "未選択";
 
-        let optionsText = "なし";
-        if (noOptionCheckbox?.checked) {
-            optionsText = noOptionCheckbox.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '');
-        } else {
-            const checkedOptions = Array.from(actualOptionItems).filter(opt => opt.checked);
-            if (checkedOptions.length > 0) {
-                optionsText = checkedOptions.map(opt => opt.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '')).join(", ");
-            }
-        }
-        previewOptionsEl.textContent = optionsText;
-        previewTotalEl.textContent = "¥" + totalEl.textContent;
-    };
+        let optionsText = "なし";
+        if (noOptionCheckbox?.checked) {
+            optionsText = noOptionCheckbox.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '');
+        } else {
+            const checkedOptions = Array.from(actualOptionItems).filter(opt => opt.checked);
+            if (checkedOptions.length > 0) {
+                optionsText = checkedOptions.map(opt => opt.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '')).join(", ");
+            }
+        }
+        previewOptionsEl.textContent = optionsText;
+        previewTotalEl.textContent = "¥" + totalEl.textContent;
+    };
 
-    const calculateTotal = () => {
-        let total = 0;
-        const selectedType = document.querySelector('input[name="type"]:checked');
-        if (selectedType) total += parseInt(selectedType.value, 10);
+    const calculateTotal = () => {
+        let total = 0;
+        const selectedType = document.querySelector('input[name="イラストタイプ"]:checked');
+        if (selectedType) total += parseInt(selectedType.value.match(/\d+/)?.at(0), 10);
 
-        if (!noOptionCheckbox?.checked) {
-            actualOptionItems.forEach(opt => {
-                if (opt.checked) total += parseInt(opt.value, 10);
-            });
-        }
-        totalEl.textContent = total.toLocaleString();
-        updatePreviewPanel();
-    };
-    
-    const createPreviewImage = (url, altText, container, isOption = false) => {
-        const img = document.createElement('img');
-        img.src = url;
-        img.alt = altText;
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        img.style.cursor = 'pointer';
-        img.style.borderRadius = '6px';
-        img.onclick = () => showPopup(img.src);
-        
-        if (isOption) {
-            img.style.maxWidth = "150px";
-            img.style.maxHeight = "150px";
-        } else {
-            img.style.maxWidth = '50%';
-            img.style.maxHeight = '200px';
-            img.style.boxSizing = 'border-box';
-            img.style.padding = '0 5px';
-            img.style.display = 'inline-block';
-        }
-        
-        container.appendChild(img);
-    };
+        if (!noOptionCheckbox?.checked) {
+            actualOptionItems.forEach(opt => {
+                const valueMatch = opt.value.match(/\d+/);
+                if (opt.checked && valueMatch) total += parseInt(valueMatch[0], 10);
+            });
+        }
+        totalEl.textContent = total.toLocaleString();
+        totalInput.value = total;
+        updatePreviewPanel();
+    };
+    
+    const createPreviewImage = (url, altText, container, isOption = false) => {
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = altText;
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.style.cursor = 'pointer';
+        img.style.borderRadius = '6px';
+        img.onclick = () => showPopup(img.src);
+        
+        if (isOption) {
+            img.style.maxWidth = "150px";
+            img.style.maxHeight = "150px";
+        } else {
+            img.style.maxWidth = '50%';
+            img.style.maxHeight = '200px';
+            img.style.boxSizing = 'border-box';
+            img.style.padding = '0 5px';
+            img.style.display = 'inline-block';
+        }
+        
+        container.appendChild(img);
+    };
 
-    const updateTypePreview = () => {
-        typePreviewContainer.innerHTML = '';
-        const selected = document.querySelector('input[name="type"]:checked');
-        if (selected?.dataset.imgs) {
-            const imageUrls = selected.dataset.imgs.split(',').map(url => url.trim()).filter(Boolean);
-            imageUrls.forEach(url => createPreviewImage(url, "タイプ画像", typePreviewContainer));
-            if (imageUrls.length > 0) {
-                const note = document.createElement("p");
-                note.textContent = "※画像をクリックすると拡大します。";
-                note.className = "preview-note";
-                typePreviewContainer.appendChild(note);
-            }
-        }
-    };
+    const updateTypePreview = () => {
+        typePreviewContainer.innerHTML = '';
+        const selected = document.querySelector('input[name="イラストタイプ"]:checked');
+        if (selected?.dataset.imgs) {
+            const imageUrls = selected.dataset.imgs.split(',').map(url => url.trim()).filter(Boolean);
+            imageUrls.forEach(url => createPreviewImage(url, "タイプ画像", typePreviewContainer));
+            if (imageUrls.length > 0) {
+                const note = document.createElement("p");
+                note.textContent = "※画像をクリックすると拡大します。";
+                note.className = "preview-note";
+                typePreviewContainer.appendChild(note);
+            }
+        }
+    };
 
-    const updateOptionPreview = () => {
-        optionPreviewContainer.innerHTML = '';
-        actualOptionItems.forEach(opt => {
-            if (opt.checked && opt.dataset.imgs) {
-                const wrapper = document.createElement("div");
-                wrapper.className = "optionImageWrapper";
-                createPreviewImage(opt.dataset.imgs, "オプション画像", wrapper, true);
-                
-                const note = document.createElement("p");
-                note.textContent = "※画像をクリックすると拡大します。";
-                note.className = "preview-note";
-                wrapper.appendChild(note);
-                optionPreviewContainer.appendChild(wrapper);
-            }
-        });
-    };
-    
-    // ファイルプレビューを更新する関数
-    const renderFilePreview = () => {
-        filePreviewContainer.innerHTML = '';
-        selectedFiles.forEach((file, index) => {
-            const previewItem = document.createElement('div');
-            previewItem.className = 'file-preview-item';
+    const updateOptionPreview = () => {
+        optionPreviewContainer.innerHTML = '';
+        actualOptionItems.forEach(opt => {
+            if (opt.checked && opt.dataset.imgs) {
+                const wrapper = document.createElement("div");
+                wrapper.className = "optionImageWrapper";
+                createPreviewImage(opt.dataset.imgs, "オプション画像", wrapper, true);
+                
+                const note = document.createElement("p");
+                note.textContent = "※画像をクリックすると拡大します。";
+                note.className = "preview-note";
+                wrapper.appendChild(note);
+                optionPreviewContainer.appendChild(wrapper);
+            }
+        });
+    };
+    
+    // ファイルプレビューを更新する関数
+    const renderFilePreview = () => {
+        filePreviewContainer.innerHTML = '';
+        selectedFiles.forEach((file, index) => {
+            const previewItem = document.createElement('div');
+            previewItem.className = 'file-preview-item';
 
-            const fileName = document.createElement('span');
-            fileName.textContent = file.name;
-            
-            const removeBtn = document.createElement('button');
-            removeBtn.textContent = '削除';
-            removeBtn.onclick = () => {
-                selectedFiles.splice(index, 1);
-                renderFilePreview();
-                if (selectedFiles.length === 0) {
-                    imageFileInput.value = ''; // ファイルリストが空になったらinputをリセット
-                }
-            };
+            const fileName = document.createElement('span');
+            fileName.textContent = file.name;
+            
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = '削除';
+            removeBtn.onclick = () => {
+                selectedFiles.splice(index, 1);
+                renderFilePreview();
+                if (selectedFiles.length === 0) {
+                    imageFileInput.value = ''; // ファイルリストが空になったらinputをリセット
+                }
+            };
 
-            previewItem.appendChild(fileName);
-            previewItem.appendChild(removeBtn);
-            filePreviewContainer.appendChild(previewItem);
-        });
-    };
+            previewItem.appendChild(fileName);
+            previewItem.appendChild(removeBtn);
+            filePreviewContainer.appendChild(previewItem);
+        });
+    };
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        let hasError = false;
-        let firstErrorElement = null;
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        let hasError = false;
+        let firstErrorElement = null;
 
-        // Reset errors
-        radios.forEach(input => input.parentElement.classList.remove("highlight-error"));
-        typeErrorMessage.classList.add('is-hidden');
-        nameInput.classList.remove("input-error");
-        nameErrorMessage.classList.add("is-hidden");
-        emailInput.classList.remove("input-error");
-        emailErrorMessage.classList.add("is-hidden");
-        fileErrorMessage.classList.add("is-hidden");
+        // Reset errors
+        radios.forEach(input => input.parentElement.classList.remove("highlight-error"));
+        typeErrorMessage.classList.add('is-hidden');
+        nameInput.classList.remove("input-error");
+        nameErrorMessage.classList.add("is-hidden");
+        emailInput.classList.remove("input-error");
+        emailErrorMessage.classList.add("is-hidden");
+        fileErrorMessage.classList.add("is-hidden");
 
-        // Validation
-        const selectedType = document.querySelector('input[name="type"]:checked');
-        if (!selectedType) {
-            hasError = true;
-            firstErrorElement = illustrationTypeSectionH3;
-            radios.forEach(input => input.parentElement.classList.add("highlight-error"));
-            typeErrorMessage.classList.remove('is-hidden');
-        }
+        // Validation
+        const selectedType = document.querySelector('input[name="イラストタイプ"]:checked');
+        if (!selectedType) {
+            hasError = true;
+            firstErrorElement = illustrationTypeSectionH3;
+            radios.forEach(input => input.parentElement.classList.add("highlight-error"));
+            typeErrorMessage.classList.remove('is-hidden');
+        }
 
-        const name = nameInput.value.trim();
-        if (!name) {
-            hasError = true;
-            nameInput.classList.add("input-error");
-            nameErrorMessage.classList.remove("is-hidden");
-            if (!firstErrorElement) firstErrorElement = contactInfoSectionH3;
-        }
+        const name = nameInput.value.trim();
+        if (!name) {
+            hasError = true;
+            nameInput.classList.add("input-error");
+            nameErrorMessage.classList.remove("is-hidden");
+            if (!firstErrorElement) firstErrorElement = contactInfoSectionH3;
+        }
 
-        const email = emailInput.value.trim();
-        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            hasError = true;
-            emailInput.classList.add("input-error");
-            emailErrorMessage.classList.remove("is-hidden");
-            if (!firstErrorElement) firstErrorElement = contactInfoSectionH3;
-        }
+        const email = emailInput.value.trim();
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            hasError = true;
+            emailInput.classList.add("input-error");
+            emailErrorMessage.classList.remove("is-hidden");
+            if (!firstErrorElement) firstErrorElement = contactInfoSectionH3;
+        }
 
-        if (selectedFiles.length > 5) {
-            hasError = true;
-            fileErrorMessage.classList.remove('is-hidden');
-        }
+        if (selectedFiles.length > 5) {
+            hasError = true;
+            fileErrorMessage.classList.remove('is-hidden');
+        }
 
-        if (hasError) {
-            firstErrorElement?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            return;
-        }
+        if (hasError) {
+            firstErrorElement?.scroll-into-view({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+        
+        // Prevent submission if no options are selected
+        const selectedOptions = document.querySelectorAll('.additional-option-item:checked');
+        if (selectedOptions.length === 0 && !noOptionCheckbox.checked) {
+             alert('追加オプションを選択するか、「追加オプションなし」にチェックを入れてください。');
+             return;
+        }
+        
+        // Formspree logic
+        showLoading("送信中です...しばらくお待ちください。");
+        submitBtn.disabled = true;
 
-        // 送信ボタンを無効化し、ローディングを表示
-        submitBtn.disabled = true;
-        showLoading("送信中です...しばらくお待ちください。");
+        const formData = new FormData(estimateForm);
+        const selectedTypeElement = document.querySelector('input[name="イラストタイプ"]:checked');
+        if (selectedTypeElement) {
+            formData.set('イラストタイプ', selectedTypeElement.parentElement.textContent.trim());
+        }
 
-        // データ収集
-        const selectedTypeLabel = selectedType.parentElement.textContent.trim();
-        const note = noteTextarea.value;
-        const total = totalEl.textContent.replace(/,/g, '');
-        const optionLabels = noOptionCheckbox.checked
-            ? ['追加オプションなし']
-            : Array.from(document.querySelectorAll('.additional-option-item:checked')).map(opt => opt.parentElement.textContent.trim());
+        const optionValues = Array.from(document.querySelectorAll('.additional-option-item:checked')).map(opt => opt.parentElement.textContent.trim());
+        if (noOptionCheckbox.checked) {
+            optionValues.push('追加オプションなし');
+        }
+        formData.set('追加オプション', optionValues.join(', '));
+        
+        // Handle file uploads
+        if (selectedFiles.length > 0) {
+             selectedFiles.forEach(file => {
+                 formData.append('参考画像', file);
+             });
+        }
+        
+        try {
+            const response = await fetch(estimateForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
 
-        const data = {
-            name: name,
-            email: email,
-            total: total,
-            note: note,
-            typeLabel: selectedTypeLabel,
-            optionLabels: optionLabels,
-        };
-        
-        // ファイルをBase64に変換し、Promise.allで一括処理
-        if (selectedFiles.length > 0) {
-            const filePromises = selectedFiles.map(file => {
-                return new Promise((resolve, reject) => {
-                    const reader = new FileReader();
-                    reader.onload = () => resolve({
-                        image: reader.result,
-                        imageName: file.name
-                    });
-                    reader.onerror = () => reject(reader.error);
-                    reader.readAsDataURL(file);
-                });
-            });
+            if (response.ok) {
+                formContainer.classList.add("is-hidden");
+                completeMessage.classList.remove("is-hidden");
+                previewPanel?.classList.add("is-hidden");
+            } else {
+                alert("送信に失敗しました。フォームの設定を確認してください。");
+            }
+        } catch (error) {
+            alert("送信中にエラーが発生しました。\n\n" + error.message);
+        } finally {
+            hideLoading();
+            submitBtn.disabled = false;
+        }
+    };
+    
+    // --- イベントリスナー設定 ---
+    popupOverlay.addEventListener('click', hidePopup);
+    document.addEventListener('contextmenu', e => { if (e.target.tagName === "IMG") e.preventDefault(); });
+    document.addEventListener('dragstart', e => { if (e.target.tagName === "IMG") e.preventDefault(); });
+    radios.forEach(r => r.addEventListener('change', () => { calculateTotal(); updateTypePreview(); }));
+    allOptionCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            if (checkbox === noOptionCheckbox && checkbox.checked) {
+                actualOptionItems.forEach(opt => { opt.checked = false; });
+            } else if (checkbox.checked) {
+                if (noOptionCheckbox) noOptionCheckbox.checked = false;
+            }
+            calculateTotal();
+            updateOptionPreview();
+        });
+    });
+    
+    // ファイル選択時のイベント
+    imageFileInput.addEventListener('change', (event) => {
+        fileErrorMessage.classList.add("is-hidden");
+        const newFiles = Array.from(event.target.files);
+        
+        if (newFiles.length > 5) {
+            fileErrorMessage.classList.remove('is-hidden');
+            // ファイル選択をリセット
+            imageFileInput.value = '';
+            selectedFiles = [];
+        } else {
+            // 新しく選択されたファイルで配列を置き換え
+            selectedFiles = newFiles;
+        }
+        renderFilePreview();
+    });
+    
+    estimateForm.addEventListener('submit', handleSubmit);
+    
+    // Responsive panel movement
+    const originalPreviewPanelParent = previewPanel?.parentElement;
+    const originalPreviewPanelNextSibling = previewPanel?.nextSibling;
+    const movePreviewPanel = () => {
+        if (!previewPanel || !estimateForm || !submitBtn) return;
+        if (window.innerWidth <= 980) {
+            if (previewPanel.parentElement !== estimateForm) {
+                estimateForm.insertBefore(previewPanel, submitBtn);
+            }
+        } else {
+            if (previewPanel.parentElement === estimateForm) {
+                originalPreviewPanelParent.insertBefore(previewPanel, originalPreviewPanelNextSibling);
+            }
+        }
+    };
+    window.addEventListener('resize', movePreviewPanel);
 
-            try {
-                data.images = await Promise.all(filePromises);
-            } catch (e) {
-                onFailure(new Error("ファイルの読み込み中にエラーが発生しました。"));
-                return;
-            }
-        } else {
-            data.images = [];
-        }
-        
-        // ★ここからfetchリクエスト
-        fetch(SCRIPT_URL, {
-            method: 'POST',
-            body: JSON.stringify({
-                action: 'submitForm',
-                data: data
-            })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(result => {
-            if (result.success) {
-                onSuccess();
-            } else {
-                onFailure(new Error(result.error));
-            }
-        })
-        .catch(e => onFailure(e));
-        // ★ここまで
-    };
-
-    const onSuccess = (result) => {
-        hideLoading();
-        formContainer.classList.add("is-hidden");
-        completeMessage.classList.remove("is-hidden");
-        previewPanel?.classList.add("is-hidden");
-    };
-
-    const onFailure = (error) => {
-        hideLoading();
-        submitBtn.disabled = false;
-        alert("送信に失敗しました。\n\n" + error.message);
-    };
-
-    // --- イベントリスナー設定 ---
-    popupOverlay.addEventListener('click', hidePopup);
-    document.addEventListener('contextmenu', e => { if (e.target.tagName === "IMG") e.preventDefault(); });
-    document.addEventListener('dragstart', e => { if (e.target.tagName === "IMG") e.preventDefault(); });
-    radios.forEach(r => r.addEventListener('change', () => { calculateTotal(); updateTypePreview(); }));
-    allOptionCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-            if (checkbox === noOptionCheckbox && checkbox.checked) {
-                actualOptionItems.forEach(opt => { opt.checked = false; });
-            } else if (checkbox.checked) {
-                if (noOptionCheckbox) noOptionCheckbox.checked = false;
-            }
-            calculateTotal();
-            updateOptionPreview();
-        });
-    });
-    
-    // ファイル選択時のイベント
-    imageFileInput.addEventListener('change', (event) => {
-        fileErrorMessage.classList.add("is-hidden");
-        const newFiles = Array.from(event.target.files);
-        
-        if (newFiles.length > 5) {
-            fileErrorMessage.classList.remove('is-hidden');
-            // ファイル選択をリセット
-            imageFileInput.value = '';
-            selectedFiles = [];
-        } else {
-            // 新しく選択されたファイルで配列を置き換え
-            selectedFiles = newFiles;
-        }
-        renderFilePreview();
-    });
-    
-    estimateForm.addEventListener('submit', handleSubmit);
-    
-    // Responsive panel movement
-    const originalPreviewPanelParent = previewPanel?.parentElement;
-    const originalPreviewPanelNextSibling = previewPanel?.nextSibling;
-    const movePreviewPanel = () => {
-        if (!previewPanel || !estimateForm || !submitBtn) return;
-        if (window.innerWidth <= 980) {
-            if (previewPanel.parentElement !== estimateForm) {
-                estimateForm.insertBefore(previewPanel, submitBtn);
-            }
-        } else {
-            if (previewPanel.parentElement === estimateForm) {
-                originalPreviewPanelParent.insertBefore(previewPanel, originalPreviewPanelNextSibling);
-            }
-        }
-    };
-    window.addEventListener('resize', movePreviewPanel);
-
-    // 初期化
-    calculateTotal();
-    updateTypePreview();
-    updateOptionPreview();
-    movePreviewPanel();
+    // 初期化
+    calculateTotal();
+    updateTypePreview();
+    updateOptionPreview();
+    movePreviewPanel();
 });
 </script>
 </body>
