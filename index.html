@@ -393,7 +393,7 @@ button[type="submit"]:hover:not([disabled]) {
     </p>
   </div>
   <div class="content-wrapper">
-    <form id="estimateForm" action="#" method="POST">
+    <form id="estimateForm">
       <h3 id="illustrationTypeSectionH3">【ご希望のイラストタイプ】<span class="required-note">※必須。</span></h3>
       <label><input type="radio" name="type" value="5000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image196.webp"> 顔アップ（5,000円）</label>
       <label><input type="radio" name="type" value="8000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/575755441817780548.webp"> バストアップ（8,000円）</label>
@@ -424,14 +424,14 @@ button[type="submit"]:hover:not([disabled]) {
       
       <h3 id="contactInfoSectionH3">【ご連絡先】</h3>
       <p>お名前orハンドルネーム<span class="required-note">※必須。</span></p>
-      <input type="text" id="name" placeholder="※例：花束の住人、yamada100" name="name">
+      <input type="text" id="name" placeholder="※例：花束の住人、yamada100">
       <p id="nameErrorMessage" class="error-message is-hidden">※お名前orハンドルネームをご入力してください。</p>
       <p>メールアドレス<span class="required-note">※必須。</span></p>
-      <input type="email" id="email" placeholder="※例：example@gmail.com" name="email">
+      <input type="email" id="email" placeholder="※例：example@gmail.com">
       <p id="emailErrorMessage" class="error-message is-hidden">※正しいメールアドレスをご入力ください。</p>
       
       <h3>【ご依頼用テンプレート】<span class="required-note">※必須。</span></h3>
-      <textarea id="note" placeholder="ご要望があればご自由にご記入ください。例：髪色・服装・性格イメージ／使用目的（アイコン・Live2Dなど）／ポーズや構図／背景の有無 など" rows="30" name="note">
+      <textarea id="note" placeholder="ご要望があればご自由にご記入ください。例：髪色・服装・性格イメージ／使用目的（アイコン・Live2Dなど）／ポーズや構図／背景の有無 など" rows="30">
 
 －－－－－－－－－－－－－－－－－－－－－－
 
@@ -462,7 +462,7 @@ button[type="submit"]:hover:not([disabled]) {
 </textarea>
       
       <h3>【参考画像（添付）】</h3>
-      <input type="file" id="imageFile" accept="image/*" multiple name="imageFile">
+      <input type="file" id="imageFile" accept="image/*" multiple>
       <p class="section-description">※参考資料などありましたら画像を添付してください。<br>Windowsの方はCtrlキー、Macの方はCommandキーを押しながらクリックすることで、複数のファイルを選択できます。（最大5枚）</p>
       <div id="filePreviewContainer"></div>
       <p id="fileErrorMessage" class="error-message is-hidden">※ファイルは5枚までしか選択できません。</p>
@@ -496,6 +496,9 @@ button[type="submit"]:hover:not([disabled]) {
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // ★ここをGASの新しいデプロイURLに書き換えてください。
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzRgh0seVFXNW6Wc2YBV_waLsyES3E5ehuarmogIAMSEdVWy8LtG_4WX4B7kMluMIsg/exec";
+    
     // --- DOM要素の取得 ---
     const formContainer = document.getElementById("formContainer");
     const completeMessage = document.getElementById("completeMessage");
@@ -528,10 +531,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingOverlay = document.getElementById('loadingOverlay');
     const loadingText = document.getElementById('loadingText');
 
-    let selectedFiles = [];
-    // GASウェブアプリのURL
-    const gasUrl = "https://script.google.com/macros/s/AKfycbxjzU7ldG2kerTD97XHIZXdXWL9CVuKNagU3TfAk-nJ_VTS2UwrbnXscNnsovUSs1Uy/exec";
+    let selectedFiles = []; // 選択されたファイルを管理する配列
 
+    // --- 関数定義 ---
     const showLoading = (text) => {
         loadingText.textContent = text;
         loadingOverlay.style.opacity = '1';
@@ -581,7 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
         totalEl.textContent = total.toLocaleString();
         updatePreviewPanel();
     };
-
+    
     const createPreviewImage = (url, altText, container, isOption = false) => {
         const img = document.createElement('img');
         img.src = url;
@@ -591,7 +593,7 @@ document.addEventListener('DOMContentLoaded', () => {
         img.style.cursor = 'pointer';
         img.style.borderRadius = '6px';
         img.onclick = () => showPopup(img.src);
-
+        
         if (isOption) {
             img.style.maxWidth = "150px";
             img.style.maxHeight = "150px";
@@ -602,7 +604,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img.style.padding = '0 5px';
             img.style.display = 'inline-block';
         }
-
+        
         container.appendChild(img);
     };
 
@@ -611,8 +613,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const selected = document.querySelector('input[name="type"]:checked');
         if (selected?.dataset.imgs) {
             const imageUrls = selected.dataset.imgs.split(',').map(url => url.trim()).filter(Boolean);
+            imageUrls.forEach(url => createPreviewImage(url, "タイプ画像", typePreviewContainer));
             if (imageUrls.length > 0) {
-                imageUrls.forEach(url => createPreviewImage(url, "タイプ画像", typePreviewContainer));
                 const note = document.createElement("p");
                 note.textContent = "※画像をクリックすると拡大します。";
                 note.className = "preview-note";
@@ -628,7 +630,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const wrapper = document.createElement("div");
                 wrapper.className = "optionImageWrapper";
                 createPreviewImage(opt.dataset.imgs, "オプション画像", wrapper, true);
-
+                
                 const note = document.createElement("p");
                 note.textContent = "※画像をクリックすると拡大します。";
                 note.className = "preview-note";
@@ -637,23 +639,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
-
+    
+    // ファイルプレビューを更新する関数
     const renderFilePreview = () => {
         filePreviewContainer.innerHTML = '';
         selectedFiles.forEach((file, index) => {
             const previewItem = document.createElement('div');
             previewItem.className = 'file-preview-item';
+
             const fileName = document.createElement('span');
             fileName.textContent = file.name;
+            
             const removeBtn = document.createElement('button');
             removeBtn.textContent = '削除';
             removeBtn.onclick = () => {
                 selectedFiles.splice(index, 1);
                 renderFilePreview();
                 if (selectedFiles.length === 0) {
-                    imageFileInput.value = '';
+                    imageFileInput.value = ''; // ファイルリストが空になったらinputをリセット
                 }
             };
+
             previewItem.appendChild(fileName);
             previewItem.appendChild(removeBtn);
             filePreviewContainer.appendChild(previewItem);
@@ -665,6 +671,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let hasError = false;
         let firstErrorElement = null;
 
+        // Reset errors
         radios.forEach(input => input.parentElement.classList.remove("highlight-error"));
         typeErrorMessage.classList.add('is-hidden');
         nameInput.classList.remove("input-error");
@@ -673,6 +680,7 @@ document.addEventListener('DOMContentLoaded', () => {
         emailErrorMessage.classList.add("is-hidden");
         fileErrorMessage.classList.add("is-hidden");
 
+        // Validation
         const selectedType = document.querySelector('input[name="type"]:checked');
         if (!selectedType) {
             hasError = true;
@@ -707,30 +715,17 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // 送信ボタンを無効化し、ローディングを表示
         submitBtn.disabled = true;
         showLoading("送信中です...しばらくお待ちください。");
 
+        // データ収集
         const selectedTypeLabel = selectedType.parentElement.textContent.trim();
         const note = noteTextarea.value;
         const total = totalEl.textContent.replace(/,/g, '');
         const optionLabels = noOptionCheckbox.checked
             ? ['追加オプションなし']
             : Array.from(document.querySelectorAll('.additional-option-item:checked')).map(opt => opt.parentElement.textContent.trim());
-
-        const fileDataArray = [];
-        for (const file of selectedFiles) {
-            const base64 = await new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onload = () => resolve(reader.result);
-                reader.onerror = reject;
-                reader.readAsDataURL(file);
-            });
-            fileDataArray.push({
-                // GAS側で受け取るプロパティ名に合わせる
-                fileName: file.name,
-                data: base64
-            });
-        }
 
         const data = {
             name: name,
@@ -739,79 +734,106 @@ document.addEventListener('DOMContentLoaded', () => {
             note: note,
             typeLabel: selectedTypeLabel,
             optionLabels: optionLabels,
-            images: fileDataArray
         };
-
-        try {
-            const response = await fetch(gasUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                mode: 'cors',
-                body: JSON.stringify({ action: 'submitForm', data: data })
+        
+        // ファイルをBase64に変換し、Promise.allで一括処理
+        if (selectedFiles.length > 0) {
+            const filePromises = selectedFiles.map(file => {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = () => resolve({
+                        image: reader.result,
+                        imageName: file.name
+                    });
+                    reader.onerror = () => reject(reader.error);
+                    reader.readAsDataURL(file);
+                });
             });
 
-            if (response.ok) {
-                hideLoading();
-                formContainer.classList.add("is-hidden");
-                completeMessage.classList.remove("is-hidden");
-                previewPanel?.classList.add("is-hidden");
-            } else {
-                throw new Error('GASへの送信に失敗しました。');
+            try {
+                data.images = await Promise.all(filePromises);
+            } catch (e) {
+                onFailure(new Error("ファイルの読み込み中にエラーが発生しました。"));
+                return;
             }
-        } catch (error) {
-            hideLoading();
-            submitBtn.disabled = false;
-            alert("送信に失敗しました。\n\n" + error.message);
+        } else {
+            data.images = [];
         }
+        
+        // ★ここからfetchリクエスト
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify({
+                action: 'submitForm',
+                data: data
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(result => {
+            if (result.success) {
+                onSuccess();
+            } else {
+                onFailure(new Error(result.error));
+            }
+        })
+        .catch(e => onFailure(e));
+        // ★ここまで
     };
 
-    // --- イベントリスナーの設定 ---
-    radios.forEach(radio => {
-        radio.addEventListener('change', () => {
-            calculateTotal();
-            updateTypePreview();
-        });
-    });
+    const onSuccess = (result) => {
+        hideLoading();
+        formContainer.classList.add("is-hidden");
+        completeMessage.classList.remove("is-hidden");
+        previewPanel?.classList.add("is-hidden");
+    };
 
+    const onFailure = (error) => {
+        hideLoading();
+        submitBtn.disabled = false;
+        alert("送信に失敗しました。\n\n" + error.message);
+    };
+
+    // --- イベントリスナー設定 ---
+    popupOverlay.addEventListener('click', hidePopup);
+    document.addEventListener('contextmenu', e => { if (e.target.tagName === "IMG") e.preventDefault(); });
+    document.addEventListener('dragstart', e => { if (e.target.tagName === "IMG") e.preventDefault(); });
+    radios.forEach(r => r.addEventListener('change', () => { calculateTotal(); updateTypePreview(); }));
     allOptionCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
-            if (checkbox.id === 'noOptionCheckbox') {
-                actualOptionItems.forEach(item => {
-                    item.disabled = checkbox.checked;
-                    if (checkbox.checked) {
-                        item.checked = false;
-                    }
-                });
-            } else {
-                if (checkbox.checked) {
-                    noOptionCheckbox.checked = false;
-                }
+            if (checkbox === noOptionCheckbox && checkbox.checked) {
+                actualOptionItems.forEach(opt => { opt.checked = false; });
+            } else if (checkbox.checked) {
+                if (noOptionCheckbox) noOptionCheckbox.checked = false;
             }
             calculateTotal();
             updateOptionPreview();
         });
     });
-
+    
     // ファイル選択時のイベント
     imageFileInput.addEventListener('change', (event) => {
         fileErrorMessage.classList.add("is-hidden");
         const newFiles = Array.from(event.target.files);
-
+        
         if (newFiles.length > 5) {
             fileErrorMessage.classList.remove('is-hidden');
+            // ファイル選択をリセット
             imageFileInput.value = '';
             selectedFiles = [];
         } else {
+            // 新しく選択されたファイルで配列を置き換え
             selectedFiles = newFiles;
         }
         renderFilePreview();
     });
-
+    
     estimateForm.addEventListener('submit', handleSubmit);
-    popupOverlay.addEventListener('click', hidePopup);
-
+    
     // Responsive panel movement
     const originalPreviewPanelParent = previewPanel?.parentElement;
     const originalPreviewPanelNextSibling = previewPanel?.nextSibling;
