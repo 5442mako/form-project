@@ -6,7 +6,7 @@
 <meta name="robots" content="noai, noimageai, noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <style>
-/* スタイルの変更は不要です */
+/* --- スタイルは変更なし --- */
 body {
     background-color: #f7f9fc;
     display: flex;
@@ -393,7 +393,7 @@ button[type="submit"]:hover:not([disabled]) {
     </p>
   </div>
   <div class="content-wrapper">
-    <form id="estimateForm" action="https://script.google.com/macros/s/AKfycbyg4-G6k-U9YXXvOw0O5Yy8CE9xP-7_NSbDkCAB7UB6O582q4jmvd2CaU5Reuavrtc/exec" method="POST">
+    <form id="estimateForm" action="https://script.google.com/macros/s/AKfycbytDXqM6zOc8ohaNdO_qFjEHE3IaB-rwyZRziWhv-QV-mdmeMJ65wf6abOMzFmjf5q6/exec" method="POST">
       <h3 id="illustrationTypeSectionH3">【ご希望のイラストタイプ】<span class="required-note">※必須。</span></h3>
       <label><input type="radio" name="type" value="5000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image196.webp"> 顔アップ（5,000円）</label>
       <label><input type="radio" name="type" value="8000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/575755441817780548.webp"> バストアップ（8,000円）</label>
@@ -529,7 +529,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingText = document.getElementById('loadingText');
 
     let selectedFiles = [];
-    // GASウェブアプリのURLを「[ウェブアプリのURL]」に置き換えてください
+    // GASウェブアプリのURL
     const gasUrl = "https://script.google.com/macros/s/AKfycbyg4-G6k-U9YXXvOw0O5Yy8CE9xP-7_NSbDkCAB7UB6O582q4jmvd2CaU5Reuavrtc/exec";
 
     const showLoading = (text) => {
@@ -748,6 +748,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Content-Type': 'application/json',
                 },
                 mode: 'cors',
+                // ここを修正
                 body: JSON.stringify({ action: 'submitForm', data: data })
             });
 
