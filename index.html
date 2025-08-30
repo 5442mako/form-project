@@ -529,7 +529,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingText = document.getElementById('loadingText');
 
     let selectedFiles = [];
-    // GASウェブアプリのURL
+    // 🚨 GASウェブアプリのURLをここに貼り付けてください 🚨
     const gasUrl = "https://script.google.com/macros/s/AKfycbx5EPJAf3voK51Ifsfw0vd3bZZXPT09AeHndayMPqkBUuA0kwxUoKQHGWuZ11wixqn-Mg/exec";
 
     const showLoading = (text) => {
@@ -717,7 +717,9 @@ document.addEventListener('DOMContentLoaded', () => {
             ? ['追加オプションなし']
             : Array.from(document.querySelectorAll('.additional-option-item:checked')).map(opt => opt.parentElement.textContent.trim());
 
+        // --- ここからGASへの送信処理 ---
         const fileDataArray = [];
+        // 画像ファイルをBase64形式に変換
         for (const file of selectedFiles) {
             const base64 = await new Promise((resolve, reject) => {
                 const reader = new FileReader();
@@ -727,7 +729,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             fileDataArray.push({
                 fileName: file.name,
-                data: base64
+                data: base64,
+                contentType: file.type // ファイルのタイプも送信
             });
         }
 
@@ -740,15 +743,14 @@ document.addEventListener('DOMContentLoaded', () => {
             optionLabels: optionLabels,
             images: fileDataArray
         };
-
+        
         try {
             const response = await fetch(gasUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                // mode: 'cors' を追加
-                mode: 'cors',
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': 'https://5442mako.github.io/form-project'
+              },
                 body: JSON.stringify(data)
             });
 
@@ -758,13 +760,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 completeMessage.classList.remove("is-hidden");
                 previewPanel?.classList.add("is-hidden");
             } else {
-                throw new Error('GASへの送信に失敗しました。');
+                throw new Error('サーバーからの応答が異常です。ステータスコード: ' + response.status);
             }
         } catch (error) {
             hideLoading();
             submitBtn.disabled = false;
             alert("送信に失敗しました。\n\n" + error.message);
         }
+        // --- ここまでGASへの送信処理 ---
     };
 
     // --- イベントリスナーの設定 ---
@@ -799,12 +802,11 @@ document.addEventListener('DOMContentLoaded', () => {
         fileErrorMessage.classList.add("is-hidden");
         const newFiles = Array.from(event.target.files);
 
-        if (newFiles.length > 5) {
+        if (selectedFiles.length + newFiles.length > 5) {
             fileErrorMessage.classList.remove('is-hidden');
             imageFileInput.value = '';
-            selectedFiles = [];
         } else {
-            selectedFiles = newFiles;
+            selectedFiles = [...selectedFiles, ...newFiles];
         }
         renderFilePreview();
     });
