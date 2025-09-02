@@ -67,7 +67,7 @@
         }
 
         label {
-            display: block;
+            display: block; /* 各項目を縦に並べる */
             margin-bottom: 10px;
         }
 
@@ -173,16 +173,16 @@
             object-fit: contain;
         }
 
-        /* 新しいCSSスタイル */
-        .price-list-section {
+        /* 変更前のCSSを削除 */
+        /* .price-list-section {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
             justify-content: space-between;
         }
         .price-list-section label {
-            width: 48%; /* 2列表示にするための幅 */
-        }
+            width: 48%;
+        } */
         
     </style>
 </head>
@@ -201,16 +201,15 @@
         <div class="content-wrapper">
             <form id="estimateForm">
                 <h3>【簡易料金表】</h3>
-                <h4 id="illustrationTypeSectionH4">【ご希望のイラストタイプ】</h4>
-                <div class="price-list-section">
-                    <label><input type="radio" name="type" value="5000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image196.webp"> 顔アップ（5,000円）</label>
-                    <label><input type="radio" name="type" value="8000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/575755441817780548.webp"> バストアップ（8,000円）</label>
-                    <label><input type="radio" name="type" value="10000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image107.webp"> 膝上（10,000円）</label>
-                    <label><input type="radio" name="type" value="13000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/イラスト210.webp"> 全身（13,000円）</label>
-                    <label><input type="radio" name="type" value="40000" > Live2D用イラストパーツ分け（40,000円）</label>
-                    <label><input type="radio" name="type" value="25000" > Live2Dバストアップ（25,000円）</label>
-                    <label><input type="radio" name="type" value="15000" > キャラ・衣装デザイン（15,000円）</label>
-                </div>
+                <h3 id="illustrationTypeSectionH3">【ご希望のイラストタイプ】<span class="required-note">※必須。</span></h3>
+                
+                <label><input type="radio" name="type" value="5000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image196.webp"> 顔アップ（5,000円）</label>
+                <label><input type="radio" name="type" value="8000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/575755441817780548.webp"> バストアップ（8,000円）</label>
+                <label><input type="radio" name="type" value="10000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image107.webp"> 膝上（10,000円）</label>
+                <label><input type="radio" name="type" value="13000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/イラスト210.webp"> 全身（13,000円）</label>
+                <label><input type="radio" name="type" value="40000" > Live2D用イラストパーツ分け（40,000円）</label>
+                <label><input type="radio" name="type" value="25000" > Live2Dバストアップ（25,000円）</label>
+                <label><input type="radio" name="type" value="15000" > キャラ・衣装デザイン（15,000円）</label>
                 <div id="typeImageBelowOptions" class="preview"></div>
 
                 <h3>【追加オプション（複数選択可）】</h3>
@@ -239,8 +238,10 @@
                 <div class="additional-info">
                     <p>
                         詳細資料などございましたらご提示頂けますと助かります。<br>
-                        お手数お掛け致しますがどうぞよろしくお願い致します。
-                        <span class="required-note">※まずは【ご依頼入力フォーム】を送信してから<br>添付ファイル送信フォームへをクリックしてください。<br>添付ファイル送信フォームへを押すとブラウザが変わるのでご注意ください。</span>
+                        お手数お掛け致しますがどうぞよろしくお願い致します。<br>
+                        <span class="required-note">※まずは【ご依頼入力フォーム】を送信してから<br>
+                            添付ファイル送信フォームへをクリックしてください。<br>
+                            添付ファイル送信フォームへを押すとブラウザが変わるのでご注意ください。</span>
                     </p>
                     <a href="https://forms.gle/vkE8MPgheKWvJ9Fn9" target="_blank" class="submit-button">
                         添付ファイル送信フォームへ
