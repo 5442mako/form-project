@@ -10,14 +10,14 @@
             background-color: #f4f4f9;
             color: #333;
             margin: 0;
-            padding: 20px; /* bodyのpaddingを元に戻す */
+            padding: 20px;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
             background: #fff;
-            padding: 0; /* ここを0に設定 */
+            padding: 0;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -28,22 +28,22 @@
             max-height: 250px;
             object-fit: cover;
             display: block;
-            border-top-left-radius: 8px; /* 角丸をトップのみに適用 */
-            border-top-right-radius: 8px; /* 角丸をトップのみに適用 */
-            border-bottom-left-radius: 0; /* 下は角丸なし */
-            border-bottom-right-radius: 0; /* 下は角丸なし */
-            margin-bottom: 0; /* 画像と注意書きの間に余白がないように調整 */
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            margin-bottom: 0;
         }
 
-        .content-padding { /* 新しいクラスを追加 */
-            padding: 20px 40px; /* コンテンツ部分にのみパディングを適用 */
+        .content-padding {
+            padding: 20px 40px;
         }
 
         .disclaimer-container {
             font-size: 0.8em;
             color: #777;
             text-align: center;
-            margin-top: 20px; /* 画像との間隔を調整 */
+            margin-top: 20px;
             margin-bottom: 20px;
         }
 
@@ -117,6 +117,14 @@
         .google-form-container {
             margin-top: 30px;
         }
+
+        /* 変更箇所 */
+        .google-form-container iframe {
+            width: 100%;
+            height: 500px;
+            border: 0;
+            min-width: 320px; /* 最小幅を設定 */
+        }
         
         .popup-overlay {
             position: fixed;
@@ -144,7 +152,8 @@
 <div class="container" id="formContainer">
     <img src="https://raw.githubusercontent.com/5442mako/image-host-/main/575758226550424048.webp" alt="ヘッダー画像" class="header-image" loading="lazy" decoding="async">
     
-    <div class="content-padding"> <div class="disclaimer-container">
+    <div class="content-padding"> 
+        <div class="disclaimer-container">
             <p>
                 ※本ページに掲載された画像の無断転載・無断使用を禁止。<br>
                 ※不正利用が発覚した場合、損害請求の対象となります。
