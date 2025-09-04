@@ -44,7 +44,7 @@
             color: #777;
             text-align: center;
             margin-top: 20px;
-            margin-bottom: 5px;
+            margin-bottom: 20px;
         }
         
         h3 {
@@ -212,9 +212,9 @@
                 <div id="typeImageBelowOptions" class="preview"></div>
 
                 <h3>【追加オプション（複数選択可）】</h3>
-                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="3000" id="backgroundCheckbox" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image209.webp"> 背景（3,000円〜）</label>
-                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" id="detailedBackgroundCheckbox" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/575755441817780548.webp,https://raw.githubusercontent.com/5442mako/image-host-/main/image107.webp"> 細かい背景（5,000円〜）</label>
-                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image216.webp"> 細かい装飾（花束、花冠などパーツ1つごと5,000円）</label>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="3000" data-option-group="background" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image209.webp"> 背景（3,000円〜）</label>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" data-option-group="background" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/575755441817780548.webp,https://raw.githubusercontent.com/5442mako/image-host-/main/image107.webp"> 細かい背景（5,000円〜）</label>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image216.webp"> 細かい装飾（花束、花冠などパーツ1つごとに5,000円）</label>
                 <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" > ぬいぐるみ（動物など）・大きめアクセ（１つごと5,000円）</label>
                 <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="10000"> 追加衣装（1着ごと10,000円）</label>
                 <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000"> 商用利用（5,000円）</label>
@@ -249,8 +249,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const allOptionCheckboxes = document.querySelectorAll('.option');
     const noOptionCheckbox = document.getElementById('noOptionCheckbox');
     const actualOptionItems = document.querySelectorAll('.additional-option-item');
-    const backgroundCheckbox = document.getElementById('backgroundCheckbox');
-    const detailedBackgroundCheckbox = document.getElementById('detailedBackgroundCheckbox');
     const popupOverlay = document.getElementById("popupOverlay");
     const popupImage = document.getElementById("popupImage");
 
@@ -341,17 +339,6 @@ document.addEventListener('DOMContentLoaded', () => {
             optionPreviewContainer.appendChild(note);
         }
     };
-
-    // --- 新しいイベントハンドラー ---
-    const handleBackgroundCheck = (changedCheckbox) => {
-        if (changedCheckbox === backgroundCheckbox && backgroundCheckbox.checked) {
-            detailedBackgroundCheckbox.checked = false;
-        } else if (changedCheckbox === detailedBackgroundCheckbox &" "& detailedBackgroundCheckbox.checked) {
-            backgroundCheckbox.checked = false;
-        }
-        calculateTotal();
-        updateOptionPreview();
-    };
     
     // --- イベントリスナー設定 ---
     popupOverlay.addEventListener('click', hidePopup);
@@ -365,6 +352,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     allOptionCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
+            // 同じデータグループを持つ他のチェックボックスを非選択にする
+            const group = checkbox.dataset.optionGroup;
+            if (group && checkbox.checked) {
+                document.querySelectorAll(`[data-option-group="${group}"]`).forEach(otherCheckbox => {
+                    if (otherCheckbox !== checkbox) {
+                        otherCheckbox.checked = false;
+                    }
+                });
+            }
+
             if (checkbox === noOptionCheckbox && checkbox.checked) {
                 actualOptionItems.forEach(opt => { opt.checked = false; });
             } else if (checkbox.checked) {
@@ -374,14 +371,6 @@ document.addEventListener('DOMContentLoaded', () => {
             updateOptionPreview();
         });
     });
-
-    // 背景と細かい背景のイベントリスナー
-    if (backgroundCheckbox) {
-        backgroundCheckbox.addEventListener('change', () => handleBackgroundCheck(backgroundCheckbox));
-    }
-    if (detailedBackgroundCheckbox) {
-        detailedBackgroundCheckbox.addEventListener('change', () => handleBackgroundCheck(detailedBackgroundCheckbox));
-    }
 
     // 初期化
     calculateTotal();
