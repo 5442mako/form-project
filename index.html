@@ -46,6 +46,13 @@
             margin-top: 20px;
             margin-bottom: 20px;
         }
+        
+        /* 修正箇所: disclaimer-container と price-estimate に左右のpaddingを追加 */
+        .disclaimer-container,
+        .price-estimate {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
 
         h3 {
             border-bottom: 2px solid #ff69b4;
@@ -120,7 +127,7 @@
         
         .google-form-container iframe {
             width: 100%;
-            height: 700px; 
+            height: 700px;
             border: 0;
             min-width: 320px;
         }
@@ -175,13 +182,13 @@
 
         /* 新しいCSSスタイル */
         .price-estimate {
-            background-color: #ffe3f2; /* 薄いピンクの背景色 */
-            padding: 1px 20px 20px; /* 見出しと項目の間隔を調整 */
+            background-color: #ffe3f2;
+            padding: 1px 20px 20px;
             border-radius: 8px;
             margin-top: 20px;
             margin-bottom: 20px;
         }
-
+        
     </style>
 </head>
 <body>
@@ -189,180 +196,179 @@
 <div class="container" id="formContainer">
     <img src="https://raw.githubusercontent.com/5442mako/image-host-/main/575758226550424048.webp" alt="ヘッダー画像" class="header-image" loading="lazy" decoding="async">
     
-    <div class="content-padding"> 
-        <div class="disclaimer-container">
-            <p>
-                ※本ページに掲載された画像の無断転載・無断使用を禁止。<br>
-                ※不正利用が発覚した場合、損害請求の対象となります。
-            </p>
-        </div>
-        <div class="content-wrapper">
-            <form id="estimateForm">
-                <div class="price-estimate">
-                    <h2>【簡易見積】</h2>
-                    <h3 id="illustrationTypeSectionH3">【ご希望のイラストタイプ】</h3>
-                    
-                    <label><input type="radio" name="type" value="5000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image196.webp"> 顔アップ（5,000円）</label>
-                    <label><input type="radio" name="type" value="8000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/575755441817780548.webp"> バストアップ（8,000円）</label>
-                    <label><input type="radio" name="type" value="10000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image107.webp"> 膝上（10,000円）</label>
-                    <label><input type="radio" name="type" value="13000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/イラスト210.webp"> 全身（13,000円）</label>
-                    <label><input type="radio" name="type" value="40000" > Live2D用イラストパーツ分け（40,000円）</label>
-                    <label><input type="radio" name="type" value="25000" > Live2Dバストアップ（25,000円）</label>
-                    <label><input type="radio" name="type" value="15000" > キャラ・衣装デザイン（15,000円）</label>
-                    
-                    <div id="typeImageBelowOptions" class="preview"></div>
+    <div class="disclaimer-container">
+        <p>
+            ※本ページに掲載された画像の無断転載・無断使用を禁止。<br>
+            ※不正利用が発覚した場合、損害請求の対象となります。
+        </p>
+    </div>
+    <div class="content-wrapper">
+        <form id="estimateForm">
+            <div class="price-estimate">
+                <h2>【簡易見積】</h2>
+                <h3 id="illustrationTypeSectionH3">【ご希望のイラストタイプ】</h3>
+                
+                <label><input type="radio" name="type" value="5000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image196.webp"> 顔アップ（5,000円）</label>
+                <label><input type="radio" name="type" value="8000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/575755441817780548.webp"> バストアップ（8,000円）</label>
+                <label><input type="radio" name="type" value="10000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image107.webp"> 膝上（10,000円）</label>
+                <label><input type="radio" name="type" value="13000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/イラスト210.webp"> 全身（13,000円）</label>
+                <label><input type="radio" name="type" value="40000" > Live2D用イラストパーツ分け（40,000円）</label>
+                <label><input type="radio" name="type" value="25000" > Live2Dバストアップ（25,000円）</label>
+                <label><input type="radio" name="type" value="15000" > キャラ・衣装デザイン（15,000円）</label>
+                
+                <div id="typeImageBelowOptions" class="preview"></div>
 
-                    <h3>【追加オプション（複数選択可）】</h3>
-                    <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="3000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image209.webp"> 背景（3,000円〜）</label>
-                    <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="15000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image216.webp"> 細かい背景（15,000円〜）</label>
-                    <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" > 細かい装飾（5,000円）</label>
-                    <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" > ぬいぐるみ（動物など）・大きめアクセ（5,000円）</label>
-                    <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="10000"> 追加衣装（1着ごと10,000円）</label>
-                    <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000"> 商用利用（5,000円）</label>
-                    <label><input type="checkbox" class="option" id="noOptionCheckbox" name="additionalOption" value="0"> 追加オプションなし</label>
-                    <div id="optionPreview" class="preview"></div>
+                <h3>【追加オプション（複数選択可）】</h3>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="3000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image209.webp"> 背景（3,000円〜）</label>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="15000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image216.webp"> 細かい背景（15,000円〜）</label>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" > 細かい装飾（5,000円）</label>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" > ぬいぐるみ（動物など）・大きめアクセ（5,000円）</label>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="10000"> 追加衣装（1着ごと10,000円）</label>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000"> 商用利用（5,000円）</label>
+                <label><input type="checkbox" class="option" id="noOptionCheckbox" name="additionalOption" value="0"> 追加オプションなし</label>
+                <div id="optionPreview" class="preview"></div>
 
-                    <h3>【合計】</h3>
-                    <div class="total">簡易見積合計金額：¥<span id="total">0</span></div>
-                    <div class="estimate-note">
-                        ※この金額はあくまで目安です。<br>
-                        ※正式にご依頼をご希望の方は、<br>下記のご依頼フォームにご入力・送信をお願いいたします。
-                    </div>
+                <h3>【合計】</h3>
+                <div class="total">簡易見積合計金額：¥<span id="total">0</span></div>
+                <div class="estimate-note">
+                    ※この金額はあくまで目安です。<br>
+                    ※正式にご依頼をご希望の方は、<br>下記のご依頼フォームにご入力・送信をお願いいたします。
                 </div>
-                <h3 id="contactInfoSectionH3">【ご依頼フォーム】</h3>
-　　　　　　　　　　　　<script src="https://ssl.form-mailer.jp/formfiles/js/embed.js"></script>
-                    <div class="formmailer-embed" data-form-hash="b426eb79864198" data-form-host="ssl.form-mailer.jp"></div>
-            </form>
-        </div>
+            </div>
+            <h3 id="contactInfoSectionH3">【ご依頼フォーム】</h3>
+            <script src="https://ssl.form-mailer.jp/formfiles/js/embed.js"></script>
+            <div class="formmailer-embed" data-form-hash="b426eb79864198" data-form-host="ssl.form-mailer.jp"></div>
+        </form>
     </div>
+</div>
 
-    <div class="popup-overlay" id="popupOverlay">
-      <img id="popupImage" src="" alt="拡大画像" loading="lazy" decoding="async">
-    </div>
+<div class="popup-overlay" id="popupOverlay">
+    <img id="popupImage" src="" alt="拡大画像" loading="lazy" decoding="async">
+</div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // --- DOM要素の取得 ---
-        const totalEl = document.getElementById("total");
-        const typePreviewContainer = document.getElementById('typeImageBelowOptions');
-        const optionPreviewContainer = document.getElementById("optionPreview");
-        const radios = document.querySelectorAll('input[name="type"]');
-        const allOptionCheckboxes = document.querySelectorAll('.option');
-        const noOptionCheckbox = document.getElementById('noOptionCheckbox');
-        const actualOptionItems = document.querySelectorAll('.additional-option-item');
-        const popupOverlay = document.getElementById("popupOverlay");
-        const popupImage = document.getElementById("popupImage");
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // --- DOM要素の取得 ---
+    const totalEl = document.getElementById("total");
+    const typePreviewContainer = document.getElementById('typeImageBelowOptions');
+    const optionPreviewContainer = document.getElementById("optionPreview");
+    const radios = document.querySelectorAll('input[name="type"]');
+    const allOptionCheckboxes = document.querySelectorAll('.option');
+    const noOptionCheckbox = document.getElementById('noOptionCheckbox');
+    const actualOptionItems = document.querySelectorAll('.additional-option-item');
+    const popupOverlay = document.getElementById("popupOverlay");
+    const popupImage = document.getElementById("popupImage");
 
-        // --- 関数定義 ---
-        const showPopup = (src) => {
-            popupImage.src = src;
-            popupOverlay.style.display = "flex";
-        };
-        const hidePopup = () => {
-            popupOverlay.style.display = "none";
-        };
+    // --- 関数定義 ---
+    const showPopup = (src) => {
+        popupImage.src = src;
+        popupOverlay.style.display = "flex";
+    };
+    const hidePopup = () => {
+        popupOverlay.style.display = "none";
+    };
 
-        const calculateTotal = () => {
-            let total = 0;
-            const selectedType = document.querySelector('input[name="type"]:checked');
-            if (selectedType) total += parseInt(selectedType.value, 10);
+    const calculateTotal = () => {
+        let total = 0;
+        const selectedType = document.querySelector('input[name="type"]:checked');
+        if (selectedType) total += parseInt(selectedType.value, 10);
 
-            if (!noOptionCheckbox?.checked) {
-                actualOptionItems.forEach(opt => {
-                    if (opt.checked) total += parseInt(opt.value, 10);
-                });
-            }
-            totalEl.textContent = total.toLocaleString();
+        if (!noOptionCheckbox?.checked) {
+            actualOptionItems.forEach(opt => {
+                if (opt.checked) total += parseInt(opt.value, 10);
+            });
+        }
+        totalEl.textContent = total.toLocaleString();
+    };
+    
+    const createPreviewImage = (url, altText, container, isOption = false) => {
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = altText;
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.style.cursor = 'pointer';
+        img.style.borderRadius = '6px';
+        img.onclick = (e) => {
+            e.preventDefault();
+            showPopup(img.src);
         };
         
-        const createPreviewImage = (url, altText, container, isOption = false) => {
-            const img = document.createElement('img');
-            img.src = url;
-            img.alt = altText;
-            img.loading = 'lazy';
-            img.decoding = 'async';
-            img.style.cursor = 'pointer';
-            img.style.borderRadius = '6px';
-            img.onclick = (e) => {
-                e.preventDefault();
-                showPopup(img.src);
-            };
-            
-            if (isOption) {
-                img.style.maxWidth = "150px";
-                img.style.maxHeight = "150px";
-            } else {
-                img.style.maxWidth = '50%';
-                img.style.maxHeight = '200px';
-                img.style.boxSizing = 'border-box';
-                img.style.padding = '0 5px';
-                img.style.display = 'inline-block';
-            }
-            
-            container.appendChild(img);
-        };
+        if (isOption) {
+            img.style.maxWidth = "150px";
+            img.style.maxHeight = "150px";
+        } else {
+            img.style.maxWidth = '50%';
+            img.style.maxHeight = '200px';
+            img.style.boxSizing = 'border-box';
+            img.style.padding = '0 5px';
+            img.style.display = 'inline-block';
+        }
+        
+        container.appendChild(img);
+    };
 
-        const updateTypePreview = () => {
-            typePreviewContainer.innerHTML = '';
-            const selected = document.querySelector('input[name="type"]:checked');
-            if (selected?.dataset.imgs) {
-                const imageUrls = selected.dataset.imgs.split(',').map(url => url.trim()).filter(Boolean);
-                imageUrls.forEach(url => createPreviewImage(url, "タイプ画像", typePreviewContainer));
-                if (imageUrls.length > 0) {
-                    const note = document.createElement("p");
-                    note.textContent = "※画像をクリックすると拡大します。";
-                    note.className = "preview-note";
-                    typePreviewContainer.appendChild(note);
-                }
-            }
-        };
-
-        const updateOptionPreview = () => {
-            optionPreviewContainer.innerHTML = '';
-            actualOptionItems.forEach(opt => {
-                if (opt.checked && opt.dataset.imgs) {
-                    const wrapper = document.createElement("div");
-                    wrapper.className = "optionImageWrapper";
-                    createPreviewImage(opt.dataset.imgs, "オプション画像", wrapper, true);
-                    optionPreviewContainer.appendChild(wrapper);
-                }
-            });
-            if (Array.from(actualOptionItems).filter(opt => opt.checked && opt.dataset.imgs).length > 0) {
+    const updateTypePreview = () => {
+        typePreviewContainer.innerHTML = '';
+        const selected = document.querySelector('input[name="type"]:checked');
+        if (selected?.dataset.imgs) {
+            const imageUrls = selected.dataset.imgs.split(',').map(url => url.trim()).filter(Boolean);
+            imageUrls.forEach(url => createPreviewImage(url, "タイプ画像", typePreviewContainer));
+            if (imageUrls.length > 0) {
                 const note = document.createElement("p");
                 note.textContent = "※画像をクリックすると拡大します。";
                 note.className = "preview-note";
-                optionPreviewContainer.appendChild(note);
+                typePreviewContainer.appendChild(note);
             }
-        };
-        
-        // --- イベントリスナー設定 ---
-        popupOverlay.addEventListener('click', hidePopup);
-        document.addEventListener('contextmenu', e => { if (e.target.tagName === "IMG") e.preventDefault(); });
-        document.addEventListener('dragstart', e => { if (e.target.tagName === "IMG") e.preventDefault(); });
-        
-        radios.forEach(r => r.addEventListener('change', () => { 
-            calculateTotal(); 
-            updateTypePreview(); 
-        }));
-        
-        allOptionCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                if (checkbox === noOptionCheckbox && checkbox.checked) {
-                    actualOptionItems.forEach(opt => { opt.checked = false; });
-                } else if (checkbox.checked) {
-                    if (noOptionCheckbox) noOptionCheckbox.checked = false;
-                }
-                calculateTotal();
-                updateOptionPreview();
-            });
-        });
+        }
+    };
 
-        // 初期化
-        calculateTotal();
-        updateTypePreview();
-        updateOptionPreview();
+    const updateOptionPreview = () => {
+        optionPreviewContainer.innerHTML = '';
+        actualOptionItems.forEach(opt => {
+            if (opt.checked && opt.dataset.imgs) {
+                const wrapper = document.createElement("div");
+                wrapper.className = "optionImageWrapper";
+                createPreviewImage(opt.dataset.imgs, "オプション画像", wrapper, true);
+                optionPreviewContainer.appendChild(wrapper);
+            }
+        });
+        if (Array.from(actualOptionItems).filter(opt => opt.checked && opt.dataset.imgs).length > 0) {
+            const note = document.createElement("p");
+            note.textContent = "※画像をクリックすると拡大します。";
+            note.className = "preview-note";
+            optionPreviewContainer.appendChild(note);
+        }
+    };
+    
+    // --- イベントリスナー設定 ---
+    popupOverlay.addEventListener('click', hidePopup);
+    document.addEventListener('contextmenu', e => { if (e.target.tagName === "IMG") e.preventDefault(); });
+    document.addEventListener('dragstart', e => { if (e.target.tagName === "IMG") e.preventDefault(); });
+    
+    radios.forEach(r => r.addEventListener('change', () => { 
+        calculateTotal(); 
+        updateTypePreview(); 
+    }));
+    
+    allOptionCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            if (checkbox === noOptionCheckbox && checkbox.checked) {
+                actualOptionItems.forEach(opt => { opt.checked = false; });
+            } else if (checkbox.checked) {
+                if (noOptionCheckbox) noOptionCheckbox.checked = false;
+            }
+            calculateTotal();
+            updateOptionPreview();
+        });
     });
-    </script>
+
+    // 初期化
+    calculateTotal();
+    updateTypePreview();
+    updateOptionPreview();
+});
+</script>
 
 </body>
 </html>
