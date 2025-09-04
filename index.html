@@ -34,9 +34,10 @@
             border-bottom-right-radius: 0;
             margin-bottom: 0;
         }
-
-        .content-padding {
-            padding: 20px 40px;
+        
+        /* content-wrapperを追加して左右の余白を管理 */
+        .content-wrapper {
+            padding: 20px;
         }
 
         .disclaimer-container {
@@ -47,12 +48,6 @@
             margin-bottom: 20px;
         }
         
-        .disclaimer-container,
-        .price-estimate {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
         h3 {
             border-bottom: 2px solid #ff69b4;
             padding-bottom: 5px;
@@ -186,7 +181,10 @@
             border-radius: 8px;
             margin-top: 20px;
             margin-bottom: 20px;
+            display: flex; /* これが原因で横並びになる */
+            flex-direction: column; /* これで縦並びに戻す */
         }
+        
     </style>
 </head>
 <body>
@@ -212,6 +210,17 @@
                 <label><input type="radio" name="type" value="13000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/イラスト210.webp"> 全身（13,000円）</label>
                 <label><input type="radio" name="type" value="40000" > Live2D用イラストパーツ分け（40,000円）</label>
                 <label><input type="radio" name="type" value="25000" > Live2Dバストアップ（25,000円）</label>
+                <label><input type="radio" name="type" value="15000" > キャラ・衣装デザイン（15,000円）</label>
+                
+                <div id="typeImageBelowOptions" class="preview"></div>
+
+                <h3>【追加オプション（複数選択可）】</h3>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="3000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image209.webp"> 背景（3,000円〜）</label>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="15000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image216.webp"> 細かい背景（15,000円〜）</label>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" > 細かい装飾（5,000円）</label>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" > ぬいぐるみ（動物など）・大きめアクセ（5,000円）</label>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="10000"> 追加衣装（1着ごと10,000円）</label>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000"> 商用利用（5,000円）</label>
                 <label><input type="checkbox" class="option" id="noOptionCheckbox" name="additionalOption" value="0"> 追加オプションなし</label>
                 <div id="optionPreview" class="preview"></div>
 
