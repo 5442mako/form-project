@@ -1,763 +1,370 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>イラスト申し込み</title>
-<meta name="robots" content="noai, noimageai, noindex, nofollow">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<style>
-/* --- スタイルは変更なし --- */
-body {
-    background-color: #f7f9fc;
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-    flex-direction: column;
-    align-items: center;
-}
-.container {
-    background: white;
-    padding: 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 700px;
-    box-sizing: border-box;
-}
-.content-wrapper {
-    padding: 15px 40px;
-}
-.header-image {
-    display: block;
-    width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    transition: opacity 0.3s ease-in-out;
-}
-.disclaimer-container {
-    padding: 15px 40px;
-    border-top: 2px solid #ff91d7;
-    border-bottom: 2px solid #ff91d7;
-    text-align: center;
-}
-.disclaimer-container p {
-    margin: 0;
-    font-size: 14px;
-    color: #000000;
-    line-height: 1.6;
-}
-h2, h3 {
-    color: #333;
-}
-h3 {
-    font-size: 1.15em;
-    font-weight: 600;
-    margin-top: 40px;
-    padding-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border-bottom: 2px solid #ff91d7;
-}
-.section-description {
-    font-size: 14px;
-    color: #666;
-    margin: 4px 0 12px;
-}
-.required-note {
-    color: #FF0000;
-    font-size: 12px;
-}
-label {
-    display: block;
-    margin: 6px 0;
-    color: #222;
-}
-input[type="text"],
-input[type="email"],
-textarea {
-    font-size: 16px;
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-}
-input[type="file"] {
-    margin-bottom: 10px;
-}
-.input-error {
-    border-color: red !important;
-    outline: 1px solid red;
-    background-color: #fff8f8;
-}
-label.highlight-error {
-    color: red !important;
-}
-.error-message {
-    color: red;
-    font-size: 0.9em;
-    margin: -10px 0 15px;
-    line-height: 1.4;
-    background-color: #fff0f0;
-    padding: 6px 8px;
-    border: 1px solid #ffcccc;
-    border-radius: 4px;
-}
-.total {
-    font-size: 1.3em;
-    font-weight: bold;
-    color: #1e7c27;
-    text-align: center;
-    margin-top: 24px;
-}
-.estimate-note {
-    text-align: center;
-    color: #555;
-    font-size: 14px;
-    margin-top: 10px;
-    line-height: 1.5;
-}
-.preview img {
-    max-width: 100%;
-    max-height: 200px;
-    margin-top: 10px;
-    border-radius: 6px;
-}
-.preview-note {
-    color: #d66;
-    font-size: 0.9em;
-    text-align: center;
-    width: 100%;
-    margin-top: 10px;
-}
-#optionPreview {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-}
-.optionImageWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.optionImageWrapper .preview-note {
-    font-size: 0.8em;
-    margin-top: 5px;
-}
-#filePreviewContainer {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-.file-preview-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 12px;
-    background-color: #f4f4f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    font-size: 0.9em;
-}
-.file-preview-item span {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-right: 10px;
-}
-.file-preview-item button {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 4px 8px;
-    cursor: pointer;
-    font-size: 0.8em;
-    line-height: 1;
-}
-.file-preview-item button:hover {
-    background-color: #cc0000;
-}
-button[type="submit"] {
-    background-color: #446dff;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    font-size: 1em;
-    width: 10em;
-    cursor: pointer;
-    margin-top: 30px;
-    transition: all 0.3s ease;
-}
-button[type="submit"][disabled] {
-    background-color: #888;
-    cursor: not-allowed;
-}
-button[type="submit"]:hover:not([disabled]) {
-    background-color: #ff69b4;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-#previewPanel {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 270px;
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-top: 4px solid #ff8cc6;
-    border-radius: 8px;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
-    padding: 18px 22px;
-    z-index: 1000;
-    font-size: 13.5px;
-    box-sizing: border-box;
-}
-#previewPanel h4 {
-    font-size: 1.15em;
-    color: #2c2c2c;
-    margin: 0 0 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #f0f0f0;
-    display: flex;
-    align-items: center;
-}
-#previewPanel h4::before {
-    content: '📋';
-    margin-right: 8px;
-    font-size: 1.1em;
-    color: #ff8cc6;
-}
-#previewPanel p {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #f5f5f5;
-    line-height: 1.4;
-}
-#previewPanel p:last-child {
-    border-bottom: none;
-    margin: 12px 0 0;
-    padding: 12px 0 0;
-    border-top: 1px solid #e9e9e9;
-}
-#previewPanel p strong {
-    display: block;
-    color: #444;
-    font-weight: 600;
-    margin-bottom: 6px;
-    font-size: 0.9em;
-}
-#previewPanel p span:not(.preview-total-highlight) {
-    display: block;
-    color: #333;
-    padding-left: 8px;
-    font-size: 0.95em;
-    word-break: break-word;
-    line-height: 1.55;
-}
-#previewPanel .preview-total-highlight {
-    font-size: 1.65em;
-    color: #1a650e;
-    font-weight: bold;
-    background-color: #e6f4e3;
-    padding: 7px 14px;
-    border-radius: 6px;
-    display: inline-block;
-    text-align: left;
-    border: 1px solid #c8e6c1;
-    margin-top: 4px;
-}
-.popup-overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.8);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-}
-.popup-overlay img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-.complete {
-    text-align: center;
-    padding: 40px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    max-width: 500px;
-    margin: 20px auto;
-}
-.is-hidden {
-    display: none !important;
-}
-#loadingOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-}
-.spinner {
-    border: 6px solid #f3f3f3;
-    border-top: 6px solid #ff69b4;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-}
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-#loadingText {
-    margin-top: 20px;
-    color: #555;
-    font-size: 1.1em;
-}
-@media (max-width: 980px) {
-    body { padding: 20px; }
-    .content-wrapper { padding: 15px 20px; }
-    .disclaimer-container { padding: 15px 20px; }
-    #previewPanel {
-        position: static;
-        width: 100%;
-        margin: 25px 0;
-        padding: 15px 18px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        border-top-width: 3px;
-    }
-    #previewPanel h4 { font-size: 1.1em; margin-bottom: 15px; padding-bottom: 10px; }
-    #previewPanel h4::before { font-size: 1em; }
-    #previewPanel p { margin-bottom: 8px; padding-bottom: 8px; line-height: 1.3; }
-    #previewPanel p strong { font-size: 0.85em; }
-    #previewPanel p span:not(.preview-total-highlight) { font-size: 0.9em; padding-left: 6px; }
-    #previewPanel .preview-total-highlight { font-size: 1.55em; padding: 6px 12px; }
-}
-@media (max-width: 600px) {
-    body { padding: 15px; }
-    .content-wrapper { padding: 15px; }
-    h3 { font-size: 1.1em; }
-    input[type="text"], input[type="email"], textarea { padding: 12px; }
-    #previewPanel { padding: 12px 15px; margin: 20px 0; }
-    #previewPanel h4 { font-size: 1.05em; }
-    #previewPanel .preview-total-highlight { font-size: 1.45em; }
-    #previewPanel p strong { font-size: 0.8em; }
-    #previewPanel p span:not(.preview-total-highlight) { font-size: 0.85em; padding-left: 5px; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イラスト制作 お問い合わせフォーム</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-image {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+            display: block;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            margin-bottom: 0;
+        }
+
+        .content-padding {
+            padding: 20px 40px;
+        }
+
+        .disclaimer-container {
+            font-size: 0.8em;
+            color: #777;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            border-bottom: 2px solid #ff69b4;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        .total {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+
+        .estimate-note {
+            font-size: 0.85em;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        .required-note {
+            color: #d9534f;
+            font-size: 0.9em;
+        }
+        
+        .preview {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .preview img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+            border: 1px solid #ddd;
+        }
+
+        .preview img:hover {
+            transform: scale(1.05);
+        }
+        
+        .preview-note {
+            font-size: 0.8em;
+            color: #777;
+            margin: 0;
+            width: 100%;
+        }
+
+        .optionImageWrapper {
+            text-align: center;
+        }
+        
+        .google-form-container {
+            margin-top: 30px;
+        }
+        
+        .google-form-container iframe {
+            width: 100%;
+            height: 700px; 
+            border: 0;
+            min-width: 320px;
+        }
+        
+        .additional-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .additional-info p {
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .submit-button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #e65a9e;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        .popup-overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        /* 新しいCSSスタイル */
+        .price-estimate {
+            background-color: #ffe3f2; /* 薄いピンクの背景色 */
+            padding: 1px 20px 20px; /* 見出しと項目の間隔を調整 */
+            border-radius: 8px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+    </style>
 </head>
 <body>
 
 <div class="container" id="formContainer">
-  <img src="https://raw.githubusercontent.com/5442mako/image-host-/main/575758226550424048.webp" alt="ヘッダー画像" class="header-image" id="headerImage" loading="lazy" decoding="async">
-  <div class="disclaimer-container">
-    <p>
-      ※本ページに掲載された画像の無断転載・無断使用を禁止。<br>
-      ※不正利用が発覚した場合、損害請求の対象となります。
-    </p>
-  </div>
-  <div class="content-wrapper">
-    <form id="estimateForm" action="https://formsubmit.co/5442.work@gmail.com" method="POST" enctype="multipart/form-data">
-        
-        <input type="hidden" name="_captcha" value="false"> <input type="hidden" name="_next" value="https://5442mako.github.io/your-repository/thanks.html"> <input type="hidden" name="_subject" value="【イラスト申し込み】新規のお問い合わせがありました">
-        <input type="hidden" name="_template" value="table"> <h3 id="illustrationTypeSectionH3">【ご希望のイラストタイプ】<span class="required-note">※必須。</span></h3>
-      <label><input type="radio" name="イラストタイプ" value="5000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image196.webp"> 顔アップ（5,000円）</label>
-      <label><input type="radio" name="イラストタイプ" value="8000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/575755441817780548.webp"> バストアップ（8,000円）</label>
-      <label><input type="radio" name="イラストタイプ" value="10000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image107.webp"> 膝上（10,000円）</label>
-      <label><input type="radio" name="イラストタイプ" value="13000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/イラスト210.webp"> 全身（13,000円）</label>
-      <label><input type="radio" name="イラストタイプ" value="40000" > Live2D用イラストパーツ分け（40,000円）</label>
-      <label><input type="radio" name="イラストタイプ" value="25000" > Live2Dバストアップ（25,000円）</label>
-      <label><input type="radio" name="イラストタイプ" value="15000" > キャラ・衣装デザイン（15,000円）</label>
-      <p id="typeErrorMessage" class="error-message is-hidden">※ご希望のイラストタイプを選択してください。</p>
-      <div id="typeImageBelowOptions" class="preview"></div>
+    <img src="https://raw.githubusercontent.com/5442mako/image-host-/main/575758226550424048.webp" alt="ヘッダー画像" class="header-image" loading="lazy" decoding="async">
+    
+    <div class="content-padding"> 
+        <div class="disclaimer-container">
+            <p>
+                ※本ページに掲載された画像の無断転載・無断使用を禁止。<br>
+                ※不正利用が発覚した場合、損害請求の対象となります。
+            </p>
+        </div>
+        <div class="content-wrapper">
+            <form id="estimateForm">
+                <div class="price-estimate">
+                    <h2>【簡易見積】</h2>
+                    <h3 id="illustrationTypeSectionH3">【ご希望のイラストタイプ】</h3>
+                    
+                    <label><input type="radio" name="type" value="5000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image196.webp"> 顔アップ（5,000円）</label>
+                    <label><input type="radio" name="type" value="8000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/575755441817780548.webp"> バストアップ（8,000円）</label>
+                    <label><input type="radio" name="type" value="10000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image107.webp"> 膝上（10,000円）</label>
+                    <label><input type="radio" name="type" value="13000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/イラスト210.webp"> 全身（13,000円）</label>
+                    <label><input type="radio" name="type" value="40000" > Live2D用イラストパーツ分け（40,000円）</label>
+                    <label><input type="radio" name="type" value="25000" > Live2Dバストアップ（25,000円）</label>
+                    <label><input type="radio" name="type" value="15000" > キャラ・衣装デザイン（15,000円）</label>
+                    
+                    <div id="typeImageBelowOptions" class="preview"></div>
 
-      <h3>【追加オプション（複数選択可）】<span class="required-note">※必須。</span></h3>
-      <label><input type="checkbox" class="option additional-option-item" name="追加オプション" value="背景（3000円）" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image209.webp"> 背景（3,000円〜）</label>
-      <label><input type="checkbox" class="option additional-option-item" name="追加オプション" value="細かい背景（15000）" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image216.webp"> 細かい背景（15,000円〜）</label>
-      <label><input type="checkbox" class="option additional-option-item" name="追加オプション" value="細かい装飾（5000）" > 細かい装飾（5,000円）</label>
-      <label><input type="checkbox" class="option additional-option-item" name="追加オプション" value="ぬいぐるみ（動物など）・大きめアクセ（5000）" > ぬいぐるみ（動物など）・大きめアクセ（5,000円）</label>
-      <label><input type="checkbox" class="option additional-option-item" name="追加オプション" value="追加衣装（10000）"> 追加衣装（1着ごと10,000円）</label>
-      <label><input type="checkbox" class="option additional-option-item" name="追加オプション" value="商用利用（5000）"> 商用利用（5,000円）</label>
-      <label><input type="checkbox" class="option" id="noOptionCheckbox" name="追加オプション" value="なし"> 追加オプションなし</label>
-      <div id="optionPreview" class="preview"></div>
+                    <h3>【追加オプション（複数選択可）】</h3>
+                    <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="3000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image209.webp"> 背景（3,000円〜）</label>
+                    <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="15000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image216.webp"> 細かい背景（15,000円〜）</label>
+                    <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" > 細かい装飾（5,000円）</label>
+                    <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" > ぬいぐるみ（動物など）・大きめアクセ（5,000円）</label>
+                    <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="10000"> 追加衣装（1着ごと10,000円）</label>
+                    <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000"> 商用利用（5,000円）</label>
+                    <label><input type="checkbox" class="option" id="noOptionCheckbox" name="additionalOption" value="0"> 追加オプションなし</label>
+                    <div id="optionPreview" class="preview"></div>
 
-      <h3>【合計】</h3>
-      <div class="total">簡易見積合計金額：¥<span id="total">0</span></div>
-      <div class="estimate-note">
-        ※この金額はあくまで目安です。<br>
-        ※実際の費用は内容を確認のうえ、<br>正式にお見積もりさせていただきます。
-      </div>
-      
-      <h3 id="contactInfoSectionH3">【ご連絡先】</h3>
-      <p>お名前orハンドルネーム<span class="required-note">※必須。</span></p>
-      <input type="text" id="name" name="お名前" placeholder="※例：花束の住人、yamada100">
-      <p id="nameErrorMessage" class="error-message is-hidden">※お名前orハンドルネームをご入力してください。</p>
-      <p>メールアドレス<span class="required-note">※必須。</span></p>
-      <input type="email" id="email" name="メールアドレス" placeholder="※例：example@gmail.com">
-      <p id="emailErrorMessage" class="error-message is-hidden">※正しいメールアドレスをご入力ください。</p>
-      
-      <h3>【ご依頼用テンプレート】<span class="required-note">※必須。</span></h3>
-      <textarea id="note" name="依頼内容" placeholder="ご要望があればご自由にご記入ください。例：髪色・服装・性格イメージ／使用目的（アイコン・Live2Dなど）／ポーズや構図／背景の有無 など" rows="30">
+                    <h3>【合計】</h3>
+                    <div class="total">簡易見積合計金額：¥<span id="total">0</span></div>
+                    <div class="estimate-note">
+                        ※この金額はあくまで目安です。<br>
+                        ※正式にご依頼をご希望の方は、<br>下記のご依頼フォームにご入力・送信をお願いいたします。
+                    </div>
+                </div>
+                <h3 id="contactInfoSectionH3">【ご依頼フォーム】</h3>
+                <div class="google-form-container">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdAWNlE8-2yBKg-0ESaPcytr41krGsdNc0wrUQRGswJ5mdn0Q/viewform?usp=pp_url&entry.1206070182=%E3%80%90%E7%B4%8D%E6%9C%9F%E3%80%91%EF%BC%9A%0A%E3%80%90%E7%B4%8D%E6%9C%9F%E3%81%AE%E5%89%8D%E5%80%92%E3%81%97%E3%81%AE%E5%8F%AF%E5%90%A6%E3%80%91%EF%BC%9A%0A%E3%80%90%E4%BD%BF%E7%94%A8%E7%94%A8%E9%80%94%E3%80%91%EF%BC%9A%0A%E3%80%90%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%88%E3%82%B5%E3%82%A4%E3%82%BA%E3%80%91%EF%BC%9A%0A%E3%80%90%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E6%9C%89%E7%84%A1%E3%80%91%EF%BC%9A%0A%E3%80%90%E7%B4%8D%E5%93%81%E5%BD%A2%E5%BC%8F%E3%80%91%EF%BC%9A%0A%E3%80%90%E3%82%AD%E3%83%A3%E3%83%A9%E3%81%AE%E5%B9%B4%E9%BD%A2%E3%80%91%EF%BC%9A%0A%E3%80%90%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E9%A0%AD%E8%BA%AB%E3%80%91%EF%BC%9A%0A%E3%80%90%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E6%A7%8B%E5%9B%B3%E3%80%91%EF%BC%9A%0A%E3%80%90%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E3%83%9D%E3%83%BC%E3%82%BA%E3%80%91%EF%BC%9A%0A%E3%80%90%E9%9B%B0%E5%9B%B2%E6%B0%97%E3%80%91%EF%BC%9A%0A%E3%80%90%E8%A1%A8%E6%83%85%E3%80%91%EF%BC%9A%0A%0A%E3%80%90%E5%AE%9F%E7%B8%BE%E5%85%AC%E9%96%8B%E5%8F%AF%E8%83%BD%E6%97%A5%E6%99%82%E3%80%91%EF%BC%9A" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+                </div>
+                
+            </form>
+        </div>
+    </div>
 
-－－－－－－－－－－－－－－－－－－－－－－
+    <div class="popup-overlay" id="popupOverlay">
+      <img id="popupImage" src="" alt="拡大画像" loading="lazy" decoding="async">
+    </div>
 
-【納期】：
-【納期の前倒しの可否】：
-【使用用途】：
-【イラストサイズ】：
-【オプションの有無】：
-【納品形式】：
-【キャラの年齢】：
-【ご希望の頭身】：
-【ご希望の構図】：
-【ご希望のポーズ】：
-【雰囲気】：
-【表情】：
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- DOM要素の取得 ---
+        const totalEl = document.getElementById("total");
+        const typePreviewContainer = document.getElementById('typeImageBelowOptions');
+        const optionPreviewContainer = document.getElementById("optionPreview");
+        const radios = document.querySelectorAll('input[name="type"]');
+        const allOptionCheckboxes = document.querySelectorAll('.option');
+        const noOptionCheckbox = document.getElementById('noOptionCheckbox');
+        const actualOptionItems = document.querySelectorAll('.additional-option-item');
+        const popupOverlay = document.getElementById("popupOverlay");
+        const popupImage = document.getElementById("popupImage");
 
-【実績公開可能日時】：
+        // --- 関数定義 ---
+        const showPopup = (src) => {
+            popupImage.src = src;
+            popupOverlay.style.display = "flex";
+        };
+        const hidePopup = () => {
+            popupOverlay.style.display = "none";
+        };
 
-－－－－－－－－－－－－－－－－－－－－－－
-任意欄
+        const calculateTotal = () => {
+            let total = 0;
+            const selectedType = document.querySelector('input[name="type"]:checked');
+            if (selectedType) total += parseInt(selectedType.value, 10);
 
-◎ご依頼検討の決め手となったイラストなどがあればお教えください
-
-◎その他ご相談したい事などございましたお教えください
-
-詳細資料などございましたらご提示頂けますと助かります。
-お手数お掛け致しますがどうぞよろしくお願い致します。
-</textarea>
-      
-      <h3>【参考画像（添付）】</h3>
-      <input type="file" id="imageFile" name="添付ファイル" accept="image/*" multiple>
-      <p class="section-description">※参考資料などありましたら画像を添付してください。<br>Windowsの方はCtrlキー、Macの方はCommandキーを押しながらクリックすることで、複数のファイルを選択できます。（最大5枚）</p>
-      <div id="filePreviewContainer"></div>
-      <p id="fileErrorMessage" class="error-message is-hidden">※ファイルは5枚までしか選択できません。</p>
-      <button id="submitBtn" type="submit">送信</button>
-    </form>
-  </div>
-</div>
-
-<div id="completeMessage" class="complete is-hidden">
-  </div>
-
-<div id="loadingOverlay">
-  <div class="spinner"></div>
-  <div id="loadingText">送信中です...しばらくお待ちください。</div>
-</div>
-
-<div id="previewPanel">
-  <h4>選択内容プレビュー</h4>
-  <p><strong>イラストタイプ:</strong> <span id="previewType">未選択</span></p>
-  <p><strong>追加オプション:</strong> <span id="previewOptions">なし</span></p>
-  <p><strong>簡易見積合計金額：</strong> <span id="previewTotal" class="preview-total-highlight">0</span></p>
-</div>
-
-<div class="popup-overlay" id="popupOverlay">
-  <img id="popupImage" src="" alt="拡大画像" loading="lazy" decoding="async">
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // --- DOM要素の取得 ---
-    const headerImage = document.getElementById("headerImage");
-    const estimateForm = document.getElementById("estimateForm");
-    const totalEl = document.getElementById("total");
-    const submitBtn = document.getElementById("submitBtn");
-    const optionPreviewContainer = document.getElementById("optionPreview");
-    const typePreviewContainer = document.getElementById('typeImageBelowOptions');
-    const radios = document.querySelectorAll('input[name="イラストタイプ"]');
-    const allOptionCheckboxes = document.querySelectorAll('.option');
-    const noOptionCheckbox = document.getElementById('noOptionCheckbox');
-    const actualOptionItems = document.querySelectorAll('.additional-option-item');
-    const previewPanel = document.getElementById('previewPanel');
-    const popupOverlay = document.getElementById("popupOverlay");
-    const popupImage = document.getElementById("popupImage");
-    const previewTypeEl = document.getElementById("previewType");
-    const previewOptionsEl = document.getElementById("previewOptions");
-    const previewTotalEl = document.getElementById("previewTotal");
-    const nameInput = document.getElementById("name");
-    const emailInput = document.getElementById("email");
-    const imageFileInput = document.getElementById("imageFile");
-    const nameErrorMessage = document.getElementById("nameErrorMessage");
-    const emailErrorMessage = document.getElementById("emailErrorMessage");
-    const typeErrorMessage = document.getElementById("typeErrorMessage");
-    const fileErrorMessage = document.getElementById("fileErrorMessage");
-    const illustrationTypeSectionH3 = document.getElementById("illustrationTypeSectionH3");
-    const contactInfoSectionH3 = document.getElementById("contactInfoSectionH3");
-    const filePreviewContainer = document.getElementById('filePreviewContainer');
-    const loadingOverlay = document.getElementById('loadingOverlay');
-    const loadingText = document.getElementById('loadingText');
-
-    let selectedFiles = [];
-
-    const showLoading = (text) => {
-        loadingText.textContent = text;
-        loadingOverlay.style.opacity = '1';
-        loadingOverlay.style.visibility = 'visible';
-    };
-
-    const showPopup = (src) => {
-        popupImage.src = src;
-        popupOverlay.style.display = "flex";
-    };
-    const hidePopup = () => {
-        popupOverlay.style.display = "none";
-    };
-
-    const updatePreviewPanel = () => {
-        const selectedTypeRadio = document.querySelector('input[name="イラストタイプ"]:checked');
-        previewTypeEl.textContent = selectedTypeRadio ? selectedTypeRadio.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '') : "未選択";
-        let optionsText = "なし";
-        if (noOptionCheckbox?.checked) {
-            optionsText = noOptionCheckbox.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '');
-        } else {
-            const checkedOptions = Array.from(actualOptionItems).filter(opt => opt.checked);
-            if (checkedOptions.length > 0) {
-                optionsText = checkedOptions.map(opt => opt.parentElement.textContent.trim().replace(/（[\d,]+円）$/, '')).join(", ");
+            if (!noOptionCheckbox?.checked) {
+                actualOptionItems.forEach(opt => {
+                    if (opt.checked) total += parseInt(opt.value, 10);
+                });
             }
-        }
-        previewOptionsEl.textContent = optionsText;
-        previewTotalEl.textContent = "¥" + totalEl.textContent;
-    };
+            totalEl.textContent = total.toLocaleString();
+        };
+        
+        const createPreviewImage = (url, altText, container, isOption = false) => {
+            const img = document.createElement('img');
+            img.src = url;
+            img.alt = altText;
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            img.style.cursor = 'pointer';
+            img.style.borderRadius = '6px';
+            img.onclick = (e) => {
+                e.preventDefault();
+                showPopup(img.src);
+            };
+            
+            if (isOption) {
+                img.style.maxWidth = "150px";
+                img.style.maxHeight = "150px";
+            } else {
+                img.style.maxWidth = '50%';
+                img.style.maxHeight = '200px';
+                img.style.boxSizing = 'border-box';
+                img.style.padding = '0 5px';
+                img.style.display = 'inline-block';
+            }
+            
+            container.appendChild(img);
+        };
 
-    const calculateTotal = () => {
-        let total = 0;
-        const selectedType = document.querySelector('input[name="イラストタイプ"]:checked');
-        if (selectedType) {
-          // ★★★ 変更点(3) ★★★ valueから金額をパースする処理を追加
-          const priceMatch = selectedType.parentElement.textContent.match(/（([\d,]+)円）/);
-          if (priceMatch) {
-            total += parseInt(priceMatch[1].replace(/,/g, ''), 10);
-          }
-        }
+        const updateTypePreview = () => {
+            typePreviewContainer.innerHTML = '';
+            const selected = document.querySelector('input[name="type"]:checked');
+            if (selected?.dataset.imgs) {
+                const imageUrls = selected.dataset.imgs.split(',').map(url => url.trim()).filter(Boolean);
+                imageUrls.forEach(url => createPreviewImage(url, "タイプ画像", typePreviewContainer));
+                if (imageUrls.length > 0) {
+                    const note = document.createElement("p");
+                    note.textContent = "※画像をクリックすると拡大します。";
+                    note.className = "preview-note";
+                    typePreviewContainer.appendChild(note);
+                }
+            }
+        };
 
-        if (!noOptionCheckbox?.checked) {
+        const updateOptionPreview = () => {
+            optionPreviewContainer.innerHTML = '';
             actualOptionItems.forEach(opt => {
-                if (opt.checked) {
-                    const priceMatch = opt.parentElement.textContent.match(/（([\d,]+)円/);
-                    if (priceMatch) {
-                        total += parseInt(priceMatch[1].replace(/,/g, ''), 10);
-                    }
+                if (opt.checked && opt.dataset.imgs) {
+                    const wrapper = document.createElement("div");
+                    wrapper.className = "optionImageWrapper";
+                    createPreviewImage(opt.dataset.imgs, "オプション画像", wrapper, true);
+                    optionPreviewContainer.appendChild(wrapper);
                 }
             });
-        }
-        totalEl.textContent = total.toLocaleString();
-        updatePreviewPanel();
-    };
-
-    const createPreviewImage = (url, altText, container, isOption = false) => {
-        const img = document.createElement('img');
-        img.src = url;
-        img.alt = altText;
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        img.style.cursor = 'pointer';
-        img.style.borderRadius = '6px';
-        img.onclick = () => showPopup(img.src);
-        if (isOption) {
-            img.style.maxWidth = "150px";
-            img.style.maxHeight = "150px";
-        } else {
-            img.style.maxWidth = '50%';
-            img.style.maxHeight = '200px';
-            img.style.boxSizing = 'border-box';
-            img.style.padding = '0 5px';
-            img.style.display = 'inline-block';
-        }
-        container.appendChild(img);
-    };
-
-    const updateTypePreview = () => {
-        typePreviewContainer.innerHTML = '';
-        const selected = document.querySelector('input[name="イラストタイプ"]:checked');
-        if (selected?.dataset.imgs) {
-            headerImage.style.opacity = '0';
-            setTimeout(() => {
-                headerImage.src = selected.dataset.imgs;
-                headerImage.style.opacity = '1';
-            }, 300);
-            const imageUrls = selected.dataset.imgs.split(',').map(url => url.trim()).filter(Boolean);
-            if (imageUrls.length > 0) {
-                imageUrls.forEach(url => createPreviewImage(url, "タイプ画像", typePreviewContainer));
+            if (Array.from(actualOptionItems).filter(opt => opt.checked && opt.dataset.imgs).length > 0) {
                 const note = document.createElement("p");
                 note.textContent = "※画像をクリックすると拡大します。";
                 note.className = "preview-note";
-                typePreviewContainer.appendChild(note);
+                optionPreviewContainer.appendChild(note);
             }
-        }
-    };
-
-    const updateOptionPreview = () => {
-        optionPreviewContainer.innerHTML = '';
-        actualOptionItems.forEach(opt => {
-            if (opt.checked && opt.dataset.imgs) {
-                const wrapper = document.createElement("div");
-                wrapper.className = "optionImageWrapper";
-                createPreviewImage(opt.dataset.imgs, "オプション画像", wrapper, true);
-                const note = document.createElement("p");
-                note.textContent = "※画像をクリックすると拡大します。";
-                note.className = "preview-note";
-                wrapper.appendChild(note);
-                optionPreviewContainer.appendChild(wrapper);
-            }
+        };
+        
+        // --- イベントリスナー設定 ---
+        popupOverlay.addEventListener('click', hidePopup);
+        document.addEventListener('contextmenu', e => { if (e.target.tagName === "IMG") e.preventDefault(); });
+        document.addEventListener('dragstart', e => { if (e.target.tagName === "IMG") e.preventDefault(); });
+        
+        radios.forEach(r => r.addEventListener('change', () => { 
+            calculateTotal(); 
+            updateTypePreview(); 
+        }));
+        
+        allOptionCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                if (checkbox === noOptionCheckbox && checkbox.checked) {
+                    actualOptionItems.forEach(opt => { opt.checked = false; });
+                } else if (checkbox.checked) {
+                    if (noOptionCheckbox) noOptionCheckbox.checked = false;
+                }
+                calculateTotal();
+                updateOptionPreview();
+            });
         });
-    };
 
-    const renderFilePreview = () => {
-        filePreviewContainer.innerHTML = '';
-        selectedFiles.forEach((file, index) => {
-            const previewItem = document.createElement('div');
-            previewItem.className = 'file-preview-item';
-            const fileName = document.createElement('span');
-            fileName.textContent = file.name;
-            const removeBtn = document.createElement('button');
-            removeBtn.textContent = '削除';
-            removeBtn.onclick = () => {
-                selectedFiles.splice(index, 1);
-                // DataTransferオブジェクトを使ってinputのFileListを更新
-                const dataTransfer = new DataTransfer();
-                selectedFiles.forEach(file => dataTransfer.items.add(file));
-                imageFileInput.files = dataTransfer.files;
-                renderFilePreview();
-            };
-            previewItem.appendChild(fileName);
-            previewItem.appendChild(removeBtn);
-            filePreviewContainer.appendChild(previewItem);
-        });
-    };
-
-    // ★★★ 変更点(4) ★★★ handleSubmitをバリデーションとローディング表示のみに変更
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        let hasError = false;
-        let firstErrorElement = null;
-
-        radios.forEach(input => input.parentElement.classList.remove("highlight-error"));
-        typeErrorMessage.classList.add('is-hidden');
-        nameInput.classList.remove("input-error");
-        nameErrorMessage.classList.add("is-hidden");
-        emailInput.classList.remove("input-error");
-        emailErrorMessage.classList.add("is-hidden");
-        fileErrorMessage.classList.add("is-hidden");
-
-        if (!document.querySelector('input[name="イラストタイプ"]:checked')) {
-            hasError = true;
-            firstErrorElement = illustrationTypeSectionH3;
-            radios.forEach(input => input.parentElement.classList.add("highlight-error"));
-            typeErrorMessage.classList.remove('is-hidden');
-        }
-
-        if (!nameInput.value.trim()) {
-            hasError = true;
-            nameInput.classList.add("input-error");
-            nameErrorMessage.classList.remove("is-hidden");
-            if (!firstErrorElement) firstErrorElement = contactInfoSectionH3;
-        }
-
-        const email = emailInput.value.trim();
-        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            hasError = true;
-            emailInput.classList.add("input-error");
-            emailErrorMessage.classList.remove("is-hidden");
-            if (!firstErrorElement) firstErrorElement = contactInfoSectionH3;
-        }
-
-        if (selectedFiles.length > 5) {
-            hasError = true;
-            fileErrorMessage.classList.remove('is-hidden');
-        }
-
-        if (hasError) {
-            firstErrorElement?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            return;
-        }
-
-        // エラーがなければローディングを表示してフォームを送信
-        submitBtn.disabled = true;
-        showLoading("送信中です...しばらくお待ちください。");
-        estimateForm.submit();
-    };
-
-    // --- イベントリスナーの設定 ---
-    radios.forEach(radio => {
-        radio.addEventListener('change', () => {
-            calculateTotal();
-            updateTypePreview();
-        });
+        // 初期化
+        calculateTotal();
+        updateTypePreview();
+        updateOptionPreview();
     });
+    </script>
 
-    allOptionCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-            if (checkbox.id === 'noOptionCheckbox' && checkbox.checked) {
-                actualOptionItems.forEach(item => {
-                    item.checked = false;
-                });
-            } else if (checkbox.checked) {
-                noOptionCheckbox.checked = false;
-            }
-            calculateTotal();
-            updateOptionPreview();
-        });
-    });
-
-    imageFileInput.addEventListener('change', (event) => {
-        fileErrorMessage.classList.add("is-hidden");
-        selectedFiles = Array.from(event.target.files);
-        if (selectedFiles.length > 5) {
-            fileErrorMessage.classList.remove('is-hidden');
-            imageFileInput.value = '';
-            selectedFiles = [];
-        }
-        renderFilePreview();
-    });
-
-    estimateForm.addEventListener('submit', handleSubmit);
-    popupOverlay.addEventListener('click', hidePopup);
-
-    const originalPreviewPanelParent = previewPanel?.parentElement;
-    const originalPreviewPanelNextSibling = previewPanel?.nextSibling;
-    const movePreviewPanel = () => {
-        if (!previewPanel || !estimateForm || !submitBtn) return;
-        if (window.innerWidth <= 980) {
-            if (previewPanel.parentElement !== estimateForm) {
-                estimateForm.insertBefore(previewPanel, submitBtn);
-            }
-        } else {
-            if (previewPanel.parentElement === estimateForm) {
-                originalPreviewPanelParent.insertBefore(previewPanel, originalPreviewPanelNextSibling);
-            }
-        }
-    };
-    window.addEventListener('resize', movePreviewPanel);
-
-    // 初期化
-    calculateTotal();
-    updateTypePreview();
-    updateOptionPreview();
-    movePreviewPanel();
-});
-</script>
 </body>
 </html>
