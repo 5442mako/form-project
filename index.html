@@ -81,11 +81,12 @@
             font-size: 0.9em;
         }
         
+        /* ここを修正: gapプロパティを追加 */
         .preview {
             margin-top: 15px;
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 10px; /* 各要素間に10pxの隙間を設定 */
             justify-content: flex-start;
             align-items: center;
         }
@@ -112,6 +113,7 @@
 
         .optionImageWrapper {
             text-align: center;
+            /* ここから直接マージンを削除。親要素のgapで管理するため */
         }
         
         .google-form-container {
