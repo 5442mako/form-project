@@ -81,12 +81,11 @@
             font-size: 0.9em;
         }
         
-        /* ここを修正: gapプロパティを追加 */
         .preview {
             margin-top: 15px;
             display: flex;
             flex-wrap: wrap;
-            gap: 10px; /* 各要素間に10pxの隙間を設定 */
+            gap: 10px;
             justify-content: flex-start;
             align-items: center;
         }
@@ -113,7 +112,6 @@
 
         .optionImageWrapper {
             text-align: center;
-            /* ここから直接マージンを削除。親要素のgapで管理するため */
         }
         
         .google-form-container {
@@ -175,7 +173,6 @@
             object-fit: contain;
         }
 
-        /* 簡易見積セクションのスタイル */
         .price-estimate {
             background-color: #ffe3f2;
             padding: 1px 20px 20px;
@@ -185,7 +182,6 @@
             display: flex;
             flex-direction: column;
         }
-        
     </style>
 </head>
 <body>
@@ -216,8 +212,8 @@
                 <div id="typeImageBelowOptions" class="preview"></div>
 
                 <h3>【追加オプション（複数選択可）】</h3>
-                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="3000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image209.webp"> 背景（3,000円〜）</label>
-                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/575755441817780548.webp,https://raw.githubusercontent.com/5442mako/image-host-/main/image107.webp"> 細かい背景（5,000円〜）</label>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="3000" id="backgroundCheckbox" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image209.webp"> 背景（3,000円〜）</label>
+                <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" id="detailedBackgroundCheckbox" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/575755441817780548.webp,https://raw.githubusercontent.com/5442mako/image-host-/main/image107.webp"> 細かい背景（5,000円〜）</label>
                 <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" data-imgs="https://raw.githubusercontent.com/5442mako/image-host-/main/image216.webp"> 細かい装飾（花束、花冠などパーツ1つごとに5,000円）</label>
                 <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="5000" > ぬいぐるみ（動物など）・大きめアクセ（１つごと5,000円）</label>
                 <label><input type="checkbox" class="option additional-option-item" name="additionalOption" value="10000"> 追加衣装（1着ごと10,000円）</label>
@@ -253,6 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const allOptionCheckboxes = document.querySelectorAll('.option');
     const noOptionCheckbox = document.getElementById('noOptionCheckbox');
     const actualOptionItems = document.querySelectorAll('.additional-option-item');
+    const backgroundCheckbox = document.getElementById('backgroundCheckbox');
+    const detailedBackgroundCheckbox = document.getElementById('detailedBackgroundCheckbox');
     const popupOverlay = document.getElementById("popupOverlay");
     const popupImage = document.getElementById("popupImage");
 
@@ -343,6 +341,17 @@ document.addEventListener('DOMContentLoaded', () => {
             optionPreviewContainer.appendChild(note);
         }
     };
+
+    // --- 新しいイベントハンドラー ---
+    const handleBackgroundCheck = (changedCheckbox) => {
+        if (changedCheckbox === backgroundCheckbox && backgroundCheckbox.checked) {
+            detailedBackgroundCheckbox.checked = false;
+        } else if (changedCheckbox === detailedBackgroundCheckbox && detailedBackgroundCheckbox.checked) {
+            backgroundCheckbox.checked = false;
+        }
+        calculateTotal();
+        updateOptionPreview();
+    };
     
     // --- イベントリスナー設定 ---
     popupOverlay.addEventListener('click', hidePopup);
@@ -365,6 +374,14 @@ document.addEventListener('DOMContentLoaded', () => {
             updateOptionPreview();
         });
     });
+
+    // 背景と細かい背景のイベントリスナー
+    if (backgroundCheckbox) {
+        backgroundCheckbox.addEventListener('change', () => handleBackgroundCheck(backgroundCheckbox));
+    }
+    if (detailedBackgroundCheckbox) {
+        detailedBackgroundCheckbox.addEventListener('change', () => handleBackgroundCheck(detailedBackgroundCheckbox));
+    }
 
     // 初期化
     calculateTotal();
