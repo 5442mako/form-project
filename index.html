@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const handleBackgroundCheck = (changedCheckbox) => {
         if (changedCheckbox === backgroundCheckbox && backgroundCheckbox.checked) {
             detailedBackgroundCheckbox.checked = false;
-        } else if (changedCheckbox === detailedBackgroundCheckbox && detailedBackgroundCheckbox.checked) {
+        } else if (changedCheckbox === detailedBackgroundCheckbox &" "& detailedBackgroundCheckbox.checked) {
             backgroundCheckbox.checked = false;
         }
         calculateTotal();
